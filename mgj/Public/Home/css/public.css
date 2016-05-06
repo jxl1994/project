@@ -1,0 +1,394 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration:none;
+}
+.c{
+	float: clear;
+}
+#header{
+	width:97.5%;
+	height:30px;
+	background: #f2f2f2;
+	border-bottom:1px solid #ddd;
+	float: left;
+}
+.dh{
+	width:430px;
+	height:30px;
+	float: right;
+}
+.dh a{
+	color:rgb(102, 102, 102);
+	font-size:12px;
+	line-height: 30px;
+	padding:0 8px;
+	float: left;
+}
+.dh span{
+	float: left;
+	color:#ddd;
+	font-size: 14px;
+	line-height: 30px;
+}
+
+.tb1{
+	position: relative;
+	top:2px;
+}
+.tb2{
+	position: relative;
+	top:3px;
+}
+.tb4{
+	position: relative;
+	top:1px;
+}
+.tb3{
+	position: relative;
+	top:5px;
+}
+
+
+/*右边导航条*/
+#right_dh{
+	width: 2.5%;
+	height: 700px;
+	float: right;
+	background: #202020;
+	position: absolute;
+	right: 0;
+	position: fixed;
+}
+.right_dh{
+	height: 500px;
+	position: relative;
+	top:50px;
+	position: fixed;
+}
+/*购物车*/
+.right_dh .rdh_gwc{
+	width: 30px;
+	height: 95px;
+	border-bottom: 1px solid #929292;
+	margin-left: 1px;
+}
+.right_dh .rdh_gwc:hover{
+	background: #ef2f23;
+}
+.right_dh .rdh_gwc_logo{
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+.right_dh .rdh_gwc_w{
+	width: 22px;
+	height: 45px;
+	color:#fff;
+	font-size:12px;
+	line-height: 15px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+/*优惠券*/
+.right_dh .rdh_yhq{
+	width: 30px;
+	height: 95px;
+	border-bottom: 1px solid #929292;
+	margin-left: 1px;
+}
+.right_dh .rdh_yhq:hover{
+	background: #ef2f23;
+}
+.right_dh .rdh_yhq_logo{
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+.right_dh .rdh_yhq_logo img{
+	position: relative;
+	top: -25px;
+}
+.right_dh .rdh_yhq_w{
+	width: 22px;
+	height: 45px;
+	color:#fff;
+	font-size:12px;
+	line-height: 15px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+/*钱包*/
+.right_dh .rdh_qb{
+	width: 30px;
+	height: 78px;
+	border-bottom: 1px solid #929292;
+	margin-left: 1px;
+}
+.right_dh .rdh_qb:hover{
+	background: #ef2f23;
+}
+.right_dh .rdh_qb_logo{
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+.right_dh .rdh_qb_logo img{
+	position: relative;
+	top: -85px;
+}
+.right_dh .rdh_qb_w{
+	width: 22px;
+	height: 35px;
+	color:#fff;
+	font-size:12px;
+	line-height: 15px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+/*足迹*/
+.right_dh .rdh_zj{
+	width: 30px;
+	height: 78px;
+	border-bottom: 1px solid #929292;
+	margin-left: 1px;
+}
+.right_dh .rdh_zj:hover{
+	background: #ef2f23;
+}
+.right_dh .rdh_zj_logo{
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+}
+.right_dh .rdh_zj_logo img{
+	position: relative;
+	top: -56px;
+}
+.right_dh .rdh_zj_w{
+	width: 22px;
+	height: 35px;
+	color:#fff;
+	font-size:12px;
+	line-height: 15px;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+/*锚点*/
+#right_dh .rdh_md{
+	width: 30px;
+	height: 40px;
+	margin-left: 1px;
+	position: relative;
+	top:600px;
+	border-top:1px solid #929292; 
+	overflow: hidden;
+}
+#right_dh .rdh_md img{
+	position: relative;
+	top: -145px;
+}
+#right_dh .rdh_md:hover{
+	background: #ef2f23;
+}
+
+/*顶部*/
+#top{
+	width:97.5%;
+	height: 144px;
+	float:left;
+	border-bottom: 1px solid #ff4466;
+}
+#top .top{
+	width: 1200px;
+	height: 144px;
+	float: right;
+}
+#top .top .top_logo{
+	width: 250px;
+	height: 60px;
+	margin-top: 40px;
+	float:left;
+}
+
+
+#top .top .fl_all{
+	width: 225px;
+	height: 36px;
+	background: #f46;
+	border-radius: 7px 7px 0 0;
+	margin-top: 14px;
+	margin-left: -1px;
+	color:#fff;
+	font-size: 15px;
+	line-height: 38px;
+	text-align: center;
+	font-family: "宋体";
+	font-weight: 700;
+}
+
+/*搜索框*/
+#top .top .top_center{
+	width:500px;
+	height: 33px;
+	margin-top: 50px;
+	margin-left: 100px;
+	float: left;
+
+}
+#top .top .top_center .sousuo_left{
+	width: 52px;
+	height: 33px;
+	padding-left: 12px;
+	border:1px solid #3a3a3a;
+	border-right:0px solid #fff;
+	float: left;
+}
+#top .top .top_center span{
+	line-height: 33px;
+	color:rgb(102, 102, 102);
+	font-size:12px;
+}
+#top .top .top_center .sousuo_center{
+	width: 360px;
+	height: 35px;
+	border:0px solid #fff;
+	border-top:1px solid #3a3a3a;
+	border-bottom:1px solid #3a3a3a;
+	float: left;
+}
+#top .top .top_center .sousuo_right{
+	width:70px;
+	height: 35px;
+	background: #3a3a3a;
+	border:1px solid #3a3a3a;
+	border-bottom: #3a3a3a;
+	overflow: hidden;
+}
+#top .top .top_center .sousuo_right img{
+	position: relative;
+	top:-58px;
+	left:25px;
+}
+/*二维码*/
+#top .top .top_right{
+	width: 251px;
+	height: 144px;
+	float: right;
+}
+#top .top .top_right img{
+	width: 83px;
+	height: 83px;
+	margin-top: 56px;
+	margin-left: 105px;
+}
+
+/*底部*/
+#footer{
+	width: 97.5%;
+	height: 160px;
+	float: left;
+}
+.footer{
+	width: 1200px;
+	height: 125px;
+	margin-top: 30px;
+	float: right;
+}
+.footer .footer_left{
+	width: 246px;
+	height: 125px;
+	float: left;
+}
+.footer .footer_logo{
+	width: 246px;
+	height: 38px;
+}
+.footer .footer_bq{
+	width: 246px;
+	height: 87px;
+	line-height: 16px;
+	color: #999;
+	font-size:12px;
+	margin-top: 5px;
+}
+.footer .footer_bq li{
+	margin-top: 5px;
+}
+.footer .footer_center{
+	width: 520px;
+	height: 125px;
+	float: left;
+	margin-left: 90px;
+	margin-top: 10px;
+}
+.footer .footer_center dl{
+	width: 110px;
+	height: 125px;
+	float: left;
+	margin-right: 55px;
+}
+.footer .footer_center dl>dt{
+	font-size:12px;
+	color:rgb(51, 51, 51);
+	line-height: 20px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+.footer .footer_center dl>dd{
+	font-size:12px;
+	line-height: 22px;
+}
+.footer .footer_center dl>dd a{
+	color:rgb(102, 102, 102);
+}
+.footer .footer_right{
+	float: left;
+}
+.footer .footer_right p{
+	font-size:12px;
+	color:rgb(51, 51, 51);
+	line-height: 20px;
+	font-weight: 700;
+	margin-top: 10px;
+}
+.footer .footer_right .img{
+	width: 320px;
+	height: 30px;
+	margin-top: 10px;
+}
+.footer_right .img .img1{
+	width:50px;
+	height: 28px;
+	overflow: hidden;
+	float: left;
+}
+.footer_right .img1 img{
+	position: relative;
+	left:-500px;
+	top:-49px;
+}
+.footer_right .img .img2{
+	width:154px;
+	height: 28px;
+	float: left;
+	overflow: hidden;
+}
+.footer_right .img2 img{
+	position: relative;
+	left:-250px;
+	top:-49px;
+}
+.footer_right .img .img3{
+	width:84px;
+	height: 28px;
+	float: left;
+	overflow: hidden;
+}
+.footer_right .img3 img{
+	position: relative;
+	left:-400px;
+	top:-49px;
+}
+

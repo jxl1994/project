@@ -1,0 +1,14 @@
+*{margin:0px;padding:0px ;list-style: none;text-decoration:none;}
+
+#quan{width: 97.5%;background: #f4f4f4;float: left;}
+.tou{margin-left:5%;width: 90%;height: 72px;border:1px solid #ddd;border-left:none;border-right:none;}
+.logo{height: 72px;float:left;}
+.logo img{margin:10px;}
+.bu{width: 509px;height: 65px;float:right;}
+.dazi{margin-left:5%;width: 90%;height: 90px;}
+.zi{width: 100%;height: 30px;font-family:微软雅黑;}
+.zi .shu{color:#ccc;}
+.zi li{float:left;margin-top:35px;}
+.zi li a{border: 1px;width: 100px;height: 50px;color:#333;font-size:17px;}
+.spbiao{margin-left:5%;width: 90%;font-size:13px;color:#333;background: #fff;margin-bottom: 60px;}
+.jiage{color:#F13E3A;font-size:28px;font-family:微软雅黑;}
