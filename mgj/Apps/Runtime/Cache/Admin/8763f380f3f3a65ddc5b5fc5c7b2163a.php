@@ -343,6 +343,18 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/index');?>">配送清单</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                      
                     </ul>
                 </div>
@@ -355,7 +367,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">权限规则列表</h1>
+    <h1 class="page-header">人员分配情况表</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -373,25 +385,7 @@
                     <div class="dataTable_wrapper">
                         <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                         	<div class="row">
-                                <form action="<?php echo U('Admin/QuanXian/index');?>" method="get">
-                                    <div class="col-sm-6">
-                                       <div class="dataTables_length" id="dataTables-example_length">
-                                        <label>Show 
-                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
-                                          <option value="5">5</option>
-                                          <option value="10">10</option>
-                                          <option value="15">15</option>
-                                          <option value="20">20</option>
-                                      </select> entries
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="col-sm-6">
-                           <div id="dataTables-example_filter" class="dataTables_filter">
-                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                            <button class="btn btn-primary">搜索</button>
-                        </div>
-                    </form>
+                                
                 </div>
             </div>
             <div class="row">
@@ -399,26 +393,17 @@
                  <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
                     <thead>
                         <tr role="row">
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="Browser: activate to sort column ascending">ID</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">权限标识</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">权限规则名</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">状态</th>                           
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="Browser: activate to sort column ascending">用户名</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">分组</th>                          
+
                        </tr>
                    </thead>
                    <tbody>
-                    <!-- z这是用户列表的遍历 -->
-                    <?php
- $arr=array('禁用','开启'); ?>
+                   
                     <?php if(is_array($res)): foreach($res as $key=>$vo): ?><tr class="gradeA odd" role="row">
-                            <td class="sid"><?php echo ($vo["id"]); ?></td>
-                            <td><?php echo ($vo["name"]); ?></td>
-                            <td class="center"><?php echo ($vo["title"]); ?></td>
-                            <td class="center"><?php echo $arr[$vo['status']]?></td>                                                 
-                            <td >
-                                <center><a href="<?php echo U('Admin/QuanXian/delete',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a></center>
-                                <center><a href="<?php echo U('Admin/QuanXian/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td></center>
-                            </td>
+                            <td class="sid"><?php echo ($vo["username"]); ?></td>
+                            <td><?php echo ($vo["title"]); ?></td>                   
+                         
                         </tr><?php endforeach; endif; ?>
                 </tbody>
             </table>

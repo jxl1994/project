@@ -355,7 +355,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">权限规则列表</h1>
+    <h1 class="page-header">人员分组</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -366,134 +366,40 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                   
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="dataTable_wrapper">
-                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        	<div class="row">
-                                <form action="<?php echo U('Admin/QuanXian/index');?>" method="get">
-                                    <div class="col-sm-6">
-                                       <div class="dataTables_length" id="dataTables-example_length">
-                                        <label>Show 
-                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
-                                          <option value="5">5</option>
-                                          <option value="10">10</option>
-                                          <option value="15">15</option>
-                                          <option value="20">20</option>
-                                      </select> entries
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="col-sm-6">
-                           <div id="dataTables-example_filter" class="dataTables_filter">
-                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                            <button class="btn btn-primary">搜索</button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" method="post" action="<?php echo U('Admin/QuanXian/User_insert');?>" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>用户名称</label>
+                                    <input type='text' name="username" placeholder="请输入规则名" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>用户组名</label>
+                                 
+                                        <select name="title" class="form-control">
+                                             <option value="0">请选择分类</option>
+                                            <?php if(is_array($res)): foreach($res as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["title"]); ?></option><?php endforeach; endif; ?>                                                                                                       
+                                        </select> 
+                                           
+                                </div>                                                                                              
+                                <button class="btn btn-primary btn-lg btn-block" >添加</button>
+                            </form>
                         </div>
-                    </form>
+                       
+                        
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
                 </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="row">
-             <div class="col-sm-12">
-                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
-                    <thead>
-                        <tr role="row">
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="Browser: activate to sort column ascending">ID</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">权限标识</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">权限规则名</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">状态</th>                           
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                    <!-- z这是用户列表的遍历 -->
-                    <?php
- $arr=array('禁用','开启'); ?>
-                    <?php if(is_array($res)): foreach($res as $key=>$vo): ?><tr class="gradeA odd" role="row">
-                            <td class="sid"><?php echo ($vo["id"]); ?></td>
-                            <td><?php echo ($vo["name"]); ?></td>
-                            <td class="center"><?php echo ($vo["title"]); ?></td>
-                            <td class="center"><?php echo $arr[$vo['status']]?></td>                                                 
-                            <td >
-                                <center><a href="<?php echo U('Admin/QuanXian/delete',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a></center>
-                                <center><a href="<?php echo U('Admin/QuanXian/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td></center>
-                            </td>
-                        </tr><?php endforeach; endif; ?>
-                </tbody>
-            </table>
+            <!-- /.panel -->
         </div>
+        <!-- /.col-lg-12 -->
     </div>
-                    <style type="text/css">
-                          #pages a,#pages span{
-                           background-color: #fff;
-                           border: 1px solid #ddd;
-                           color: #337ab7;
-                           float: left;
-                           line-height: 1.42857;
-                           margin-left: -1px;
-                           padding: 6px 12px;
-                           position: relative;
-                           text-decoration: none;
-                       }
-                       #pages span{
-                    	/*background:#337ab7;
-                    	color:white;*/
-                    	background-color: #337ab7;
-                      border-color: #337ab7;
-                      color: #fff;
-                      cursor: default;
-                      z-index: 2;
-                    }
-                  </style>
-                  <div class="row">
-                      <div class="col-sm-6">
-                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
-                       <div class="col-sm-6">
-                        <div id="pages">
-                         <?php echo ($pages); ?>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- /.table-responsive -->
-
-     </div>
-     <!-- /.panel-body -->
- </div>
- <!-- /.panel -->
-</div>
-<!-- /.col-lg-12 -->
-</div>
-<script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript">
-    // alert($);
-    $(function(){
-        //获取btn
-        $('.btn-del').click(function(){
-            // alert('222');
-           var v = $(this).parents('.gradeA').find('.sid').html();
-           // alert(v);
-           //发送ajax
-           var url = "<?php echo U('Admin/User/delete');?>";
-           var btn = $(this);
-           $.ajax({
-                url:url,
-                data:{id:v},
-                type:'get',
-                success:function(data){
-                    // console.log(data);
-                    if(data == 0){
-                      // location.href = location.href;
-                      btn.parents('.gradeA').remove();
-                    }else{
-                        alert('删除失败');
-                    }
-                }
-           })
-        })
-    })
-</script>
 
             <!-- /.row -->
            

@@ -323,16 +323,34 @@
                             <a href="#"><i class="fa fa-qq  fa-fw"></i>权限管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/QuanXian/add');?>">新值权限</a>
+                                    <a href="<?php echo U('Admin/QuanXian/add');?>">添加规则</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/QuanXian/index');?>">权限列表</a>
+                                    <a href="<?php echo U('Admin/QuanXian/index');?>">规则列表</a>
                                 </li>
                                  <li>
-                                    <a href="<?php echo U('Admin/QuanXian/Group_add');?>">组权限添加</a>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_add');?>">用户组添加</a>
                                 </li>
                                  <li>
-                                    <a href="<?php echo U('Admin/QuanXian/Group_index');?>">组权限浏览</a>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/index');?>">配送清单</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

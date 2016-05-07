@@ -6,7 +6,7 @@ http-equiv="X-UA-Compatible">
  
 <META http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <TITLE>登录页面</TITLE> 
-<SCRIPT src="/Public/Admin/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
+<SCRIPT src="/mgj/Public/Admin/js/jquery-1.9.1.min.js" type="text/javascript"></SCRIPT>
  
 <STYLE>
 body{
@@ -40,14 +40,14 @@ body{
 	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
 .u_logo{
-	/*background: url("/Public/Admin/images/username.png") no-repeat;*/
+	/*background: url("/mgj/Public/Admin/images/username.png") no-repeat;*/
 	padding: 10px 10px;
 	position: absolute;
 	top: 43px;
 	left: 40px;
 }
 .p_logo{
-	/*background: url("/Public/Admin/images/password.png") no-repeat;*/
+	/*background: url("/mgj/Public/Admin/images/password.png") no-repeat;*/
 	padding: 10px 10px;
 	position: absolute;
 	top: 12px;
@@ -57,7 +57,7 @@ a{
 	text-decoration: none;
 }
 .tou{
-	background: url("/Public/Admin/images/tou.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/tou.png") no-repeat;
 	width: 97px;
 	height: 92px;
 	position: absolute;
@@ -65,7 +65,7 @@ a{
 	left: 140px;
 }
 .left_hand{
-	background: url("/Public/Admin/images/left_hand.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/left_hand.png") no-repeat;
 	width: 32px;
 	height: 37px;
 	position: absolute;
@@ -73,7 +73,7 @@ a{
 	left: 150px;
 }
 .right_hand{
-	background: url("/Public/Admin/images/right_hand.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/right_hand.png") no-repeat;
 	width: 32px;
 	height: 37px;
 	position: absolute;
@@ -81,7 +81,7 @@ a{
 	right: -64px;
 }
 .initial_left_hand{
-	background: url("/Public/Admin/images/hand.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/hand.png") no-repeat;
 	width: 30px;
 	height: 20px;
 	position: absolute;
@@ -89,7 +89,7 @@ a{
 	left: 100px;
 }
 .initial_right_hand{
-	background: url("/Public/Admin/images/hand.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/hand.png") no-repeat;
 	width: 30px;
 	height: 20px;
 	position: absolute;
@@ -97,7 +97,7 @@ a{
 	right: -112px;
 }
 .left_handing{
-	background: url("/Public/Admin/images/left-handing.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/left-handing.png") no-repeat;
 	width: 30px;
 	height: 20px;
 	position: absolute;
@@ -105,7 +105,7 @@ a{
 	left: 139px;
 }
 .right_handinging{
-	background: url("/Public/Admin/images/right_handing.png") no-repeat;
+	background: url("/mgj/Public/Admin/images/right_handing.png") no-repeat;
 	width: 30px;
 	height: 20px;
 	position: absolute;
@@ -156,7 +156,7 @@ $(function(){
 <DIV class="initial_left_hand" id="left_hand"></DIV>
 <DIV class="initial_right_hand" id="right_hand"></DIV></DIV>
 <P style="padding: 30px 0px 10px; position: relative;"><SPAN 
-class="u_logo" style="background: url("/Public/Admin/images/username.png") no-repeat;"></SPAN>         
+class="u_logo" style="background: url("/mgj/Public/Admin/images/username.png") no-repeat;"></SPAN>         
 <INPUT class="ipt" type="text" placeholder="请输入用户名" value="" name="username"> 
     </P>
 <P style="position: relative;"><SPAN class="p_logo"></SPAN>         

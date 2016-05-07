@@ -54,9 +54,19 @@ class UserController extends CommonController {
     	$user = M('user');
     	
     	//创建数据
-    	$user->create();
+        $time=date('Y-m-d H:i:s',time());
+        // var_dump($time);
+    	$data['username']=$_POST['username'];
+        $data['password']=$_POST['password'];
+        $data['email']=$_POST['email'];
+        $data['phone']=$_POST['phone'];
+        $data['level']=$_POST['level'];
+        $data['addtime']=$time;
+
+        // var_dump($data);die;
     	//执行添加
-    	$res = $user->add();
+    	$res = $user->data($data)->add();
+        // echo $user->_sql();die;
     	if($res){
     		//添加成功
     		$this->success('添加成功',U('Admin/User/index'));

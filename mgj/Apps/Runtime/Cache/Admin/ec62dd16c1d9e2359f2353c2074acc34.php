@@ -334,6 +334,12 @@
                                  <li>
                                     <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>

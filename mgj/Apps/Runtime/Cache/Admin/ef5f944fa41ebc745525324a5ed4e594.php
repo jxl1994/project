@@ -10,22 +10,22 @@
     <title>蘑菇街后台管理</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/mgj/Public/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/mgj/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="/mgj/Public/Admin/dist/css/timeline.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/mgj/Public/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/mgj/Public/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/mgj/Public/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Public/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -281,7 +281,7 @@
                             <a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-dashboard fa-fw"></i> 后台首页</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user-md fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/User/add');?>">用户添加</a>
@@ -296,7 +296,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa glyphicon-fire fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
@@ -308,13 +308,37 @@
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Goods/add');?>">商品添加</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo U('Admin/Goods/index');?>">商品列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-qq  fa-fw"></i>权限管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/add');?>">添加规则</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/index');?>">规则列表</a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_add');?>">用户组添加</a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -366,7 +390,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label>状态</label>
+                                    <label>身份</label>
                                     <select name="level" class="form-control">
                                         <option value="游客">游客</option>
                                         <option value="会员">会员</option>
@@ -374,6 +398,7 @@
                                         <option value="超级管理员">超级管理员</option>
                                     </select>
                                 </div>
+                              
                                 <button class="btn btn-primary btn-lg btn-block" >添加</button>
                             </form>
                         </div>
@@ -400,18 +425,18 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="/mgj/Public/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/Public/Admin/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/mgj/Public/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/Public/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="/mgj/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
 
     <!-- Custom Theme JavaScript -->
-    <script src="/mgj/Public/Admin/dist/js/sb-admin-2.js"></script>
+    <script src="/Public/Admin/dist/js/sb-admin-2.js"></script>
 
 </body>
 

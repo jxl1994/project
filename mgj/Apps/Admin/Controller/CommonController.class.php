@@ -7,6 +7,7 @@ class CommonController extends Controller {
 	public function _initialize(){
 		//用户的登录检测
 		$id = session('uid');
+		// var_dump($id);
 		//判断
 		if(empty($id)){
 			$this->error('请先登录',U('Admin/Login/index'));

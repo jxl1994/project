@@ -281,7 +281,7 @@
                             <a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-dashboard fa-fw"></i> 后台首页</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-user-md fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/User/add');?>">用户添加</a>
@@ -296,7 +296,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                        <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa glyphicon-fire fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
@@ -308,13 +308,49 @@
                             <!-- /.nav-second-level -->
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Goods/add');?>">商品添加</a>
                                 </li>
                                 <li>
                                     <a href="<?php echo U('Admin/Goods/index');?>">商品列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-qq  fa-fw"></i>权限管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/add');?>">添加规则</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/index');?>">规则列表</a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_add');?>">用户组添加</a>
+                                </li>
+                                 <li>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/index');?>">配送清单</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

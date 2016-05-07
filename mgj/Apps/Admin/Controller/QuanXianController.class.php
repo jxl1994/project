@@ -255,6 +255,100 @@ class QuanXianController extends CommonController {
             //修改失败
             $this->error('修改失败',U('Admin/QuanXian/Group_index'));
         }
-     }      
+     }
+//人员分组列表
+    public function User_index(){
+        //创建对象
+        $user = M('user');
+         //var_dump($_GET);
+         //dump($_GET);
+         // if(!empty($_GET['keyword'])){
+         //     //建议使用数组形式来创建where条件
+         //     // $where['username'] = array('like','%'.$_GET['keyword'].'%');
+         //     $where=" where username like '%\\".$_GET['keyword']."%'";
+         // }else{
+         //    $where='';
+         // }
+         //var_dump($where);die;
+         //var_dump($where);
+        //获取每页显示的数量
+        $num = !empty($_GET['num']) ? $_GET['num'] :5;
+        // var_dump($num);      
+        //统计总数
+        $sql = 'select * from think_auth_group_access ';
+        $result=mysql_query($sql);
+        //统计总数据
+        $count=mysql_num_rows($result);
+        // var_dump($count);die;
+        
+        // 实例化分页类
+        $Page = new \Think\Page($count,$num);
+        //获取limit
+        $limit = $Page->firstRow.','.$Page->listRows;
+        //var_dump($limit);die;
+        // 分页显示输出
+        $pages = $Page->show();
+        // var_dump($pages);
+        //查询
+        //$users = $user->limit($limit)->where(array('hs'=>0))->select();
+        $sql='select think_auth_group_access.*, user.*, think_auth_group.* from user left join think_auth_group_access on think_auth_group_access.uid = user.id  join think_auth_group on think_auth_group_access.group_id = think_auth_group.id limit '.$limit; 
+        //查看sql语句
+        $res=$user->query($sql);
+        // echo $sql;
+        // var_dump($res);die;
+        //分配变量
+        $this->assign('res',$res);
+        $this->assign('pages',$pages);
+        //解析模板
+        $this->display();   
+    }
+//人员分组添加
+     public function User_add(){ 
+        $user = M('think_auth_group');
+        $res=$user->select();
+            
+        // var_dump($res);die;
+        $this->assign('res',$res);                                                                                  
+        //解析模板
+        $this->display();
+     }
+//执行分组添加     
+  public function User_insert(){
+        // var_dump($_POST);die;
+        //创建表对象
+        $user = M('user');
+        $username=$_POST['username'];
+        if(!empty($username)){
+           $username=$_POST['username'];    
+        }else{
+            $this->error('没有填写用户',U('Admin/QuanXian/User_index'));
+        }
+        $sql='select * from user where username="'.$username.'"';
+        echo $sql;
+        $result=mysql_query($sql);
+        $row=mysql_fetch_assoc($result);
+        // var_dump($row);die;
+        $id=$row['id'];
+        // var_dump($id);die;
+        //创建对象
+        $user = M('think_auth_group_access');
+        //插入关联表
+        $data['uid']=$id;
+        $data['group_id']=$_POST['title'];
+       
+        // var_dump($data);die;
+        //执行添加
+        $res = $user->data($data)->add();
+
+        if($res && $result){
+            //添加成功
+            $this->success('添加成功',U('Admin/QuanXian/User_index'));
+        }else{
+            //失败
+            $this->error('添加失败',U('Admin/QuanXian/User_index'));
+        }
+    }
+ 
+
 
 }

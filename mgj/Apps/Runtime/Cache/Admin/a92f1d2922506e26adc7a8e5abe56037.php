@@ -334,6 +334,12 @@
                                  <li>
                                     <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
                                 </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -397,8 +403,8 @@
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">用户名</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">邮箱</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">手机</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">分组</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="CSS grade: activate to sort column ascending">状态</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">身份</th>
+             
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="CSS grade: activate to sort column ascending">添加时间</th>                            
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
                        </tr>
@@ -410,10 +416,8 @@
                             <td><?php echo ($vo["username"]); ?></td>
                             <td class="center"><?php echo ($vo["email"]); ?></td>
                             <td class="center"><?php echo ($vo["phone"]); ?></td>
-                            <td class="center"><?php echo ($vo["level"]); ?></td>
-                            <td class="center"><?php echo ($vo["status"]); ?></td>
-                            <?php  $time=time(); $date=date('Y-m-d H:i:s',$time); ?>
-                            <td><?php echo ($date); ?></td>
+                            <td class="center"><?php echo ($vo["level"]); ?></td>                                                   
+                            <td><?php echo ($vo["addtime"]); ?></td>
                             <td >
                                 <center><a href="<?php echo U('Admin/User/toTrach',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a></center>
                                 <center><a href="<?php echo U('Admin/User/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td></center>
