@@ -10,22 +10,22 @@
     <title>蘑菇街后台管理</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/mgj/Public/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/mgj/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="/mgj/Public/Admin/dist/css/timeline.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/mgj/Public/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="/mgj/Public/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/mgj/Public/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Public/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -296,7 +296,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                        <li>
-                            <a href="#"><i class="fa glyphicon-fire fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bitbucket fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
@@ -344,7 +344,26 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-apple  fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa  fa-twitter  fa-fw"></i> 订单管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Order/index');?>">订单浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa  fa-book  fa-fw"></i> 评价管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Pingjia/index');?>">评价浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-truck   fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
@@ -355,6 +374,56 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-behance-square   fa-fw"></i> 友情链接<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Link/add');?>">添加链接</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Link/index');?>">链接浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-camera-retro  fa-fw"></i> 轮播管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Carousel/add');?>">添加轮播图</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Carousel/index');?>">轮播列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa  fa-shopping-cart   fa-fw"></i> 充值系统<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Recharge/add');?>">去充值</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Recharge/index');?>">账户余额</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                         <li>
+                            <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                      
                     </ul>
                 </div>
@@ -475,18 +544,18 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="/mgj/Public/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/Public/Admin/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/mgj/Public/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/Public/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="/mgj/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
 
     <!-- Custom Theme JavaScript -->
-    <script src="/mgj/Public/Admin/dist/js/sb-admin-2.js"></script>
+    <script src="/Public/Admin/dist/js/sb-admin-2.js"></script>
 
 </body>
 

@@ -58,7 +58,7 @@
                         <tr class="gradeA odd" role="row">
                             <td class="sid">{$vo.id}</td>
                            <td class="center"><img class='pic' src="__PUBLIC__{$vo.pic}" width="50px">
-                              <div style="width:77px;height:25px;border:0px solid blue;padding-top:2px;">
+                              <div class='smallpic' style="width:77px;height:25px;border:0px solid blue;padding-top:2px;">
                                 <?php
                                   $sql = 'select * from goods_image where ggid='.$vo['id'];
                                   $result=mysql_query($sql);
@@ -111,6 +111,9 @@
                       cursor: default;
                       z-index: 2;
                     }
+                      .smallpic{
+                        display: none;
+                      }
                   </style>
                   <div class="row">
                       <div class="col-sm-6">
@@ -139,10 +142,18 @@
      var v= $(this).parents('tr').find('td:first').html();
      // alert(v);
      //拼接url路径,js是脚本语言,thinkphp框架不能直接解析js的变量
-     var url="http://localhost/mgj/index.php/Admin/Goods/smailpic/ggid/";
+     var url="smailpic/ggid/";
      location.href= url+v;
       
-    })
+    });
+    //鼠标移入显示小图
+    $('.pic').mouseover(function(){
+      $(this).parents('tr').find('.smallpic').css('display','block');
+    });
+    //鼠标移出隐藏小图
+    $('.pic').mouseout(function(){
+      $(this).parents('tr').find('.smallpic').css('display','none');
+    });
 
    });
 

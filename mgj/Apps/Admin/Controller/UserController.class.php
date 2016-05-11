@@ -57,7 +57,7 @@ class UserController extends CommonController {
         $time=date('Y-m-d H:i:s',time());
         // var_dump($time);
     	$data['username']=$_POST['username'];
-        $data['password']=$_POST['password'];
+        $data['password']=md5($_POST['password']);
         $data['email']=$_POST['email'];
         $data['phone']=$_POST['phone'];
         $data['level']=$_POST['level'];
@@ -195,7 +195,14 @@ class UserController extends CommonController {
     //执行修改
     public function update(){
         //$id = $_POST['id']; 
-        //var_dump($_POST);die;     
+        //var_dump($_POST);die;
+        $data['id']=$_POST['id'];
+        $data['password']=md5($_POST['password']);
+        $data['username']=$_POST['username'];
+        $data['email']=$_POST['email'];
+        $data['phone']=$_POST['phone'];
+        $data['level']=$_POST['level'];
+        // var_dump($data);     
         //更新主表
         $user = M('user');
         //处理图片上传
@@ -226,7 +233,8 @@ class UserController extends CommonController {
         //创建数据
          $user->create();
     //     //执行更新
-         $res = $user->save();
+         $res = $user->data($data)->save();
+         // echo $user->_sql();die;
          //var_dump($res);
 
     //     //更新附表

@@ -37,10 +37,10 @@
                                 <div class="form-group">
                                     <label>分组</label>
                                     <select name="level" class="form-control">
-                                        <option value="游客" <if condition="$info['level'] eq 0">selected</if>>游客</option>
-                                        <option value="会员" <if condition="$info['level'] eq 1">selected</if>>会员</option>
-                                        <option value="管理员" <if condition="$info['level'] eq 2">selected</if>>管理员</option>
-                                        <option value="超级管理员" <if condition="$info['level'] eq 3">selected</if>>超级管理员</option>
+                                        <option value="游客" <if condition="$info['level'] eq 游客">selected</if>>游客</option>
+                                        <option value="会员" <if condition="$info['level'] eq 会员">selected</if>>会员</option>
+                                        <option value="管理员" <if condition="$info['level'] eq 管理员">selected</if>>管理员</option>
+                                        <option value="超级管理员" <if condition="$info['level'] eq 超级管理员">selected</if>>超级管理员</option>
                                     </select>
                                 </div>
                                 <button class="btn btn-primary btn-lg btn-block" >修改</button>

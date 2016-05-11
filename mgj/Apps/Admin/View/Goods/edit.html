@@ -9,25 +9,56 @@
     <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
     <script type="text/javascript" src='__PUBLIC__/Admin/js/jquery-1.8.3.min.js'></script>
     <script type="text/javascript">
-    // alert($);
+   // alert($);
     //定义全局变量
     var Cprice = false;
+    var Cnum=false;
+    var Cdetail=false;
     $(function(){
 
         //绑定表单提交事件
         $('form').submit(function(){
         //触发丧失焦点事件
         $('input').trigger('blur');
-
+        $('textarea').trigger('blur');
         //检测是否能够提交
-        if(Cprice){
+        if(Cprice && Cnum && Cdetail){
             //提交
             return true;
         }else{
             return false;
         }
         })  
+         //获取元素
+            $('input[name=num]').blur(function(){
+            
+            var v = $(this).val();
+            var reg=/^\d+$/;
 
+         
+            //判断价格不能为负
+            if(reg.test(v)){
+                $(this).next().html('').css('color','#fff');
+                Cnum= true;
+            }else{
+                 $(this).next().html('库存不正确').css('color','red');
+                Cnum= false;
+            }
+        });
+        //获取元素
+        $('textarea[name=detail]').blur(function(){  
+            var v = $(this).val();
+            var reg=/^\w+$/;
+
+            //判断价格不能为负
+            if(!reg.test(v)){
+                $(this).next().html('不能为空').css('color','red');
+                Cdetail= false;
+            }else{
+                 $(this).next().html('').css('color','#fff');
+                Cdetail= true;
+            }
+        });
 
         //获取元素
             $('input[name=price]').focus(function(){
@@ -44,8 +75,10 @@
         $('input[name=price]').blur(function(){
             
             var v = $(this).val();
+            var reg=/^\d+[^0]$/;
+            var res=reg.test(v);
             //判断价格不能为负
-            if(v <= 0){
+            if(!res){
                 $(this).next().html('价格不正确').css('color','red');
                  Cprice = false;
 
@@ -57,7 +90,7 @@
 
     }
     );
-    
+        
         
     </script>
 
@@ -93,13 +126,13 @@
                                     <input name="price" value="{$arr.price}" class="form-control"><span></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>商品数量</label>
-                                    <input name="num" value="{$arr.num}" class="form-control">
+                                    <label>库存量</label>
+                                    <input name="num" value="{$arr.num}" class="form-control"><span></span>
                                 </div>
                                 <div class="form-group">
                                     <label>商品图片</label>
                                     <input type="file" name="pic">
-                                    <!-- <img src="__PUBLIC__{$arr.pic}" alt=""> -->
+                                    <img src="__PUBLIC__{$arr.pic}" alt="">
                                 </div>
                                 <div class="form-group">
                                     <label>销售状态</label>
@@ -145,7 +178,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>商品描述</label>
-                                    <textarea name="detail"  cols="65" rows="10"><?php echo $arr['detail']?></textarea>
+                                    <textarea name="detail"  cols="65" rows="10"><?php echo $arr['detail']?></textarea><span></span>
                                 </div>
                                 
                                 

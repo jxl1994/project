@@ -268,6 +268,8 @@ class GoodsController extends CommonController {
     }
     //添加商品小图
     public function smailpic(){
+        // session_start();
+        // var_dump($_SESSION);die;
         // var_dump($_GET);die;
         $goodsid=$_GET['ggid'];
         // var_dump($goodsid);

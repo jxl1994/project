@@ -58,6 +58,11 @@ class CateController extends CommonController {
         //创建表对象
         $cate = M('category');
         $cates = $cate->select();
+        foreach ($cates as $k => $v) {
+            //计算出分隔多少次
+            $c = count(explode(',',$v['path']))-1;
+            $cates[$k]['catename'] = str_repeat('-----',$c).$v['catename'];
+        }
 
         //分配变量
         $this->assign('cates',$cates);

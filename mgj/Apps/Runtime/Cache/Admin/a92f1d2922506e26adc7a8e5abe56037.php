@@ -343,6 +343,74 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="#"><i class="fa  fa-twitter  fa-fw"></i> 订单管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Order/index');?>">订单浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa  fa-book  fa-fw"></i> 评价管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Pingjia/index');?>">评价浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa fa-truck   fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Post/index');?>">配送清单</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-behance-square   fa-fw"></i> 友情链接<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Link/add');?>">添加链接</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Link/index');?>">链接浏览</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa fa-camera-retro  fa-fw"></i> 轮播管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Carousel/add');?>">添加轮播图</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Carousel/index');?>">轮播列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                         <li>
+                            <a href="#"><i class="fa  fa-shopping-cart   fa-fw"></i> 充值系统<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Recharge/add');?>">去充值</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Recharge/index');?>">账户余额</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
                      
                     </ul>
                 </div>

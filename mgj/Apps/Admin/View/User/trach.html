@@ -46,8 +46,6 @@
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">邮箱</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">手机</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="CSS grade: activate to sort column ascending">身份</th>
-
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 55px;" aria-label="CSS grade: activate to sort column ascending">删除时间</th>
                             
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
                        </tr>
@@ -62,12 +60,6 @@
                             <td class="center">{$vo.phone}</td>
                             <td class="center">{$vo.level}</td>
                            
-                            <?php
-                                $time=time();
-                                $a=date('Y-m-d H:i:s');
-
-                              ?>
-                              <td class="center">{$a}</td>
                             <td class="center">
                                 <a href="{:U('Admin/User/delete',array('id'=>$vo['id']))}"><button type="button" class="btn btn-danger">删除</button></a>
                                 <a href="{:U('Admin/User/hf',array('id'=>$vo['id']))}"><button type="button" class="btn btn-primary">恢复</button></a>

@@ -12,6 +12,8 @@
     // alert($);
     //定义全局变量
     var Cprice = false;
+    var Cnum=false;
+    var Cdetail=false;
     $(function(){
 
         //绑定表单提交事件
@@ -20,14 +22,43 @@
         $('input').trigger('blur');
 
         //检测是否能够提交
-        if(Cprice){
+        if(Cprice && Cnum && Cdetail){
             //提交
             return true;
         }else{
             return false;
         }
         })  
+         //获取元素
+            $('input[name=num]').blur(function(){
+            
+            var v = $(this).val();
+            var reg=/^\d+$/;
 
+         
+            //判断价格不能为负
+            if(reg.test(v)){
+                $(this).next().html('').css('color','#fff');
+                Cnum= true;
+            }else{
+                 $(this).next().html('库存不正确').css('color','red');
+                Cnum= false;
+            }
+        });
+        //获取元素
+        $('textarea[name=detail]').blur(function(){  
+            var v = $(this).val();
+            var reg=/^\w+$/;
+
+            //判断价格不能为负
+            if(!reg.test(v)){
+                $(this).next().html('不能为空').css('color','red');
+                Cdetail= false;
+            }else{
+                 $(this).next().html('').css('color','#fff');
+                Cdetail= true;
+            }
+        });
 
         //获取元素
             $('input[name=price]').focus(function(){
@@ -44,8 +75,10 @@
         $('input[name=price]').blur(function(){
             
             var v = $(this).val();
+            var reg=/^\d+[^0]$/;
+            var res=reg.test(v);
             //判断价格不能为负
-            if(v <= 0){
+            if(!res){
                 $(this).next().html('价格不正确').css('color','red');
                  Cprice = false;
 
@@ -89,8 +122,8 @@
                                     <input name="price" placeholder="请输入商品价格" class="form-control"><span></span>
                                 </div>
                                 <div class="form-group">
-                                    <label>商品数量</label>
-                                    <input name="num" placeholder="请输入商品数量" class="form-control">
+                                    <label>库存量</label>
+                                    <input name="num" placeholder="请输入商品数量" class="form-control"><span></span>
                                 </div>
                                 <div class="form-group">
                                     <label>商品图片</label>
@@ -114,7 +147,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>商品描述</label>
-                                    <textarea name="detail"  cols="65" rows="10"></textarea>
+                                    <textarea name="detail"  cols="65" rows="10"></textarea><span></span>
                                 </div>
                                 <div class="form-group">
                                     <label>验证码</label>

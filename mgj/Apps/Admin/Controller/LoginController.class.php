@@ -16,9 +16,10 @@ class LoginController extends Controller {
 
         $username = I('post.username');
         $password = I('post.password');
-
+        $pass=md5($password);
+        // var_dump($pass);die;
         //查询
-        $info = $user->where('username = "'.$username.'" and password = "'.$password.'"')->find();
+        $info = $user->where('username = "'.$username.'" and password = "'.$pass.'"')->find();
          // echo $user->_sql();
          // var_dump($info);
         //检测 如果用户存在
