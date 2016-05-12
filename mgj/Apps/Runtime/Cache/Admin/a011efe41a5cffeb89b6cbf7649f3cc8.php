@@ -296,7 +296,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                        <li>
-                            <a href="#"><i class="fa glyphicon-fire fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bitbucket fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
@@ -410,6 +410,46 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                         <li>
+                            <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-reddit-square    fa-fw"></i> 广告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Adver/add');?>">添加广告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Adver/index');?>">广告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Activity/index');?>">活动列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
                      
                     </ul>

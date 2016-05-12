@@ -9,7 +9,7 @@ class CarouselController extends CommonController {
 
         //获取关键字
         if(!empty($_GET['keyword'])){
-            $where = "where name like '%\\".$_GET['keyword']."%'";
+            $where = "where category.catename like '%\\".$_GET['keyword']."%'";
         }else{
             $where = '';
         }

@@ -9,7 +9,7 @@ class PostController extends CommonController {
 
         //获取关键字
         if(!empty($_GET['keyword'])){
-            $where = "where order_num like '%\\".$_GET['keyword']."%'";
+            $where = "where send.orderid like '%\\".$_GET['keyword']."%'";
         }else{
             $where = '';
         }
@@ -30,7 +30,7 @@ class PostController extends CommonController {
     	$pages = $Page->show();
     	// var_dump($pages);
     	//多表联合查询
-        $sql="select orders.order_num, orders.linkman, orders.address, send.* from orders right join send on orders.id = send.orderid  ".$where." order by send.id asc limit ".$limit;
+        $sql="select orders.id, orders.linkman, orders.address, send.* from orders right join send on orders.id = send.orderid  ".$where." order by send.id asc limit ".$limit;
         //查看sql语句
         // echo $sql;die;
         // var_dump($Goods);die;

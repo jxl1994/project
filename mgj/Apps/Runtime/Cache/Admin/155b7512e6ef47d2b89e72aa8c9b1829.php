@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -10,22 +10,22 @@
     <title>蘑菇街后台管理</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="__PUBLIC__/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="__PUBLIC__/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="__PUBLIC__/Admin/dist/css/timeline.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/timeline.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="__PUBLIC__/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/Public/Admin/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="__PUBLIC__/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="/Public/Admin/bower_components/morrisjs/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="__PUBLIC__/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/Public/Admin/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -254,7 +254,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="{:U('Admin/Logout/logout')}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo U('Admin/Logout/logout');?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -278,19 +278,19 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="{:U('Admin/Index/index')}"><i class="fa fa-dashboard fa-fw"></i> 后台首页</a>
+                            <a href="<?php echo U('Admin/Index/index');?>"><i class="fa fa-dashboard fa-fw"></i> 后台首页</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-user-md fa-fw"></i> 用户管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/User/add')}">用户添加</a>
+                                    <a href="<?php echo U('Admin/User/add');?>">用户添加</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/User/index')}">用户列表</a>
+                                    <a href="<?php echo U('Admin/User/index');?>">用户列表</a>
                                 </li>
                                  <li>
-                                    <a href="{:U('Admin/User/trach')}">回收站</a>
+                                    <a href="<?php echo U('Admin/User/trach');?>">回收站</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -299,10 +299,10 @@
                             <a href="#"><i class="fa fa-bitbucket fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Cate/add')}">分类添加</a>
+                                    <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Cate/index')}">分类列表</a>
+                                    <a href="<?php echo U('Admin/Cate/index');?>">分类列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -311,10 +311,10 @@
                             <a href="#"><i class="fa fa-apple  fa-fw"></i> 商品管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Goods/add')}">商品添加</a>
+                                    <a href="<?php echo U('Admin/Goods/add');?>">商品添加</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Goods/index')}">商品列表</a>
+                                    <a href="<?php echo U('Admin/Goods/index');?>">商品列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -323,22 +323,22 @@
                             <a href="#"><i class="fa fa-qq  fa-fw"></i>权限管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/QuanXian/add')}">添加规则</a>
+                                    <a href="<?php echo U('Admin/QuanXian/add');?>">添加规则</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/QuanXian/index')}">规则列表</a>
+                                    <a href="<?php echo U('Admin/QuanXian/index');?>">规则列表</a>
                                 </li>
                                  <li>
-                                    <a href="{:U('Admin/QuanXian/Group_add')}">用户组添加</a>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_add');?>">用户组添加</a>
                                 </li>
                                  <li>
-                                    <a href="{:U('Admin/QuanXian/Group_index')}">用户组表</a>
+                                    <a href="<?php echo U('Admin/QuanXian/Group_index');?>">用户组表</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/QuanXian/User_add')}">人员分组</a>
+                                    <a href="<?php echo U('Admin/QuanXian/User_add');?>">人员分组</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/QuanXian/User_index')}">人员分组列表</a>
+                                    <a href="<?php echo U('Admin/QuanXian/User_index');?>">人员分组列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -347,7 +347,7 @@
                             <a href="#"><i class="fa  fa-twitter  fa-fw"></i> 订单管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Order/index')}">订单浏览</a>
+                                    <a href="<?php echo U('Admin/Order/index');?>">订单浏览</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -356,7 +356,7 @@
                             <a href="#"><i class="fa  fa-book  fa-fw"></i> 评价管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Pingjia/index')}">评价浏览</a>
+                                    <a href="<?php echo U('Admin/Pingjia/index');?>">评价浏览</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -366,10 +366,10 @@
                             <a href="#"><i class="fa fa-truck   fa-fw"></i> 配送管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Post/add')}">添加配送</a>
+                                    <a href="<?php echo U('Admin/Post/add');?>">添加配送</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Post/index')}">配送清单</a>
+                                    <a href="<?php echo U('Admin/Post/index');?>">配送清单</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -378,10 +378,10 @@
                             <a href="#"><i class="fa fa-behance-square   fa-fw"></i> 友情链接<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Link/add')}">添加链接</a>
+                                    <a href="<?php echo U('Admin/Link/add');?>">添加链接</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Link/index')}">链接浏览</a>
+                                    <a href="<?php echo U('Admin/Link/index');?>">链接浏览</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -390,10 +390,10 @@
                             <a href="#"><i class="fa fa-camera-retro  fa-fw"></i> 轮播管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Carousel/add')}">添加轮播图</a>
+                                    <a href="<?php echo U('Admin/Carousel/add');?>">添加轮播图</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Carousel/index')}">轮播列表</a>
+                                    <a href="<?php echo U('Admin/Carousel/index');?>">轮播列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -402,10 +402,10 @@
                             <a href="#"><i class="fa  fa-shopping-cart   fa-fw"></i> 充值系统<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Recharge/add')}">去充值</a>
+                                    <a href="<?php echo U('Admin/Recharge/add');?>">去充值</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Recharge/index')}">账户余额</a>
+                                    <a href="<?php echo U('Admin/Recharge/index');?>">账户余额</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Pay/add')}">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Pay/index')}">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -428,10 +428,10 @@
                             <a href="#"><i class="fa  fa-reddit-square    fa-fw"></i> 广告管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Adver/add')}">添加广告</a>
+                                    <a href="<?php echo U('Admin/Adver/add');?>">添加广告</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Adver/index')}">广告列表</a>
+                                    <a href="<?php echo U('Admin/Adver/index');?>">广告列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -441,10 +441,10 @@
                             <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="{:U('Admin/Activity/add')}">添加活动</a>
+                                    <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
                                 </li>
                                 <li>
-                                    <a href="{:U('Admin/Activity/index')}">活动列表</a>
+                                    <a href="<?php echo U('Admin/Activity/index');?>">活动列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -462,105 +462,150 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                <block name="title">
-                    <h1 class="page-header">Dashboard</h1>
-                </block>
+                
+    <h1 class="page-header">链接列表</h1>
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <block name="content">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-comments fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">26</div>
-                                    <div>New Comments!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
+            
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-tasks fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">12</div>
-                                    <div>New Tasks!</div>
-                                </div>
-                            </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div class="dataTable_wrapper">
+                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        	<div class="row">
+                                <form action="<?php echo U('Admin/Link/index');?>" method="get">
+                                    <div class="col-sm-6">
+                                       <div class="dataTables_length" id="dataTables-example_length">
+                                        <label>Show 
+                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
+                                          <option value="5">5</option>
+                                          <option value="10">10</option>
+                                          <option value="15">15</option>
+                                          <option value="20">20</option>
+                                      </select> entries
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                           <div id="dataTables-example_filter" class="dataTables_filter">
+                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
+                            <button class="btn btn-primary">搜索</button>
                         </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-shopping-cart fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">124</div>
-                                    <div>New Orders!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="panel panel-red">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <i class="fa fa-support fa-5x"></i>
-                                </div>
-                                <div class="col-xs-9 text-right">
-                                    <div class="huge">13</div>
-                                    <div>Support Tickets!</div>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
-                    </div>
+                    </form>
                 </div>
             </div>
-            </block>
+            <div class="row">
+             <div class="col-sm-12">
+                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
+                    <thead>
+                        <tr role="row">
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Browser: activate to sort column ascending">ID</th>
+                           <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">网站logo</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">网站名称</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">域名</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">状态</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">添加时间</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    <!-- z这是用户列表的遍历 -->
+                    <?php if(is_array($res)): foreach($res as $key=>$vo): ?><tr class="gradeA odd" role="row">
+                            <td class="sid"><?php echo ($vo["id"]); ?></td>
+                            <td class="sorting_1"><img src="/Public/<?php echo ($vo["logo"]); ?>" width="50px"></td>
+                            <td><?php echo ($vo["name"]); ?></td>
+                            <td class="center"><?php echo ($vo["address"]); ?></td>
+                            <td class="center"><?php echo ($vo["status"]); ?></td>
+                        
+                            <td class="center"><?php echo ($vo["addtime"]); ?></td>
+                            <td>
+                                <a href="<?php echo U('Admin/Link/delete',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a>
+                                <a href="<?php echo U('Admin/Link/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td>
+                            </td>
+                        </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                    <style type="text/css">
+                          #pages a,#pages span{
+                           background-color: #fff;
+                           border: 1px solid #ddd;
+                           color: #337ab7;
+                           float: left;
+                           line-height: 1.42857;
+                           margin-left: -1px;
+                           padding: 6px 12px;
+                           position: relative;
+                           text-decoration: none;
+                       }
+                       #pages span{
+                    	/*background:#337ab7;
+                    	color:white;*/
+                    	background-color: #337ab7;
+                      border-color: #337ab7;
+                      color: #fff;
+                      cursor: default;
+                      z-index: 2;
+                    }
+                  </style>
+                  <div class="row">
+                      <div class="col-sm-6">
+                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
+                       <div class="col-sm-6">
+                        <div id="pages">
+                         <?php echo ($pages); ?>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- /.table-responsive -->
+
+     </div>
+     <!-- /.panel-body -->
+ </div>
+ <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</div>
+<script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    // alert($);
+    $(function(){
+        //获取btn
+        $('.btn-del').click(function(){
+            // alert('222');
+           var v = $(this).parents('.gradeA').find('.sid').html();
+           // alert(v);
+           //发送ajax
+           var url = "<?php echo U('Admin/User/delete');?>";
+           var btn = $(this);
+           $.ajax({
+                url:url,
+                data:{id:v},
+                type:'get',
+                success:function(data){
+                    // console.log(data);
+                    if(data == 0){
+                      // location.href = location.href;
+                      btn.parents('.gradeA').remove();
+                    }else{
+                        alert('删除失败');
+                    }
+                }
+           })
+        })
+    })
+</script>
+
             <!-- /.row -->
            
             <!-- /.row -->
@@ -571,18 +616,18 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="__PUBLIC__/Admin/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/Public/Admin/bower_components/jquery/dist/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="__PUBLIC__/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/Public/Admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="__PUBLIC__/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="/Public/Admin/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
 
     <!-- Custom Theme JavaScript -->
-    <script src="__PUBLIC__/Admin/dist/js/sb-admin-2.js"></script>
+    <script src="/Public/Admin/dist/js/sb-admin-2.js"></script>
 
 </body>
 

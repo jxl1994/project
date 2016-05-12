@@ -1,8 +1,8 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class RechargeController extends CommonController {
-    //充值列表
+class PayController extends CommonController {
+    //配送的列表
     public function index(){
     	//创建对象
     	$user = M('user_info');
@@ -85,7 +85,6 @@ class RechargeController extends CommonController {
         // var_dump($_POST);die;
         // 创建对象
         $name=$_POST['username'];
-        //查询会员的id号
         $user = M('user');
         $res=$user->where(array('username'=>$name))->find();
         $id=$res['id'];
@@ -103,17 +102,10 @@ class RechargeController extends CommonController {
         //新的账户金额
         $data['gold']=$_POST['gold']+$gold;
         // var_dump($data);die;
-        //判断用户个人信息表是否填写
-        if($res){
-            //执行修改
-            $res1=$users->where(array('uid'=>$id))->data($data)->save();  
-        }else{
-            //执行添加
-            $res1=$users->data($data)->add();
-        }
         
        
-                       
+         //执行添加
+        $res1=$users->where(array('uid'=>$id))->data($data)->save();                
         if($res1){
              //添加成功
             $this->success('充值成功',U('Admin/Recharge/index'));

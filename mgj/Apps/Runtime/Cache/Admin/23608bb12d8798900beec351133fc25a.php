@@ -296,7 +296,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                        <li>
-                            <a href="#"><i class="fa glyphicon-fire fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bitbucket fa-fw"></i> 分类管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Cate/add');?>">分类添加</a>
@@ -411,6 +411,46 @@
                             <!-- /.nav-second-level -->
                         </li>
 
+                         <li>
+                            <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-reddit-square    fa-fw"></i> 广告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Adver/add');?>">添加广告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Adver/index');?>">广告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                        <li>
+                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Activity/index');?>">活动列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
                      
                     </ul>
                 </div>
@@ -423,7 +463,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">用户列表</h1>
+    <h1 class="page-header">充值中心</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -434,137 +474,101 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                   
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="dataTable_wrapper">
-                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        	<div class="row">
-                                <form action="<?php echo U('Admin/User/index');?>" method="get">
-                                    <div class="col-sm-6">
-                                       <div class="dataTables_length" id="dataTables-example_length">
-                                        <label>Show 
-                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
-                                          <option value="5">5</option>
-                                          <option value="10">10</option>
-                                          <option value="15">15</option>
-                                          <option value="20">20</option>
-                                      </select> entries
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="col-sm-6">
-                           <div id="dataTables-example_filter" class="dataTables_filter">
-                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                            <button class="btn btn-primary">搜索</button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" method="post" action="<?php echo U('Admin/Recharge/insert');?>" enctype="multipart/form-data">                              
+                                <div class="form-group">
+                                    <label>会员名</label>
+                                    <input type="text" name="username" class="form-control"><span></span>
+                                </div>
+                                <div class="form-group">
+                                    <label>充值金额</label>
+                                    <input name="gold" class="form-control"><span class="a"></span>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-lg btn-block" >添加</button>
+                            </form>
                         </div>
-                    </form>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
                 </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="row">
-             <div class="col-sm-12">
-                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
-                    <thead>
-                        <tr role="row">
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="Browser: activate to sort column ascending">ID</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">用户名</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">邮箱</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">手机</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">身份</th>
-             
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="CSS grade: activate to sort column ascending">添加时间</th>                            
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                    <!-- z这是用户列表的遍历 -->
-                    <?php if(is_array($res)): foreach($res as $key=>$vo): ?><tr class="gradeA odd" role="row">
-                            <td class="sid"><?php echo ($vo["id"]); ?></td>
-                            <td><?php echo ($vo["username"]); ?></td>
-                            <td class="center"><?php echo ($vo["email"]); ?></td>
-                            <td class="center"><?php echo ($vo["phone"]); ?></td>
-                            <td class="center"><?php echo ($vo["level"]); ?></td>                                                   
-                            <td><?php echo ($vo["addtime"]); ?></td>
-                            <td >
-                                <center><a href="<?php echo U('Admin/User/toTrach',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a></center>
-                                <center><a href="<?php echo U('Admin/User/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td></center>
-                            </td>
-                        </tr><?php endforeach; endif; ?>
-                </tbody>
-            </table>
+            <!-- /.panel -->
         </div>
+        <!-- /.col-lg-12 -->
     </div>
-                    <style type="text/css">
-                          #pages a,#pages span{
-                           background-color: #fff;
-                           border: 1px solid #ddd;
-                           color: #337ab7;
-                           float: left;
-                           line-height: 1.42857;
-                           margin-left: -1px;
-                           padding: 6px 12px;
-                           position: relative;
-                           text-decoration: none;
-                       }
-                       #pages span{
-                    	/*background:#337ab7;
-                    	color:white;*/
-                    	background-color: #337ab7;
-                      border-color: #337ab7;
-                      color: #fff;
-                      cursor: default;
-                      z-index: 2;
-                    }
-                  </style>
-                  <div class="row">
-                      <div class="col-sm-6">
-                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
-                       <div class="col-sm-6">
-                        <div id="pages">
-                         <?php echo ($pages); ?>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- /.table-responsive -->
+    <script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript">
+    //定义全局变量
+    var Cuser = false;
+   
+    //绑定表单事件
+    $('form').submit(function(){
+        //触发丧失焦点事件
+        $('input').trigger('blur');
 
-     </div>
-     <!-- /.panel-body -->
- </div>
- <!-- /.panel -->
-</div>
-<!-- /.col-lg-12 -->
-</div>
-<script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript">
-    // alert($);
-    $(function(){
-        //获取btn
-        $('.btn-del').click(function(){
-            // alert('222');
-           var v = $(this).parents('.gradeA').find('.sid').html();
-           // alert(v);
-           //发送ajax
-           var url = "<?php echo U('Admin/User/delete');?>";
-           var btn = $(this);
-           $.ajax({
-                url:url,
-                data:{id:v},
-                type:'get',
-                success:function(data){
-                    // console.log(data);
-                    if(data == 0){
-                      // location.href = location.href;
-                      btn.parents('.gradeA').remove();
-                    }else{
-                        alert('删除失败');
-                    }
-                }
-           })
-        })
+        //检测是否能够提交
+        if(Cuser){
+            //提交
+            return true;
+        }
+        return false;
     })
-</script>
+
+    //绑定丧失焦点事件
+    $('input[name=username]').blur(function(){
+        var inp= $(this);
+        var username = $(this).val();
+        //发送ajax验证用户名是否可用
+        var url="/Admin/Recharge/select";
+        
+        $.ajax({
+            url:url,
+            data:{username:username},
+            type:'get',
+            // 同步
+            async:false,
+            success:function(data){
+                //如果用户名可用
+                if(data == 0){
+                    // alert('可用');
+                    inp.next().html('首冲打8折!').css({color:"gold"});
+                    Cuser = true;
+
+                }else if(data == 2){
+                    // alert('不享受首冲');
+                    inp.next().html('').css('color','#fff');                   
+                    Cuser = true;
+                }else{
+                    inp.next().html('没有该会员').css('color','red');                   
+                    Cuser = false;
+                }
+            }
+        })
+    });
+
+    $('input[name=gold]').blur(function(){
+        var gold = $(this).val();
+        var v=$('form').find('span').html();
+        if(v == '首冲打8折!'){
+            var newgold=gold*0.8;
+            $('form').find('.a').html('实际付款'+newgold+'元').css({color:'#90f'});
+        }else{
+
+            $('form').find('.a').html('实际付款'+gold+'元').css({color:'#90f'});
+        }
+        
+       
+      
+
+    });
+    </script>
+
 
             <!-- /.row -->
            

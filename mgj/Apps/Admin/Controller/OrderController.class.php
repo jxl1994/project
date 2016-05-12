@@ -82,11 +82,20 @@ class OrderController extends CommonController {
 
 		// //删除订单
 		public function del(){
+			
+			$id = $_GET['id'];
+			//先删除详情表的商品
+			$detail=M('order_detail');
+			$res=$detail->where(' orderid ='.$id)->select();
+			if($res){
+				//先删除详情表的内容
+				$res1=$detail->where(' orderid ='.$id)->delete();
+			}
 			//创建对象
 			$orders = M("orders");
-			$id = $_GET['id'];
-			$res =  $orders->where('id='.$id)->delete();							
-			if($res){
+
+			$res2 =  $orders->where('id='.$id)->delete();							
+			if($res1 && $res2 ){
 	            //删除成功
 	            $this->success('删除成功',U('Admin/Order/index'));
 	        }else{
