@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -463,7 +487,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <center><h2 class="page-header">修改订单</h2></center>
+    <h1 class="page-header">用户列表</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -474,41 +498,138 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   <div><a href="<?php echo U('Admin/Order/index');?>">返回订单列表</a></div>
+
                 </div>
+                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Order/update');?>" enctype="multipart/form-data">
-                                <input type="hidden" name="id" value="<?php echo ($info['id']); ?>">
-
-                                <div class="form-group">
-                                    <label>订单状态</label>
-                                    <select name="status" class="form-control">
-                                        <option value="1" <?php if($info['status'] == 1): ?>selected<?php endif; ?>>新订单</option>
-                                        <option value="2" <?php if($info['status'] == 2): ?>selected<?php endif; ?>>已发货</option>
-                                        <option value="3" <?php if($info['status'] == 3): ?>selected<?php endif; ?>>已收货</option>
-                                        <option value="4" <?php if($info['status'] == 4): ?>selected<?php endif; ?>>订单完成</option>
-                                    </select>
-                                </div>
-                                <!-- <input id="modifyState" class="btn no-border" type="button" name="sub" value="修改订单"> -->
-
-                                <td style="text-align:right;"><input type="submit" class="btn no-border" value="提交"></td>
-                            </form>
+                    <div class="dataTable_wrapper">
+                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        	<div class="row">
+                                <form action="<?php echo U('Admin/User/index');?>" method="get">
+                                    <div class="col-sm-6">
+                                       <div class="dataTables_length" id="dataTables-example_length">
+                                        <label>Show 
+                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
+                                          <option value="5">5</option>
+                                          <option value="10">10</option>
+                                          <option value="15">15</option>
+                                          <option value="20">20</option>
+                                      </select> entries
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                           <div id="dataTables-example_filter" class="dataTables_filter">
+                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
+                            <button class="btn btn-primary">搜索</button>
                         </div>
-                       
-                        
-                        <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.row (nested) -->
+                    </form>
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
+            <div class="row">
+             <div class="col-sm-12">
+                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
+                    <thead>
+                        <tr role="row">
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="Browser: activate to sort column ascending">ID</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 50px;" aria-label="Platform(s): activate to sort column ascending">用户名</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">邮箱</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">手机</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">身份</th>
+             
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 100px;" aria-label="CSS grade: activate to sort column ascending">添加时间</th>                            
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    <!-- z这是用户列表的遍历 -->
+                    <?php if(is_array($res)): foreach($res as $key=>$vo): ?><tr class="gradeA odd" role="row">
+                            <td class="sid"><?php echo ($vo["id"]); ?></td>
+                            <td><?php echo ($vo["username"]); ?></td>
+                            <td class="center"><?php echo ($vo["email"]); ?></td>
+                            <td class="center"><?php echo ($vo["phone"]); ?></td>
+                            <td class="center"><?php echo ($vo["level"]); ?></td>                                                   
+                            <td><?php echo ($vo["addtime"]); ?></td>
+                            <td >
+                                <center><a href="<?php echo U('Admin/User/toTrach',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a></center>
+                                <center><a href="<?php echo U('Admin/User/edit',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-primary">修改</button></a></td></center>
+                            </td>
+                        </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
-    
+                    <style type="text/css">
+                          #pages a,#pages span{
+                           background-color: #fff;
+                           border: 1px solid #ddd;
+                           color: #337ab7;
+                           float: left;
+                           line-height: 1.42857;
+                           margin-left: -1px;
+                           padding: 6px 12px;
+                           position: relative;
+                           text-decoration: none;
+                       }
+                       #pages span{
+                    	/*background:#337ab7;
+                    	color:white;*/
+                    	background-color: #337ab7;
+                      border-color: #337ab7;
+                      color: #fff;
+                      cursor: default;
+                      z-index: 2;
+                    }
+                  </style>
+                  <div class="row">
+                      <div class="col-sm-6">
+                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
+                       <div class="col-sm-6">
+                        <div id="pages">
+                         <?php echo ($pages); ?>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- /.table-responsive -->
+
+     </div>
+     <!-- /.panel-body -->
+ </div>
+ <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</div>
+<script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    // alert($);
+    $(function(){
+        //获取btn
+        $('.btn-del').click(function(){
+            // alert('222');
+           var v = $(this).parents('.gradeA').find('.sid').html();
+           // alert(v);
+           //发送ajax
+           var url = "<?php echo U('Admin/User/delete');?>";
+           var btn = $(this);
+           $.ajax({
+                url:url,
+                data:{id:v},
+                type:'get',
+                success:function(data){
+                    // console.log(data);
+                    if(data == 0){
+                      // location.href = location.href;
+                      btn.parents('.gradeA').remove();
+                    }else{
+                        alert('删除失败');
+                    }
+                }
+           })
+        })
+    })
+</script>
+
             <!-- /.row -->
            
             <!-- /.row -->

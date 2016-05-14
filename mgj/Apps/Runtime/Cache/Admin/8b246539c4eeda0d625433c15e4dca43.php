@@ -563,7 +563,7 @@
                        <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
                        <div class="col-sm-6">
                         <div id="pages">
-                         <?php echo ($pageinfo); ?>
+                         <?php echo ($pages); ?>
                      </div>
                  </div>
              </div>

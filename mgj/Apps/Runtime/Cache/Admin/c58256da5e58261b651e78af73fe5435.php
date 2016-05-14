@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -493,9 +493,9 @@
 
                                  <div class="form-group">
                                     <label>折扣</label><br>
-                                    <input type="radio" name="zhekou" value='0.5' <?php if($res['zhekou'] == 0.5): ?>checked<?php endif; ?>>全场半价&nbsp;
-                                    <input type="radio" name="zhekou" value='0.8' <?php if($res['zhekou'] == 0.8): ?>checked<?php endif; ?>>全场八折&nbsp;
-                                    <input type="radio" name="zhekou" value='0.7' <?php if($res['zhekou'] == 0.7): ?>checked<?php endif; ?>>全场七折&nbsp;
+                                    <input type="radio" name="zhekou" disabled value='0.5' <?php if($res['zhekou'] == 0.5): ?>checked<?php endif; ?>>全场半价&nbsp;
+                                    <input type="radio" name="zhekou" disabled value='0.8' <?php if($res['zhekou'] == 0.8): ?>checked<?php endif; ?>>全场八折&nbsp;
+                                    <input type="radio" name="zhekou" disabled value='0.7' <?php if($res['zhekou'] == 0.7): ?>checked<?php endif; ?>>全场七折&nbsp;
                                   
                                 </div>
                                  <div class="form-group">
@@ -569,13 +569,7 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label>状态</label>
-                                    <select name="status" class="form-control">
-                                        <option value="0" <?php if($res['status'] == 0): ?>selected<?php endif; ?>>开启</option>
-                                        <option value="1" <?php if($res['status'] == 1): ?>selected<?php endif; ?>>关闭</option>
-                                    </select>
-                                </div>
+                                
                                 <button class="btn btn-primary btn-lg btn-block" >修改</button>
                             </form>
                         </div>

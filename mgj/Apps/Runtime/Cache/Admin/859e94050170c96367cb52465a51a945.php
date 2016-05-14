@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -463,54 +487,104 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">分类修改</h1>
+    <h1 class="page-header">后台首页</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                   
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Cate/update');?>" >
-                                <div class="form-group">
-                                    <label>选择分类</label>
-                                    <select name="pid" class="form-control">
-                                        <option value="0">顶级分类</option>
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
-                                    </select>
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-comments fa-5x"></i>
                                 </div>
-
-                                <div class="form-group">
-                                    <label>分类名</label>
-                                    <input name="catename" value="<?php echo ($info['catename']); ?>" placeholder="请输入分类名" class="form-control">
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">26</div>
+                                    <div>New Comments!</div>
                                 </div>
-                                <input type="hidden" name="id" value="<?php echo ($info['id']); ?>">
-                                
-                                
-                                <button class="btn btn-primary btn-lg btn-block" >修改</button>
-                            </form>
+                            </div>
                         </div>
-                       
-                        
-                        <!-- /.col-lg-6 (nested) -->
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
-                    <!-- /.row (nested) -->
                 </div>
-                <!-- /.panel-body -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tasks fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">12</div>
+                                    <div>New Tasks!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-shopping-cart fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">124</div>
+                                    <div>New Orders!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">13</div>
+                                    <div>Support Tickets!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-12 -->
-    </div>
-
+            
             <!-- /.row -->
            
             <!-- /.row -->

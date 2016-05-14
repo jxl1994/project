@@ -463,102 +463,13 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">商品添加</h1>
+    <h1 class="page-header">广告添加</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.all.min.js"> </script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
-    <script type="text/javascript" src='/Public/Admin/js/jquery-1.8.3.min.js'></script>
-    <script type="text/javascript">
-    // alert($);
-    //定义全局变量
-    var Cprice = false;
-    var Cnum=false;
-    var Cdetail=false;
-    $(function(){
-
-        //绑定表单提交事件
-        $('form').submit(function(){
-        //触发丧失焦点事件
-        $('input').trigger('blur');
-
-        //检测是否能够提交
-        if(Cprice && Cnum && Cdetail){
-            //提交
-            return true;
-        }else{
-            return false;
-        }
-        })  
-         //获取元素
-            $('input[name=num]').blur(function(){
-            
-            var v = $(this).val();
-            var reg=/^\d+$/;
-
-         
-            //判断价格不能为负
-            if(reg.test(v)){
-                $(this).next().html('').css('color','#fff');
-                Cnum= true;
-            }else{
-                 $(this).next().html('库存不正确').css('color','red');
-                Cnum= false;
-            }
-        });
-        //获取元素
-        $('textarea[name=detail]').blur(function(){  
-            var v = $(this).val();
-            var reg=/^\w+$/;
-
-            //判断价格不能为负
-            if(!reg.test(v)){
-                $(this).next().html('不能为空').css('color','red');
-                Cdetail= false;
-            }else{
-                 $(this).next().html('').css('color','#fff');
-                Cdetail= true;
-            }
-        });
-
-        //获取元素
-            $('input[name=price]').focus(function(){
-            
-            var v = $(this).val();
-            //判断价格不能为负
-            if(v > 0){
-                $(this).next().html().css('color','#fff');
-
-            }else{
-                
-            }
-        });
-        $('input[name=price]').blur(function(){
-            
-            var v = $(this).val();
-            var reg=/^\d+[^0]$/;
-            var res=reg.test(v);
-            //判断价格不能为负
-            if(!res){
-                $(this).next().html('价格不正确').css('color','red');
-                 Cprice = false;
-
-            }else{
-                $(this).next().html('').css('color','#fff');
-                Cprice = true;
-            }
-        });
-
-    }
-    );
-        
-    </script>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
@@ -568,64 +479,29 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Goods/insert');?>" enctype="multipart/form-data">
+                            <form role="form" method="post" action="<?php echo U('Admin/Adver/insert');?>" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label>选择分类</label>
-                                    <select name="typeid" class="form-control">
-                                        <option value="0">请选择分类</option>
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
-                                    </select>
+                                    
+                                    <label>广告上传</label>
+                                    <input type="file" name="logo">
+                                
                                 </div>
+                                <div class="form-group">
+                                    <label>广告域名</label>
+                                    <input name="address" class="form-control">
+                                </div>
+                                
 
                                 <div class="form-group">
-                                    <label>商品名称</label>
-                                    <input name="name" placeholder="请输入商品名字" class="form-control">
-                                </div>
-                                 <div class="form-group">
-                                    <label>商品价格</label>
-                                    <input name="price" placeholder="请输入商品价格" class="form-control"><span></span>
-                                </div>
-                                <div class="form-group">
-                                    <label>库存量</label>
-                                    <input name="num" placeholder="请输入商品数量" class="form-control"><span></span>
-                                </div>
-                                <div class="form-group">
-                                    <label>商品图片</label>
-                                    <input type="file" name="pic">
-                                    <!-- <img src="/Public/Admin/ueditor/upload/image/20160429/1461920460295284.jpg" alt=""> -->
-                                </div>
-                                <div class="form-group">
-                                    <label>销售状态</label>
-                                    <select name="rexiao" class="form-control">
-                                        <option value="热销">热销</option>
-                                        <option value="精品">精品</option>
-                                        <option value="新品">新品</option>                
+                                    <label>状态</label>
+                                    <select name="status" class="form-control">
+                                        <option value="未审核">未审核</option>
+                                        <option value="已审核">已审核</option>
                                     </select>
                                 </div>
-                                 <div class="form-group">
-                                    <label>商品状态</label>
-                                    <select name="statu" class="form-control">
-                                        <option value="上架">上架</option>
-                                        <option value="下架">下架</option>               
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>商品描述</label>
-                                    <textarea name="detail"  cols="65" rows="10"></textarea><span></span>
-                                </div>
-                                <div class="form-group">
-                                    <label>验证码</label>
-                                    <input name="vcode" class="form-control">
-                                    <img src="<?php echo U('Admin/Public/createVcode');?>" alt="" onclick="this.src=this.src+'?a'">
-                                    
-                                </div>
-                                
-                                
                                 <button class="btn btn-primary btn-lg btn-block" >添加</button>
                             </form>
                         </div>
-                       
-                        
                         <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->
@@ -636,7 +512,6 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
- 
 
             <!-- /.row -->
            

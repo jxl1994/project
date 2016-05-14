@@ -463,7 +463,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">链接添加</h1>
+    <h1 class="page-header">用户添加</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -479,32 +479,39 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Link/insert');?>" enctype="multipart/form-data">
+                            <form role="form" method="post" action="<?php echo U('Admin/User/insert');?>" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    
-                                    <label>logo上传</label>
-                                    <input type="file" name="logo">
+                                    <label>用户名</label>
+                                    <input name="username" placeholder="请输入用户名" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>密码</label>
+                                    <input type="password" name="password" placeholder="请输入密码" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>邮箱</label>
+                                    <input name="email" placeholder="请输入邮箱" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input name="phone" placeholder="请输入手机号" class="form-control">
+                                </div>
                                 
-                                </div>
                                 <div class="form-group">
-                                    <label>网站名称</label>
-                                    <input type="text" name="name" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label>网站域名</label>
-                                    <input name="address" class="form-control">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label>状态</label>
-                                    <select name="status" class="form-control">
-                                        <option value="未审核">未审核</option>
-                                        <option value="已审核">已审核</option>
+                                    <label>身份</label>
+                                    <select name="level" class="form-control">
+                                        <option value="游客">游客</option>
+                                        <option value="会员">会员</option>
+                                        <option value="管理员">管理员</option>
+                                        <option value="超级管理员">超级管理员</option>
                                     </select>
                                 </div>
+                              
                                 <button class="btn btn-primary btn-lg btn-block" >添加</button>
                             </form>
                         </div>
+                       
+                        
                         <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->

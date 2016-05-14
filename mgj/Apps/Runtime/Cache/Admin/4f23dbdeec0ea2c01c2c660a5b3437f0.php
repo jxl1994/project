@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,33 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加头像</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -463,182 +490,140 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">商品详细信息修改</h1>
+    <h1 class="page-header">公告列表</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.all.min.js"> </script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
-    <script type="text/javascript" src='/Public/Admin/js/jquery-1.8.3.min.js'></script>
-    <script type="text/javascript">
-   // alert($);
-    //定义全局变量
-    var Cprice = false;
-    var Cnum=false;
-    var Cdetail=false;
-    $(function(){
-
-        //绑定表单提交事件
-        $('form').submit(function(){
-        //触发丧失焦点事件
-        $('input').trigger('blur');
-        $('textarea').trigger('blur');
-        //检测是否能够提交
-        if(Cprice && Cnum && Cdetail){
-            //提交
-            return true;
-        }else{
-            return false;
-        }
-        })  
-         //获取元素
-            $('input[name=num]').blur(function(){
-            
-            var v = $(this).val();
-            var reg=/^\d+$/;
-
-         
-            //判断价格不能为负
-            if(reg.test(v)){
-                $(this).next().html('').css('color','#fff');
-                Cnum= true;
-            }else{
-                 $(this).next().html('库存不正确').css('color','red');
-                Cnum= false;
-            }
-        });
-        //获取元素
-        $('textarea[name=detail]').blur(function(){  
-            var v = $(this).val();
-            var reg=/^\w+$/;
-
-            //判断价格不能为负
-            if(!reg.test(v)){
-                $(this).next().html('不能为空').css('color','red');
-                Cdetail= false;
-            }else{
-                 $(this).next().html('').css('color','#fff');
-                Cdetail= true;
-            }
-        });
-
-        //获取元素
-            $('input[name=price]').focus(function(){
-            
-            var v = $(this).val();
-            //判断价格不能为负
-            if(v > 0){
-                $(this).next().html().css('color','#fff');
-
-            }else{
-                
-            }
-        });
-        $('input[name=price]').blur(function(){
-            
-            var v = $(this).val();
-            var reg=/^\d+[^0]$/;
-            var res=reg.test(v);
-            //判断价格不能为负
-            if(!res){
-                $(this).next().html('价格不正确').css('color','red');
-                 Cprice = false;
-
-            }else{
-                $(this).next().html('').css('color','#fff');
-                Cprice = true;
-            }
-        });
-
-    }
-    );
-        
-        
-    </script>
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                   
+
                 </div>
+                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Goods/update');?>" enctype="multipart/form-data">
-                                <div class="form-group">
-                                <input type="hidden" name='goodsid' value="<?php echo ($arr["gid"]); ?>">
-                                    <label>选择分类</label>
-                                    <select name="typeid" class="form-control">
-                                   
-                                        <option value="<?php echo ($arr["typeid"]); ?>"><?php echo ($arr["catename"]); ?></option>
-
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>商品名称</label>
-                                    <input name="name" value="<?php echo ($arr["name"]); ?>" class="form-control">
-                                </div>
-                                 <div class="form-group">
-                                    <label>商品价格</label>
-                                    <input name="price" value="<?php echo ($arr["price"]); ?>" class="form-control"><span></span>
-                                </div>
-                                <div class="form-group">
-                                    <label>库存量</label>
-                                    <input name="num" value="<?php echo ($arr["num"]); ?>" class="form-control"><span></span>
-                                </div>
-                                <div class="form-group">
-                                    <label>商品图片</label>
-                                    <input type="file" name="pic">
-                                    <img src="/Public<?php echo ($arr["pic"]); ?>" alt="">
-                                </div>
-                                <div class="form-group">
-                                    <label>销售状态</label>
-                                    <?php
- $q=$w=$e=''; switch ($arr['rexiao']) { case "热销": $q='selected'; break; case "精品": $w='selected'; break; case "新品": $e='selected'; break; } ?>
-                                    <select name="rexiao" class="form-control">
-                                        <option value="热销" <?php echo $q ?>>热销</option>
-                                        <option value="精品" <?php echo $w ?>>精品</option>
-                                        <option value="新品" <?php echo $e ?>>新品</option>                
-                                    </select>
-                                </div>
-                                 <div class="form-group">
-                                    <label>商品状态</label>
-                                        <?php
- $a=$b=''; switch ($arr['statu']) { case "上架": $a='selected'; break; case "下架": $b='selected'; break; } ?>
-                                    <select name="statu" class="form-control">
-                                        <option value="上架" <?php echo $a ?>>上架</option>
-                                        <option value="下架" <?php echo $b ?>>下架</option>               
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>商品描述</label>
-                                    <textarea name="detail"  cols="65" rows="10"><?php echo $arr['detail']?></textarea><span></span>
-                                </div>
-                                
-                                
-                                <button class="btn btn-primary btn-lg btn-block" >修改</button>
-                            </form>
+                    <div class="dataTable_wrapper">
+                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        	<div class="row">
+                                <form action="<?php echo U('Admin/Notice/index');?>" method="get">
+                                    <div class="col-sm-6">
+                                       <div class="dataTables_length" id="dataTables-example_length">
+                                        <label>Show 
+                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
+                                          <option value="5">5</option>
+                                          <option value="10">10</option>
+                                          <option value="15">15</option>
+                                          <option value="20">20</option>
+                                      </select> entries
+                                  </label>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                           <div id="dataTables-example_filter" class="dataTables_filter">
+                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
+                            <button class="btn btn-primary">搜索</button>
                         </div>
-                       
-                        
-                        <!-- /.col-lg-6 (nested) -->
-                    </div>
-                    <!-- /.row (nested) -->
+                    </form>
                 </div>
-                <!-- /.panel-body -->
             </div>
-            <!-- /.panel -->
+            <div class="row">
+             <div class="col-sm-12">
+                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
+                    <thead>
+                        <tr role="row">
+                           <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 78px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">ID</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 105px;" aria-label="Browser: activate to sort column ascending">公告名称</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 135px;" aria-label="Platform(s): activate to sort column ascending">公告内容</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">添加时间</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                    <!-- z这是用户列表的遍历 -->
+                    <?php if(is_array($list)): foreach($list as $key=>$row): ?><tr class="gradeA odd" role="row">
+                            <td class="sid"><?php echo ($row["id"]); ?></td>
+                            <td><?php echo ($row["name"]); ?></td>
+                            <td class="center"><?php echo ($row["content"]); ?></td>
+                            <td class="center"><?php echo ($row["time"]); ?></td>
+                             <td><a href="/Admin/Notice/edit?id=<?php echo ($row['id']); ?>">修改</a> |  <a href="/Admin/Notice/delete?id=<?php echo ($row['id']); ?>"> 删除</a> </td>
+                        </tr><?php endforeach; endif; ?>
+                </tbody>
+            </table>
         </div>
-        <!-- /.col-lg-12 -->
     </div>
- 
+                    <style type="text/css">
+                          #pages a,#pages span{
+                           background-color: #fff;
+                           border: 1px solid #ddd;
+                           color: #337ab7;
+                           float: left;
+                           line-height: 1.42857;
+                           margin-left: -1px;
+                           padding: 6px 12px;
+                           position: relative;
+                           text-decoration: none;
+                       }
+                       #pages span{
+                    	/*background:#337ab7;
+                    	color:white;*/
+                    	background-color: #337ab7;
+                      border-color: #337ab7;
+                      color: #fff;
+                      cursor: default;
+                      z-index: 2;
+                    }
+                  </style>
+                  <div class="row">
+                      <div class="col-sm-6">
+                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
+                       <div class="col-sm-6">
+                        <div id="pages">
+                         <?php echo ($pages); ?>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         <!-- /.table-responsive -->
+
+     </div>
+     <!-- /.panel-body -->
+ </div>
+ <!-- /.panel -->
+</div>
+<!-- /.col-lg-12 -->
+</div>
+<script type="text/javascript" src="/Public/Admin/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+    // alert($);
+    $(function(){
+        //获取btn
+        $('.btn-del').click(function(){
+            // alert('222');
+           var v = $(this).parents('.gradeA').find('.sid').html();
+           // alert(v);
+           //发送ajax
+           var url = "<?php echo U('Admin/User/delete');?>";
+           var btn = $(this);
+           $.ajax({
+                url:url,
+                data:{id:v},
+                type:'get',
+                success:function(data){
+                    // console.log(data);
+                    if(data == 0){
+                      // location.href = location.href;
+                      btn.parents('.gradeA').remove();
+                    }else{
+                        alert('删除失败');
+                    }
+                }
+           })
+        })
+    })
+</script>
 
             <!-- /.row -->
            

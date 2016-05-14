@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -450,6 +450,20 @@
                             <!-- /.nav-second-level -->
                         </li>
 
+                        <li>
+                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
 
                      
                     </ul>
@@ -463,18 +477,13 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">轮播图设置</h1>
+    <h1 class="page-header">公告修改</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/ueditor.all.min.js"> </script>
-    <script type="text/javascript" charset="utf-8" src="/Public/Admin/ueditor/lang/zh-cn/zh-cn.js"></script>
-    <script type="text/javascript" src='/Public/Admin/js/jquery-1.8.3.min.js'></script>        
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
@@ -484,28 +493,17 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Carousel/update');?>" enctype="multipart/form-data">
-                                <input type="hidden" name="id" value="<?php echo ($sends["id"]); ?>">
+                            <form role="form" method="post" action="<?php echo U('Admin/Notice/update');?>" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="<?php echo ($info['id']); ?>">
                                 <div class="form-group">
-                                    <label>选择分类</label>
-                                    <select name="cateid" class="form-control">
-                                        <option value="0">请选择分类</option>
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
-                                    </select>
+                                    <label>公告名称</label>
+                                    <input name="name" value="<?php echo ($info['name']); ?>"  class="form-control">
                                 </div>
-                                 <div class="form-group">
-                                    <label>是否开启</label>
-                                    <input type="radio" name="statu" value="0" <?php if($sends['statu'] == 0): ?>checked<?php endif; ?>>开启
-                                    <input type="radio" name="statu" value="1" <?php if($sends['statu'] == 1): ?>checked<?php endif; ?>>关闭
-                                </div>
-            
                                 <div class="form-group">
-                                    <label>轮播图片</label>
-                                    <input type="file" name="pic">
-                                    <!-- <img src="/Public/Admin/ueditor/upload/image/20160429/1461920460295284.jpg" alt=""> -->
+                                    <label>公告内容</label>
+                                    <input type="content" value="<?php echo ($info['content']); ?>" name="content" placeholder="" class="form-control">
                                 </div>
-                                
-                                
+                               
                                 <button class="btn btn-primary btn-lg btn-block" >修改</button>
                             </form>
                         </div>
@@ -521,7 +519,6 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
- 
 
             <!-- /.row -->
            

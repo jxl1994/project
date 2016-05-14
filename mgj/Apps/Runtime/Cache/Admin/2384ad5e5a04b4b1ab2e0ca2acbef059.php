@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -463,7 +487,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">分类列表</h1>
+    <h1 class="page-header">添加活动</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -474,107 +498,115 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                   
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="dataTable_wrapper">
-                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        	<div class="row">
-                                <form action="<?php echo U('Admin/Cate/index');?>" method="get">
-                                    <div class="col-sm-6">
-                                       <div class="dataTables_length" id="dataTables-example_length">
-                                        <label>Show 
-                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
-                                          <option value="5">5</option>
-                                          <option value="10">10</option>
-                                          <option value="15">15</option>
-                                          <option value="20">20</option>
-                                      </select> entries
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="col-sm-6">
-                           <div id="dataTables-example_filter" class="dataTables_filter">
-                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                            <button class="btn btn-primary">搜索</button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" method="post" action="<?php echo U('Admin/Activity/insert');?>" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    
+                                    <label>背景图上传</label>
+                                    <input type="file" name="pic">
+                                
+                                </div>
+                                <div class="form-group">
+                                    <label>活动名称</label>
+                                    <input name="name" class="form-control">
+                                </div>
+
+                                 <div class="form-group">
+                                    <label>折扣</label><br>
+                                    <input type="radio" name="zhekou" value='0.5'>全场半价&nbsp;
+                                    <input type="radio" name="zhekou" value='0.8'>全场八折&nbsp;
+                                    <input type="radio" name="zhekou" value='0.7'>全场七折&nbsp;
+                                  
+                                </div>
+                                 <div class="form-group">
+                                    <label>开始月份</label>
+                                    <select name="month" class="form-control">
+                                        <option value="0">请选择</option>
+                                        <option value="1">1月</option>
+                                        <option value="2">2月</option>
+                                        <option value="3">3月</option>
+                                        <option value="4">4月</option>
+                                        <option value="5">5月</option>
+                                        <option value="6">6月</option>
+                                        <option value="7">7月</option>
+                                        <option value="8">8月</option>
+                                        <option value="9">9月</option>
+                                        <option value="10">10月</option>
+                                        <option value="11">11月</option>
+                                        <option value="12">12月</option>
+                                    </select>
+                                </div>
+                                 <div class="form-group">
+                                    <label>开始日</label>
+                                    <select name="day" class="form-control">
+                                        <option value="0">请选择</option>
+                                        <option value="1">1日</option>
+                                        <option value="2">2日</option>
+                                        <option value="3">3日</option>
+                                        <option value="4">4日</option>
+                                        <option value="5">5日</option>
+                                        <option value="6">6日</option>
+                                        <option value="7">7日</option>
+                                        <option value="8">8日</option>
+                                        <option value="9">9日</option>
+                                        <option value="10">10日</option>
+                                        <option value="11">11日</option>
+                                        <option value="12">12日</option>
+                                        <option value="13">13日</option>
+                                        <option value="14">14日</option>
+                                        <option value="15">15日</option>
+                                        <option value="16">16日</option>
+                                        <option value="17">17日</option>
+                                        <option value="18">18日</option>
+                                        <option value="19">19日</option>
+                                        <option value="20">20日</option>
+                                        <option value="21">21日</option>
+                                        <option value="22">22日</option>
+                                        <option value="23">23日</option>
+                                        <option value="24">24日</option>
+                                        <option value="25">25日</option>
+                                        <option value="26">26日</option>
+                                        <option value="27">27日</option>
+                                        <option value="28">28日</option>
+                                        <option value="29">29日</option>
+                                        <option value="30">30日</option>
+                                        <option value="31">31日</option>
+
+
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>限时</label>
+                                    <select name="time" class="form-control">
+                                        <option value="0">请选择</option>
+                                        <option value="1">1天</option>
+                                        <option value="2">2天</option>
+                                        <option value="3">3天</option>
+                                        <option value="4">4天</option>
+                                        <option value="5">5天</option>
+                                        <option value="6">6天</option>
+
+                                    </select>
+                                </div>
+
+                                
+                                <button class="btn btn-primary btn-lg btn-block" >添加</button>
+                            </form>
                         </div>
-                    </form>
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
                 </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="row">
-             <div class="col-sm-12">
-                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
-                    <thead>
-                        <tr role="row">
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 145px;" aria-label="Browser: activate to sort column ascending">ID</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 135px;" aria-label="Platform(s): activate to sort column ascending">分类名称</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 108px;" aria-label="Engine version: activate to sort column ascending">pid</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">path</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                    <!-- z这是分类列表的遍历 -->
-                    <?php if(is_array($cates)): $i = 0; $__LIST__ = $cates;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr class="gradeA odd" role="row">
-                            <td class="sid"><?php echo ($vo["id"]); ?></td>
-                            
-                            <td><?php echo ($vo["catename"]); ?></td>
-                
-                            <td class="center"><?php echo ($vo["pid"]); ?></td>
-                            <td class="center"><?php echo ($vo["path"]); ?></td>
-                            <td class="center">
-                                <a href="<?php echo U('Admin/Cate/delete',array('id'=>$vo['id']));?>"><button class="btn btn-danger btn-circle" type="button"><i class="fa fa-times"></i></button></a>
-                                <a href="<?php echo U('Admin/Cate/edit',array('id'=>$vo['id']));?>"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-list"></i></button></a>
-                            </td>
-                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-                </tbody>
-            </table>
+            <!-- /.panel -->
         </div>
+        <!-- /.col-lg-12 -->
     </div>
-                    <style type="text/css">
-                          #pages a,#pages span{
-                           background-color: #fff;
-                           border: 1px solid #ddd;
-                           color: #337ab7;
-                           float: left;
-                           line-height: 1.42857;
-                           margin-left: -1px;
-                           padding: 6px 12px;
-                           position: relative;
-                           text-decoration: none;
-                       }
-                       #pages span{
-                    	/*background:#337ab7;
-                    	color:white;*/
-                    	background-color: #337ab7;
-                      border-color: #337ab7;
-                      color: #fff;
-                      cursor: default;
-                      z-index: 2;
-                    }
-                  </style>
-                  <div class="row">
-                      <div class="col-sm-6">
-                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div>
-                       <div class="col-sm-6">
-                        <div id="pages">
-                         <?php echo ($pages); ?>
-                         </div>
-                      </div>
-                      </div>
-                </div>
-            
-         <!-- /.table-responsive -->
-
-     </div>
-     <!-- /.panel-body -->
- </div>
- <!-- /.panel -->
-</div>
-<!-- /.col-lg-12 -->
-</div>
-
 
             <!-- /.row -->
            

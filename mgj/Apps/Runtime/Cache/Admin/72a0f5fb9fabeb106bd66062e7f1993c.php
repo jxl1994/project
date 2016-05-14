@@ -463,66 +463,67 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <center><h2 class="page-header">订单详情表</h2></center>
+    <h1 class="page-header">用户修改</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             
-    <!-- <div id="page-wrapper"> -->
-    <!-- /.row -->
-    <div class="row admin-table">
-      <div class="col-lg-12">
-      <div><a href="/Admin/Order/index/">返回订单列表</a></div>
-          <!-- 搜索 -->
-          <div class="row">
-            <div class="col-lg-4 admin-search">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                   
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" method="post" action="<?php echo U('Admin/User/update');?>" enctype="multipart/form-data">
+                                <input type="hidden" name="id" value="<?php echo ($info['id']); ?>">
+                                <div class="form-group">
+                                    <label>用户名</label>
+                                    <input value="<?php echo ($info['username']); ?>" id="disabledInput"  name="username" placeholder="请输入用户名" class="form-control">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label>密码</label>
+                                    <input value="<?php echo ($info['password']); ?>" type="password" name="password" placeholder="请输入密码" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>邮箱</label>
+                                    <input value="<?php echo ($info['email']); ?>" name="email" placeholder="请输入邮箱" class="form-control">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>手机号</label>
+                                    <input value="<?php echo ($info['phone']); ?>" name="phone" placeholder="请输入手机号" class="form-control">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label>分组</label>
+                                    <select name="level" class="form-control">
+                                        <option value="游客" <?php if($info['level'] == 游客): ?>selected<?php endif; ?>>游客</option>
+                                        <option value="会员" <?php if($info['level'] == 会员): ?>selected<?php endif; ?>>会员</option>
+                                        <option value="管理员" <?php if($info['level'] == 管理员): ?>selected<?php endif; ?>>管理员</option>
+                                        <option value="超级管理员" <?php if($info['level'] == 超级管理员): ?>selected<?php endif; ?>>超级管理员</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary btn-lg btn-block" >修改</button>
+                            </form>
+                        </div>
+                       
+                        
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
             </div>
-          </div>
-            
-          <div class="table-responsive">
-            <table class="table table-bordered table-hover table-striped table-condensed goodstable" valign="middle">
-              <thead>
-                <tr>
-                  <th>会员ID</th>
-                  <th>商品</th>
-                  <th>单价</th>
-                  <th>数量</th>
-                  <th>小计</th>
-                  <th>订单状态</th>
-               
-                </tr>
-              </thead>
-              <?php if(is_array($shoplist)): foreach($shoplist as $key=>$row): ?><tbody>
-                  <tr>
-                    <td><?php echo ($row['uid']); ?></td>
-                    <td><?php echo ($row['name']); ?></td>
-                    <td><?php echo ($row['price']); ?></td>
-                    <td><?php echo ($row['num']); ?></td>
-                    <td><?php echo ($row['num']*$row['price']); ?></td>
-                    <td><?php echo ($status[$row['status']]); ?></td>
-                
-                  </tr>
-                </tbody><?php endforeach; endif; ?>
-              <tr>
-                <td><?php if($row['status'] == 1): ?>新订单<?php elseif($row['status'] == 2): ?>已发货</a><?php elseif($row['status'] == 3): ?>已收货<?php elseif($row['status'] == 4): ?>订单完成<?php endif; ?></td>
-                <td colspan="6">总金额:￥<?php echo ($row['total']); ?></td>
-              </tr>
-            </table>
-            <?php echo ($pageinfo); ?>
-          </div>
-        </center>
-      </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
     </div>
-    <!-- /.row -->
-  <!-- </div> -->
-  <!-- /.container-fluid -->
-<!-- </div> -->
-<!-- /#page-wrapper -->
-
-
-
 
             <!-- /.row -->
            

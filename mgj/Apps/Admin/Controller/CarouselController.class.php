@@ -149,18 +149,22 @@ class CarouselController extends CommonController {
         // var_dump($_GET);die;
 
 
+
         //查询出所有的分类
         $cate = M('category');
         $cates = $cate->query('select * from category where id != '.$cateid.' order by concat(path,id) asc');
-        
+        $catename=$cate->query('select catename from category where id ='.$cateid);
         foreach ($cates as $k => $v) {
             //计算出分隔多少次
             $c = count(explode(',',$v['path']))-1;
             $cates[$k]['catename'] = str_repeat('-----',$c).$v['catename'];
         }
         // var_dump($cates);
+        // var_dump($catename);
         //分配变量
         $this->assign('cates',$cates);
+       
+        $this->assign('catename',$catename);
         $sends = M('carousel');             
         //根据id查询要修改的哪个数据
         

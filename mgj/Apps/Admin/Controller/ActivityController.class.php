@@ -2,7 +2,7 @@
 namespace Admin\Controller;
 use Think\Controller;
 class ActivityController extends CommonController {
-    //配送的列表
+    //活动的列表
     public function index(){
     	//创建对象
     	$user = M('activity');
@@ -157,9 +157,13 @@ class ActivityController extends CommonController {
 
        	$data['name']=$_POST['name'];
        	$data['id']=$id;
-        $data['status']=$_POST['status'];
+      
         $data['zhekou']=$_POST['zhekou'];
-        $data['pic']=$_POST['pic'];
+        //判断是否还要修改图片
+        if(!empty($_POST['pic'])){
+          $data['pic']=$_POST['pic'];  
+        }
+        
         $data['month']=$_POST['month'];
         $data['day']=$_POST['day'];
         $data['time']=$_POST['time'];

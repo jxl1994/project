@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -463,7 +487,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">商品列表</h1>
+    <h1 class="page-header">添加公告</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -474,146 +498,36 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-
+                   
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <div class="dataTable_wrapper">
-                        <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                        	<div class="row">
-                                <form action="<?php echo U('Admin/Goods/index');?>" method="get">
-                                    <div class="col-sm-6">
-                                       <div class="dataTables_length" id="dataTables-example_length">
-                                        <label>Show 
-                                         <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
-                                          <option value="5">5</option>
-                                          <option value="10">10</option>
-                                          <option value="15">15</option>
-                                          <option value="20">20</option>
-                                      </select> entries
-                                  </label>
-                              </div>
-                          </div>
-                          <div class="col-sm-6">
-                           <div id="dataTables-example_filter" class="dataTables_filter">
-                            <label>Search:<input value="<?php echo ($_GET['keyword']); ?>" name="keyword" type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                            <button class="btn btn-primary">搜索</button>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" method="post" action="<?php echo U('Admin/Notice/insert');?>" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>公告名称</label>
+                                    <input name="name" placeholder="请输入公告名称" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label>公告内容</label>
+                                    <input type="textarea" name="content" placeholder="" class="form-control">
+                                </div>
+                               
+                                <button class="btn btn-primary btn-lg btn-block" >添加</button>
+                            </form>
                         </div>
-                    </form>
+                       
+                        
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
                 </div>
+                <!-- /.panel-body -->
             </div>
-            <div class="row">
-             <div class="col-sm-12">
-                 <table id="dataTables-example" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="dataTables-example_info">
-                    <thead>
-                        <tr role="row">
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Browser: activate to sort column ascending">ID</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Platform(s): activate to sort column ascending">商品图片</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Engine version: activate to sort column ascending">商品分类</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="CSS grade: activate to sort column ascending">商品名称</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="CSS grade: activate to sort column ascending">商品单价</th>
-                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="CSS grade: activate to sort column ascending">在售状态</th>
-                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="CSS grade: activate to sort column ascending">商品状态</th>
-                              <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">库存量</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                    <!-- z这是商品列表的遍历 -->
-                    <?php if(is_array($Goods)): foreach($Goods as $key=>$vo): ?><tr class="gradeA odd" role="row">
-                            <td class="sid"><?php echo ($vo["id"]); ?></td>
-                           <td class="center"><img class='pic' src="/Public<?php echo ($vo["pic"]); ?>" width="50px">
-                              <div class='smallpic' style="width:77px;height:25px;border:0px solid blue;padding-top:2px;">
-                                <?php
- $sql = 'select * from goods_image where ggid='.$vo['id']; $result=mysql_query($sql); while ($row=mysql_fetch_assoc($result)) { echo '<div style="width:25px;height:25px;border:0px solid blue;float:left">'; echo '<img width="25px"  src="/Public'.$row['minpic'].'">'; echo '</div>'; } ?>
-                              </div>
-                           </td>
-                            <td class="center"><?php echo ($vo["catename"]); ?>
-                                  
-                            </td>
-                            <td class="center"><?php echo ($vo["name"]); ?></td>
-                            <td class="center"><?php echo ($vo["price"]); ?></td>
-                             <td class="center"><?php echo ($vo["statu"]); ?></td>
-                              <td class="center"><?php echo ($vo["rexiao"]); ?></td>
-                               <td class="center"><?php echo ($vo["num"]); ?></td>
-                            <td class="center">
-                                <a href="<?php echo U('Admin/Goods/delete',array('id'=>$vo['id']));?>"><button class="btn btn-danger btn-circle" type="button"><i class="fa fa-times"></i></button></a>
-                                <a href="<?php echo U('Admin/Goods/edit',array('id'=>$vo['id']));?>"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-list"></i></button></a>
-                            </td>
-                        </tr><?php endforeach; endif; ?>
-                </tbody>
-            </table>
+            <!-- /.panel -->
         </div>
+        <!-- /.col-lg-12 -->
     </div>
-                    <style type="text/css">
-                          #pages a,#pages span{
-                           background-color: #fff;
-                           border: 1px solid #ddd;
-                           color: #337ab7;
-                           float: left;
-                           line-height: 1.42857;
-                           margin-left: -1px;
-                           padding: 6px 12px;
-                           position: relative;
-                           text-decoration: none;
-                       }
-                       #pages span{
-                    	/*background:#337ab7;
-                    	color:white;*/
-                    	background-color: #337ab7;
-                      border-color: #337ab7;
-                      color: #fff;
-                      cursor: default;
-                      z-index: 2;
-                    }
-                      .smallpic{
-                        display: none;
-                      }
-                  </style>
-                  <div class="row">
-                      <div class="col-sm-6">
-                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
-                       <div class="col-sm-6">
-                        <div id="pages">
-                         <?php echo ($pages); ?>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         <!-- /.table-responsive -->
-
-     </div>
-     <!-- /.panel-body -->
- </div>
- <!-- /.panel -->
-</div>
-<!-- /.col-lg-12 -->
-</div>
-   <script type="text/javascript" src='/Public/Admin/js/jquery-1.8.3.min.js'></script>
-   <script type="text/javascript">
-   $(function(){
-    //获取元素
-    $('.pic').click(function(){
-     var v= $(this).parents('tr').find('td:first').html();
-     // alert(v);
-     //拼接url路径,js是脚本语言,thinkphp框架不能直接解析js的变量
-     var url="smailpic/ggid/";
-     location.href= url+v;
-      
-    });
-    //鼠标移入显示小图
-    $('.pic').mouseover(function(){
-      $(this).parents('tr').find('.smallpic').css('display','block');
-    });
-    //鼠标移出隐藏小图
-    $('.pic').mouseout(function(){
-      $(this).parents('tr').find('.smallpic').css('display','none');
-    });
-
-   });
-
-
-   </script>
 
             <!-- /.row -->
            

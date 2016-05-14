@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -463,7 +463,7 @@
             <div class="row">
                 <div class="col-lg-12">
                 
-    <h1 class="page-header">分类添加</h1>
+    <h1 class="page-header">支付方式修改</h1>
 
                 </div>
                 <!-- /.col-lg-12 -->
@@ -479,26 +479,30 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" method="post" action="<?php echo U('Admin/Cate/insert');?>" >
+                            <form role="form" method="post" action="<?php echo U('Admin/Purse/update');?>" enctype="multipart/form-data">
+                            <input type="hidden" name="id" value="<?php echo ($info['id']); ?>">
                                 <div class="form-group">
-                                    <label>选择分类</label>
-                                    <select name="pid" class="form-control">
-                                        <option value="0">顶级分类</option>
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
+                                    
+                                    <label>支付logo</label>
+                                    <input type="file" name="logo">
+                                    <img src="/Public/<?php echo ($info['logo']); ?>" width="50px" alt="">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label>支付银行</label>
+                                    <input name="name" value="<?php echo ($info['name']); ?>" class="form-control">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>状态</label>
+                                    <select name="status" class="form-control">
+                                        <option value="未审核" <?php if($info['status'] == 未审核 ): ?>selected<?php endif; ?>>未审核</option>
+                                        <option value="已审核" <?php if($info['status'] == 已审核 ): ?>selected<?php endif; ?>>已审核</option>
                                     </select>
                                 </div>
-
-                                <div class="form-group">
-                                    <label>分类名</label>
-                                    <input name="catename" placeholder="请输入分类名" class="form-control">
-                                </div>
-                                
-                                
-                                <button class="btn btn-primary btn-lg btn-block" >添加</button>
+                                <button class="btn btn-primary btn-lg btn-block" >修改</button>
                             </form>
                         </div>
-                       
-                        
                         <!-- /.col-lg-6 (nested) -->
                     </div>
                     <!-- /.row (nested) -->

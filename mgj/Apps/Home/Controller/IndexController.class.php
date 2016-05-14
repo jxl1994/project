@@ -18,16 +18,42 @@ class IndexController extends Controller {
         //var_dump($goods3);die;
         //轮播图遍历
         $carousel=M('carousel');
+
+		// var_dump($num);die;
         $res=$carousel->where(array('statu'=>'0'))->order('id desc')->limit(5)->select();
-        
+        // $res1=count($res);
         // var_dump($res);die;
+        
+       
+
         //分配变量
         $this->assign('res',$res);
+  
         $this->assign('links',$links);
         $this->assign('goods1',$goods1);
         $this->assign('goods2',$goods2);
         $this->assign('goods3',$goods3);
         $this->assign('category',$category);
         $this->display();
+    }
+    //ajax查询
+    public function select(){
+        $user=M('activity');
+        $sql='select * from activity where status=0';
+        $res=$user->query($sql);
+        foreach ($res as $k => $v) {
+            
+        }
+        //拼接图片存放路径
+        $pic=$v['pic'];
+        if($res){
+            // 查到数据 ,返回图片路径
+            echo $pic;
+        }else{
+            //没查到数据
+            echo 0;
+        }
+        
+
     }
 }
