@@ -533,7 +533,7 @@
                         <tr role="row">
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Browser: activate to sort column ascending">ID</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Platform(s): activate to sort column ascending">轮播图片</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Engine version: activate to sort column ascending">分类</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="Engine version: activate to sort column ascending">活动分类</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 90px;" aria-label="CSS grade: activate to sort column ascending">状态</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
                        </tr>
@@ -545,14 +545,17 @@
                            <td class="center"><img class='pic' src="/Public<?php echo ($vo["pic"]); ?>" width="50px">
                               
                            </td>
-                            <td class="center"><?php echo ($vo["catename"]); ?>
-                                  
+                            <td class="center">
+                            <?php  if(empty($vo['name'])){ echo '无活动'; }else{ ?>
+                              <?php echo ($vo["name"]); ?>
+                             <?php
+ } ?>     
                             </td>
                             <?php  $arr=array('开启',"关闭"); ?>
                             <td class="center"><?php echo $arr[$vo['statu']] ?></td>
                             <td class="center">
                                 <a href="<?php echo U('Admin/Carousel/delete',array('id'=>$vo['id']));?>"><button class="btn btn-danger btn-circle" type="button"><i class="fa fa-times"></i></button></a>
-                                <a href="<?php echo U('Admin/Carousel/edit',array('cateid'=>$vo['cateid'],'id'=>$vo['id']));?>"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-list"></i></button></a>
+                                <a href="<?php echo U('Admin/Carousel/edit',array('activityid'=>$vo['activityid'],'id'=>$vo['id']));?>"><button class="btn btn-primary btn-circle" type="button"><i class="fa fa-list"></i></button></a>
                             </td>
                         </tr><?php endforeach; endif; ?>
                 </tbody>

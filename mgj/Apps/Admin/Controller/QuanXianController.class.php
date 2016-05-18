@@ -324,7 +324,7 @@ class QuanXianController extends CommonController {
             $this->error('没有填写用户',U('Admin/QuanXian/User_index'));
         }
         $sql='select * from user where username="'.$username.'"';
-        echo $sql;
+        // echo $sql;
         $result=mysql_query($sql);
         $row=mysql_fetch_assoc($result);
         // var_dump($row);die;

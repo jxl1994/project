@@ -415,10 +415,10 @@
                             <a href="#"><i class="fa  fa-fire    fa-fw"></i> 支付方式管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/add');?>">添加支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/add');?>">添加支付方式</a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo U('Admin/Pay/index');?>">浏览支付方式</a>
+                                    <a href="<?php echo U('Admin/Purse/index');?>">浏览支付方式</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -487,10 +511,10 @@
                         <div class="col-lg-6">
                             <form role="form" method="post" action="<?php echo U('Admin/Carousel/insert');?>" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label>选择分类</label>
-                                    <select name="cateid" class="form-control">
-                                        <option value="0">请选择分类</option>
-                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["catename"]); ?></option><?php endforeach; endif; ?>
+                                    <label>活动方式</label>
+                                    <select name="activityid" class="form-control">
+                                        <option value="0">无活动</option>
+                                    <?php if(is_array($cates)): foreach($cates as $key=>$vo): ?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["name"]); ?></option><?php endforeach; endif; ?>
                                     </select>
                                 </div>
 

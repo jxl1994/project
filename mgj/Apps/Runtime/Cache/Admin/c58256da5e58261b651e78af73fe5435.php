@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      
@@ -481,11 +505,7 @@
                         <div class="col-lg-6">
                             <form role="form" method="post" action="<?php echo U('Admin/Activity/update');?>" enctype="multipart/form-data">
                                 <input type="hidden" name='id' value="<?php echo ($res['id']); ?>">
-                                <div class="form-group">                   
-                                    <label>新背景图上传</label>
-                                    <input type="file" name="pic">
-                                
-                                </div>
+                               
                                 <div class="form-group">
                                     <label>活动名称</label>
                                     <input name="name" value="<?php echo ($res['name']); ?>" class="form-control">
@@ -493,9 +513,16 @@
 
                                  <div class="form-group">
                                     <label>折扣</label><br>
-                                    <input type="radio" name="zhekou" disabled value='0.5' <?php if($res['zhekou'] == 0.5): ?>checked<?php endif; ?>>全场半价&nbsp;
-                                    <input type="radio" name="zhekou" disabled value='0.8' <?php if($res['zhekou'] == 0.8): ?>checked<?php endif; ?>>全场八折&nbsp;
-                                    <input type="radio" name="zhekou" disabled value='0.7' <?php if($res['zhekou'] == 0.7): ?>checked<?php endif; ?>>全场七折&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.5' <?php if($res['zhekou'] == 0.5): ?>checked<?php endif; ?>>全场半价&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.8' <?php if($res['zhekou'] == 0.8): ?>checked<?php endif; ?>>全场八折&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.7' <?php if($res['zhekou'] == 0.7): ?>checked<?php endif; ?>>全场七折&nbsp;
+                                  
+                                </div>
+                                <div class="form-group">
+                                    <label>状态</label><br>
+                                    <input type="radio" name="status" value='0' <?php if($res['status'] == 0): ?>checked<?php endif; ?>>开启&nbsp;
+                                    <input type="radio" name="status" value='1' <?php if($res['status'] == 1): ?>checked<?php endif; ?>>关闭&nbsp;
+                              
                                   
                                 </div>
                                  <div class="form-group">

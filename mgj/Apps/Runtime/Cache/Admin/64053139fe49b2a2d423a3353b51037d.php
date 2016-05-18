@@ -438,7 +438,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa glyphicon-piggy-bank fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-comments  fa-fw"></i> 活动管理<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="<?php echo U('Admin/Activity/add');?>">添加活动</a>
@@ -449,6 +449,30 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+
+                        <li>
+                            <a href="#"><i class="fa  fa-inbox  fa-fw"></i> 公告管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/add');?>">添加公告</a>
+                                </li>
+                                <li>
+                                    <a href="<?php echo U('Admin/Notice/index');?>">公告列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+                           <li>
+                            <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">                             
+                                <li>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
 
 
                      

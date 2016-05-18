@@ -52,7 +52,7 @@
 			</div>
 			<!-- 钱包 -->
 			<div class="rdh_qb">
-				<a href="">
+				<a href="<?php echo U('Home/Purse/index');?>">
 					<div class="rdh_qb_logo">
 						<img src="/Public/Home/images/right_dh.png" alt="">
 					</div>
@@ -61,7 +61,7 @@
 			</div>
 			<!-- 足迹 -->
 			<div class="rdh_zj">
-				<a href="">
+				<a href="<?php echo U('Home/Mark/index');?>">
 					<div class="rdh_zj_logo">
 						<img src="/Public/Home/images/right_dh.png" alt="">
 					</div>
@@ -112,28 +112,8 @@
 	<!-- 中间 -->
 	<div class="c"></div>
 	
-	<style type="text/css">
-	*{margin: 0;padding: 0;list-style:none;}
-		.banner{
-			margin: 50px;overflow: hidden;position: relative;}
-		.banner .img{width: 4290px;position: absolute;}
-		.banner .img li{float: left;}
-		.banner .img li img{width: 715px;}
-		.btn{width: 30px;height: 50px;position: absolute;top:50%;
-		background: rgba(0,0,0,0.5);text-align:center;margin-top: -25px;
-		line-height:50px;color:#fff;font-size:40px;font-family:'宋体';
-		cursor:pointer;
-		}
-		.btn_l{left:0px;}
-		.btn_r{right:0px;}
-		.num{position: absolute;width: 100%;bottom:10px;left: 0px;text-align:center;}
-		.num li{width: 10px;height: 10px;background: #333;
-		border-radius:50%;margin: 0 3px;display:inline-block;
-		}
-		.num .on{background: #f39;}	
-
-
-	</style>
+	<link rel="stylesheet" type="text/css" href="/Public/Home/css/index.css">
+	
 
 	<script type="text/javascript" src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript">
@@ -152,14 +132,14 @@
 		// console.log(length);
 
 		// 启动定时器
-		var inte = setInterval(moveR,3000);
+		var inte = setInterval(moveR,2000);
 		//鼠标悬停事件
 		$('.banner').hover(function(){
 			//鼠标移入以后 清除定时器
 			clearInterval(inte);
 		},function(){
 			//启动轮播
-			inte = setInterval(moveR,3000);
+			inte = setInterval(moveR,2000);
 		})
 
 		//给小圆点绑定鼠标滑入事件
@@ -234,13 +214,19 @@
 		<div class="c1">
 		<!-- 商品分类 -->
 			<div class="c1_fl">
-	<?php
- $sql=" SELECT * FROM category "; $result = mysql_query($sql); if($result && mysql_num_rows($result)>0){ $arr=array(); $pid = array(); while($row = mysql_fetch_assoc($result)){ $arr[]=$row; $pid[]=$row; } } foreach($arr as $v){ if($v['pid'] == 0){ echo '<dl><dd><h2><a href="?id='.$v['id'].'">'.$v['catename'].'</a></h2>'; for($i=0;$i<count($pid);$i++){ if($v['id'] == $pid[$i]['pid']){ echo '<dd><li><h3><a href="?id='.$pid[$i]['id'].'" style="color:red;">'.$pid[$i]['catename'].'</a><h3></li></dd>'; } } echo '</dd></dl>'; } } ?>		
+				<?php if(is_array($list[0])): foreach($list[0] as $key=>$vo): ?><dl>
+						<dd>
+						<h3><a href="<?php echo U('Home/list/lb',array('id' =>$vo['id']));?>"><?php echo ($vo["catename"]); ?></a></h3>
+						</dd>
+						<?php if(is_array($list[$vo['id']])): foreach($list[$vo['id']] as $key=>$vo2): ?><dd>
+							<a href="<?php echo U('Home/List/lb',array('id' =>$vo2['id']));?>" style="color:red;"><?php echo ($vo2["catename"]); ?></a>
+							</dd><?php endforeach; endif; ?>
+					</dl><?php endforeach; endif; ?>
 			</div>
 			<!-- 轮播图 -->
 			<div class="c1_lb banner">
 				<ul class="img">
-					<?php if(is_array($res)): foreach($res as $key=>$vo): ?><li><a href=""><img src="/Public<?php echo ($vo["pic"]); ?>" alt=""></a></li><?php endforeach; endif; ?>
+					<?php if(is_array($res)): foreach($res as $key=>$vo): ?><li><a href="<?php echo U('Home/List/lb',array('id'=>$vo['id']));?>"><img src="/Public<?php echo ($vo["pic"]); ?>" alt=""></a></li><?php endforeach; endif; ?>
 				</ul>
 					<div class="btn btn_l">&lt;</div>
 					<div class="btn btn_r">&gt;</div>
@@ -312,7 +298,7 @@
 				</div>
 				<div class="c2_goods_r">
 				<?php if(is_array($goods1)): foreach($goods1 as $key=>$vo): ?><div class="c2_goods_r1">
-						<a href=""><img src="/Public/<?php echo ($vo["pic"]); ?>" alt="">
+						<div class="rl_img"><a href="<?php echo U('Home/Detail/index',array('id'=>$vo['id']));?>"><img src="/Public/<?php echo ($vo["pic"]); ?>" alt=""></div>
 						<p><?php echo ($vo["name"]); ?></p>
 						</a>
 					</div><?php endforeach; endif; ?>	
@@ -369,7 +355,7 @@
 				</div>
 				<div class="c2_goods_r">
 				<?php if(is_array($goods2)): foreach($goods2 as $key=>$vo): ?><div class="c2_goods_r1">
-						<a href=""><img src="/Public/<?php echo ($vo["pic"]); ?>" alt="">
+						<div class="rl_img"><a href="<?php echo U('Home/Detail/index',array('id'=>$vo['id']));?>"><img src="/Public/<?php echo ($vo["pic"]); ?>" alt=""></div>
 						<p><?php echo ($vo["name"]); ?></p>
 						</a>
 					</div><?php endforeach; endif; ?>
@@ -426,7 +412,7 @@
 				</div>
 				<div class="c2_goods_r">
 				<?php if(is_array($goods3)): foreach($goods3 as $key=>$vo): ?><div class="c2_goods_r1">
-						<a href=""><img src="/Public/<?php echo ($vo["pic"]); ?>" alt="">
+						<div class="rl_img"><a href="<?php echo U('Home/Detail/index',array('id'=>$vo['id']));?>"><img src="/Public/<?php echo ($vo["pic"]); ?>" alt=""></div>
 						<p><?php echo ($vo["name"]); ?></p>
 						</a>
 					</div><?php endforeach; endif; ?>
@@ -456,6 +442,77 @@
 		</div>
 		<script type="text/javascript"src="/Public/Home/js/ss.js"></script>
 	</div>
+
+<script>
+$(function (){
+$('.adver').animate({right:'10px',bottom:'-50px'},1000);
+$('.c').click(function(){
+   $('.adver').hide();
+   $('.c img').hide();
+});
+});
+$(function(){
+	$('.c').animate({right:'10px',bottom:'-50px'},1000);
+});
+</script>
+<div class="c">
+	<img src="/Public/Home/images/577.png" alt="">
+</div>
+<div class="banner adver">
+	<ul class="imgs">
+	<?php if(is_array($advers)): foreach($advers as $key=>$vo): ?><a href="http://<?php echo ($vo["address"]); ?>"><img src="/Public/<?php echo ($vo["logo"]); ?>" alt=""></a><?php endforeach; endif; ?>
+	</ul>
+</div>
+<!-- 广告轮播 -->
+	
+	</div>
+	<script type="text/javascript">
+		//定义全局变量
+		var i = 0;
+		//无缝第一步 克隆第一张图片
+		var cloneimg = $('.adver').find('img:first').clone();
+		//插入进去 克隆第二步
+		$('.adver .imgs').append(cloneimg);
+		//获取图片的个数
+		var length = $('.adver .imgs img').length;
+		console.log(length);
+
+		// 启动定时器
+		var inte = setInterval(moveR,3000);
+		//鼠标悬停事件
+		$('.adver').hover(function(){
+			//鼠标移入以后 清除定时器
+			clearInterval(inte);
+		},function(){
+			//启动轮播
+			inte = setInterval(moveR,3000);
+		})
+
+		// 封装向右移动的方法
+		function moveR(){
+			i++;
+			//检测越界
+			if(i == length){
+				// i = 0;//不能等于0 无缝第三步
+				$('.adver .imgs').css({left:0});
+				//把i改成1
+				i = 1;
+			}
+			//计算新left
+			newLeft = i*220;
+			//设置样式 //stop是为了运行更流畅
+			$('.adver .imgs').stop().animate({left:-newLeft+'px'},500);
+			//在方法中移动园点 class="on"
+		}
+	</script>
+	
+	<script type="text/javascript">
+		$('.adver').mouseover(function(){
+			$('.c img').css('display','block');
+			
+		})
+	</script>
+
 
 
 	<div class="c"></div>

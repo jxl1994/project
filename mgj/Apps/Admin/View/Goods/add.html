@@ -51,12 +51,12 @@
             var reg=/^\w+$/;
 
             //判断价格不能为负
-            if(!reg.test(v)){
-                $(this).next().html('不能为空').css('color','red');
-                Cdetail= false;
-            }else{
-                 $(this).next().html('').css('color','#fff');
+            if(reg.test(v)){
+                $(this).next().html('').css('color','#fff');
                 Cdetail= true;
+            }else{
+                 $(this).next().html('不能为空').css('color','red');
+                Cdetail= false;
             }
         });
 

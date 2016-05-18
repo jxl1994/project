@@ -5,11 +5,18 @@
 }
 #list .list_fl{
 	width: 1183px;
-	height: 38px;
+	height: 40px;
+	border-radius: 10px;
 	padding-left: 15px;
+	position:relative;
+	left:-3px;
+	margin-top: -19px;
 	float: right;
-	border:1px solid #e5e5e5;
-	background: #fafafa;
+	background: #efefef; 
+    background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+    padding: 0 20px;
+    border-radius: 10px;  
+    list-style: none;
 }
 #list .list_fl li{
 	width: 65px;
@@ -50,19 +57,27 @@
 	width:100%;
 	height: auto;
 	margin-right: 3px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 	margin-left:5px ;
 	float: left;
+	padding-top:15px;
 }
 #list .list_g1{
 	width: 220px;
-	height: 383px;
+	height: 320px;
 	float: left;
-	margin-left: 25px;
+	position:relative;
+	left:30px;
+	margin-right: 20px;
 	margin-top: 25px;
+}
+#list .list_g1 img{
+	width:200px;
+	height:260px;
 }
 #list .goods_name{
 	margin-top: 5px;
+	margin-left:60px;
 }
 #list .goods_name a{
 	color: rgb(102, 102, 102);
@@ -71,10 +86,30 @@
 }
 #list .goods_price{
 	font-size: 14px;
-	color: rgb(255, 51, 102);
+	color:#ccc;
 	margin-top: 8px;
 	float: left;
-	margin-left: 5px;
+	margin-left: 60px;
+	text-decoration:line-through; 
+}
+#list .goods_zhekou{
+	font-size: 22px;
+	color: #ef2f23;
+	margin-top: 0px;
+	display: inline-block;
+	margin-left: 40px;
+	font-weight:700;		
+	position:relative;
+	top:-13px;
+	
+}
+#zk{
+	font-size: 14px;
+	color: #ef2f23;
+	margin-top:8px;
+	position:relative;
+	left:5px;
+	
 }
 #list .goods_sc{
 	float: left;
@@ -82,4 +117,66 @@
 	font-size: 12px;
 	color: rgb(153, 153, 153);
 	margin-left: 15px;
+}
+#list .fy{
+	width: 1200px;
+	height: 30px;
+	/*background: #f39;*/
+	float: right;
+	margin-bottom: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+}
+.l{
+	clear:both;
+	width:1215px;
+	height:520px;
+	padding-right:30px;
+	margin-left:-20px;
+	position:relative;
+	margin-top:1px;
+	overflow:hidden;
+	
+	left:30px;
+	float:left;
+}
+.l img{
+	width:1215px;
+	z-index:0;
+	
+	
+}
+.l .someTimer{
+	width: 700px; 
+	margin: 0 auto;
+	z-index:1;
+	
+	
+}
+.a{
+	width:85px;
+	height:38px;
+	position:relative;
+	left:-15px;
+	z-index:1;
+	background: #efefef;
+	border-radius: 10px;
+	display:none;
+}
+.a a{
+	padding-left:13px;
+	position:absolute;
+	z-index:1;
+}
+.name{
+	position:relative;
+	top:5px;
+	left:12px;
+	clear:both;
+	width:300px;
+	height:30px;
+	padding-top:20px;
+	
 }

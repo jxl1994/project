@@ -15,11 +15,7 @@
                         <div class="col-lg-6">
                             <form role="form" method="post" action="{:U('Admin/Activity/update')}" enctype="multipart/form-data">
                                 <input type="hidden" name='id' value="{$res['id']}">
-                                <div class="form-group">                   
-                                    <label>新背景图上传</label>
-                                    <input type="file" name="pic">
-                                
-                                </div>
+                               
                                 <div class="form-group">
                                     <label>活动名称</label>
                                     <input name="name" value="{$res['name']}" class="form-control">
@@ -27,9 +23,16 @@
 
                                  <div class="form-group">
                                     <label>折扣</label><br>
-                                    <input type="radio" name="zhekou" disabled value='0.5' <if condition="$res['zhekou'] eq 0.5">checked</if>>全场半价&nbsp;
-                                    <input type="radio" name="zhekou" disabled value='0.8' <if condition="$res['zhekou'] eq 0.8">checked</if>>全场八折&nbsp;
-                                    <input type="radio" name="zhekou" disabled value='0.7' <if condition="$res['zhekou'] eq 0.7">checked</if>>全场七折&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.5' <if condition="$res['zhekou'] eq 0.5">checked</if>>全场半价&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.8' <if condition="$res['zhekou'] eq 0.8">checked</if>>全场八折&nbsp;
+                                    <input type="radio" name="zhekou"  value='0.7' <if condition="$res['zhekou'] eq 0.7">checked</if>>全场七折&nbsp;
+                                  
+                                </div>
+                                <div class="form-group">
+                                    <label>状态</label><br>
+                                    <input type="radio" name="status" value='0' <if condition="$res['status'] eq 0">checked</if>>开启&nbsp;
+                                    <input type="radio" name="status" value='1' <if condition="$res['status'] eq 1">checked</if>>关闭&nbsp;
+                              
                                   
                                 </div>
                                  <div class="form-group">

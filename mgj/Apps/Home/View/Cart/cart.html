@@ -1,0 +1,29 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="title">
+	<title>我的购物车</title>
+</block>
+<block name="top">
+</block>
+<block name="center">
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/kongcart.css">
+	<div id="quan">
+		<div class="tou">
+			<div class="logo"><a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/Home/images/c.png" alt=""></div></a>
+			<div class="bu" style="background:url('__PUBLIC__/Home/images/d.png');"></div>
+		</div>
+		<div class="spbiao">
+			<div class="cart_goods">
+				<div class="kcart_img">
+					<img src="__PUBLIC__/Home/images/kcart.png" alt="">
+				</div>
+				<div class="kcart_ts">
+					<span>您的购物车还是空的，赶快去挑选商品吧！</span>
+					<a href="{:U('Home/Index/index')}">去购物</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</block>

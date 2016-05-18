@@ -1,0 +1,109 @@
+*{
+	margin:0px;
+	padding:0px ;
+	list-style: none;
+	text-decoration:none;
+}
+
+#quan{
+	width: 97.5%;
+	background: #f4f4f4;
+	float: left;
+}
+.tou{
+	height: 72px;
+	border-bottom:1px solid #ddd;
+}
+.tou .logo{
+	height: 72px;
+	float:left;
+	margin-left: 30px;
+	margin-top: 10px;
+}
+
+.tou .bu{
+	width: 509px;
+	height: 65px;
+	float:right;
+}
+.cart_head{
+	width: 1200px;
+	height: 30px;
+	margin-top: 30px;
+	margin-bottom: 25px;
+	float: right;
+	line-height: 30px;
+}
+.cart_head li{
+	float: left;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+	margin-right: 30px;
+	margin-left: 10px;
+}
+.cart_head li span{
+	color:#ddd;
+	font-size: 12px;
+}
+.cart_head .cart_all{
+	width: 100px;
+	height: 30px;
+	background: rgb(51, 51, 51);
+	float: left;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+}
+.spbiao{
+	width: 1200px;
+	height: 240px;
+	float: right;
+	background: #fff;
+	font-size:13px;
+	color:#333;
+	background: #fff;
+	margin-bottom: 60px;
+	margin-top: 30px;
+}
+.spbiao .cart_goods{
+	width: 1200px;
+	height: 85px;
+	/*background: #f39;*/
+	margin:77px auto;
+
+}
+.spbiao .kcart_img{
+	width: 85px;
+	height: 65px;
+	/*border:1px solid #f39;*/
+	float: left;
+	margin-left: 370px;
+	overflow: hidden;
+}
+.spbiao .kcart_img img{
+	position: relative;
+	top:-128px;
+	left:-192px;
+}
+.spbiao .kcart_ts{
+	width:330px;
+	height: 60px;
+	margin-left: 25px;
+	float: left;
+	/*background: #f39;*/
+	padding-top: 15px
+}
+.spbiao .kcart_ts span{
+	font-size: 16px;
+	font-weight: 700;
+	color: rgb(51, 51, 51);
+	line-height: 24px;
+}
+
+.spbiao .kcart_ts a{
+	line-height: 24px;
+	color: rgb(255, 79, 124);
+	font-size: 12px;
+	text-decoration: underline;
+}
+

@@ -1,4 +1,4 @@
-
+﻿
 .center{
 	width: 97.5%;
 	float: left;
@@ -113,6 +113,27 @@
 	float: left;
 	margin:20px 20px 0 20px;
 }
+/*轮播图*/
+*{margin: 0;padding: 0;list-style:none;}
+		.banner{
+			margin: 50px;overflow: hidden;position: relative;}
+		.banner .img{width: 4290px;position: absolute;}
+		.banner .img li{float: left;}
+		.banner .img li img{width: 715px;}
+		.btn{width: 30px;height: 50px;position: absolute;top:50%;
+		background: rgba(0,0,0,0.5);text-align:center;margin-top: -25px;
+		line-height:50px;color:#fff;font-size:40px;font-family:'宋体';
+		cursor:pointer;
+		}
+		.btn_l{left:0px;}
+		.btn_r{right:0px;}
+		.num{position: absolute;width: 100%;bottom:10px;left: 0px;text-align:center;}
+		.num li{width: 10px;height: 10px;background: #333;
+		border-radius:50%;margin: 0 3px;display:inline-block;
+		}
+		.num .on{background: #f39;}	
+
+
 /*右侧图片*/
 .c1 .c1_img{
 	width: 180px;
@@ -246,7 +267,40 @@
 	margin-top: 50px;
 	margin-bottom: 50px;
 }
+/*广告管理*/
+.adver{
+	width:220px; 
+	height:205px;  
+	position:fixed; 
+	right:-262px; 
+	bottom:10px;
 
+}
+
+.adver  img{
+	width: 220px;
+	margin-top:-17px;
+	z-index:1;
+}
+.c{
+	width:20px;
+	height:20px;
+	position:fixed;
+	left:1178px;
+	top:440px;
+	z-index:1;
+}
+.c img{
+	position:relative;
+	top:-6px;
+	right:3px;
+	width:30px;
+	height:30px;
+	display:none;
+}
+.adver{margin: 50px;overflow: hidden;}
+.adver .imgs{width: 1420px;position: absolute;}
+/*广告结束*/
 
 
 

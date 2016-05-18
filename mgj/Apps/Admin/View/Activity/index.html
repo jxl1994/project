@@ -43,7 +43,7 @@
                         <tr role="row">
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Browser: activate to sort column ascending">ID</th>
                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">活动名称</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">素材图</th>
+                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">状态</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">折扣</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">活动时间</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">限时天数</th>
@@ -59,7 +59,10 @@
                         <tr class="gradeA odd" role="row">
                             <td class="sid">{$vo.id}</td>
                             <td class="sid">{$vo.name}</td>
-                            <td class="sorting_1"><img src="__PUBLIC__/{$vo.pic}" width="50px"></td>
+                            <?php
+                                $arr=array('开启','关闭');
+                            ?>
+                            <td class="sid"><?php echo $arr[$vo['status']] ?></td>
                             <td class="center">{$vo.zhekou}</td>
                             <td class="center">{$vo.month}月{$vo.day}日</td>
                             <td class="center">{$vo.time}天</td>                         

@@ -1,0 +1,63 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="title">
+	<title>我的购物车</title>
+</block>
+<block name="top">
+</block>
+<block name="center">
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/cart.css">
+	<div id="quan">
+		<div class="tou">
+			<div class="logo"><a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/Home/images/c.png" alt=""></div></a>
+			<div class="bu" style="background:url('__PUBLIC__/Home/images/d.png');"></div>
+		</div>
+		<div class="cart_head">
+			<div class="cart_all">全部商品</div>
+			<li><span>|</span></li>
+			<li>优惠</li>
+			<li><span>|</span></li>
+			<li>库存紧张</li>
+		</div>
+		<div class="spbiao">
+			<div class="cart_goods">
+				<table cellspacing="1" width="100%" class="table" >
+					<tr height="49px" class="b1"align="center">
+						<td width="120px">商品编号</td>
+						<td>商品图片</td>
+						<td>商品名称</td>
+						<td>单价(元)</td>
+						<td>数量</td>
+						<td>小计(元)</td>
+						<td>操作</td>
+					</tr>
+					<foreach name="cart" item="vo" > 
+						<tr height="113px" class="b2"align="center">
+							<td class="sid">{$vo.id}</td>
+							<td class="img"><img src="__PUBLIC__{$vo.pic}" alt=""></td>
+							<td>{$vo.name}</td>
+							<td class="price">{$vo.price}</td>
+							<td><button class="but1">-</button><span>{$vo.gnum}</span><button class="but2">+</button></td>
+							<td class="xj"><?php  
+									
+								$xj=$vo['price']*$vo['gnum']; 
+									$total += $xj;
+									echo $xj;
+								
+							?>
+							</td>
+							<td><p style="cursor:pointer"  class="delete">删除</p></td>
+						</tr>
+					</foreach>
+					<tr height="50px"align="center" class="zj">
+						<td><p style="cursor:pointer" class="qingkong">清空购物车</p></td>
+						<td align="center"><a href=""></a></td>
+						<td colspan="5" align="right">总计:&nbsp;&nbsp;<span class="jiage">¥ </span><span class="jiage total"><?php echo $total;?></span>&nbsp;&nbsp;<a href="{:U('Home/Myorder/index')}"><input type="button" class="qfk" value="去付款 >"></a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/cart.js"></script>
+</block>

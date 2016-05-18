@@ -9,7 +9,7 @@ class CarouselController extends CommonController {
 
         //获取关键字
         if(!empty($_GET['keyword'])){
-            $where = "where category.catename like '%\\".$_GET['keyword']."%'";
+            $where = "where activity.name like '%\\".$_GET['keyword']."%'";
         }else{
             $where = '';
         }
@@ -30,7 +30,7 @@ class CarouselController extends CommonController {
         $pages = $Page->show();
         // var_dump($pages);
         //多表联合查询
-        $sql="select carousel.*,category.catename from carousel left join category on carousel.cateid = category.id ".$where." order by carousel.id desc limit ".$limit;
+        $sql="select carousel.*,activity.name from carousel left join activity on carousel.activityid = activity.id ".$where." order by carousel.id desc limit ".$limit;
         //查看sql语句
         // echo $sql;die;
         // var_dump($Goods);die;
@@ -56,13 +56,9 @@ class CarouselController extends CommonController {
 //添加轮播图
     public function add(){
         //创建表对象
-        $cate = M('category');
+        $cate = M('activity');
         $cates = $cate->select();
-        foreach ($cates as $k => $v) {
-            //计算出分隔多少次
-            $c = count(explode(',',$v['path']))-1;
-            $cates[$k]['catename'] = str_repeat('-----',$c).$v['catename'];
-        }
+        
         // var_dump($cates);die;
         //分配变量
         $this->assign('cates',$cates);
@@ -144,27 +140,21 @@ class CarouselController extends CommonController {
 
 //轮播图修改
     public function edit(){
-        $cateid = I('get.cateid');
+        $activityid = I('get.activityid');
         $id=I('get.id');
         // var_dump($_GET);die;
 
 
 
         //查询出所有的分类
-        $cate = M('category');
-        $cates = $cate->query('select * from category where id != '.$cateid.' order by concat(path,id) asc');
-        $catename=$cate->query('select catename from category where id ='.$cateid);
-        foreach ($cates as $k => $v) {
-            //计算出分隔多少次
-            $c = count(explode(',',$v['path']))-1;
-            $cates[$k]['catename'] = str_repeat('-----',$c).$v['catename'];
-        }
+        $cate = M('activity');
+        $cates = $cate->query('select * from activity');
+      
         // var_dump($cates);
-        // var_dump($catename);
+        // var_dump($res);die;
         //分配变量
         $this->assign('cates',$cates);
        
-        $this->assign('catename',$catename);
         $sends = M('carousel');             
         //根据id查询要修改的哪个数据
         

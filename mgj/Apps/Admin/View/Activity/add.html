@@ -14,12 +14,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <form role="form" method="post" action="{:U('Admin/Activity/insert')}" enctype="multipart/form-data">
-                                <div class="form-group">
-                                    
-                                    <label>背景图上传</label>
-                                    <input type="file" name="pic">
-                                
-                                </div>
+                               
                                 <div class="form-group">
                                     <label>活动名称</label>
                                     <input name="name" class="form-control">
@@ -30,6 +25,14 @@
                                     <input type="radio" name="zhekou" value='0.5'>全场半价&nbsp;
                                     <input type="radio" name="zhekou" value='0.8'>全场八折&nbsp;
                                     <input type="radio" name="zhekou" value='0.7'>全场七折&nbsp;
+                                  
+                                </div>
+
+                                <div class="form-group">
+                                    <label>状态</label><br>
+                                    <input type="radio" name="status" value='0'>开启&nbsp;
+                                    <input type="radio" name="status" value='1'>关闭&nbsp;
+                              
                                   
                                 </div>
                                  <div class="form-group">
