@@ -3,6 +3,17 @@ namespace Home\Controller;
 use Think\Controller;
 class AddressController extends Controller {
     public function index(){
+        $uid = $_SESSION['uid'];
+        $user = M('user');
+        $info = $user->where(array('id'=>$uid))->select();
+        // var_dump($info);
+        $pic = $info[0]['pic'];
+        // var_dump($pic);die;
+            if($pic==null){
+                $this -> assign("pic","Home/images/tx.jpg");
+            }else{
+                $this -> assign("pic",$pic);
+            }
     	$address_user = M('address_user');
     	
 	    // 	//加载模板
@@ -10,6 +21,7 @@ class AddressController extends Controller {
     }
 
     public function add(){
+
         $this->display();
     }
 

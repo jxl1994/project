@@ -1,0 +1,39 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="title">
+	<title>我的收藏</title>
+</block>
+
+<block name="center">
+<link rel="stylesheet" href="__PUBLIC__/Home/css/shoucang.css">
+<div class="sc_head">
+	<div class="sc_h1">
+		<div class="sc_div1">我的收藏</div>
+		<div>我的动态</div>
+		<div>我的关注</div>
+		<div class="sc_div2">我的粉丝</div>
+	</div>
+</div>
+<div class="sc_main">
+	<div class="sc_good">
+	<foreach name="sc" item="vo" > 
+		<div class="sc_good1">
+			<div class="sc_img"><a href="/Home/Detail/index?id={$vo.goodsid}"><img src="__PUBLIC__/{$vo.pic}" alt=""></a></div>
+			<div class="sc_price">
+				￥{$vo.price}
+			</div>
+			<div class="sc_w">
+				<div class="gname">
+					<a href="/Home/Detail/index?id={$vo.goodsid}">{$vo.name}</a>
+				</div>
+				<div class="sc_time">
+					{$vo.addtime}
+				</div>
+			</div>
+		</div>
+		</foreach>
+		
+
+	</div>
+</div>
+</block>

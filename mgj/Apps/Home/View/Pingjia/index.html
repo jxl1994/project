@@ -1,0 +1,51 @@
+<extend name="./Public/public" />
+<block name="header">
+<head>
+	<meta charset="UTF-8">
+	<title>商品评价</title>
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/public.css">
+	<link rel="icon" href="__PUBLIC__/Home/images/logo.ico">
+	<link href="__PUBLIC__/Home/css/pingjia.css" rel="stylesheet"/>
+</head>
+</block>
+<block name="fl">
+	
+</block>
+<block name="center">
+	<div class="main">
+		<div class="c"></div>
+
+			<!-- 商品评价 -->
+			<!-- 评价 -->
+			<div class="re">
+				<div class="re_w">评价宝贝</div>
+				<div class="reviews">
+					<div class="re_main">
+						<foreach name="info" item="vo" >
+						<div class="re_l">
+							<img src="__PUBLIC__/{$vo.pic}" alt=""><br>
+							<a href="{:U('Home/Detail/index',array('id'=>$vo['spid']))}">{$vo.name}</a>
+						</div>
+						<div class="re_r">
+							<form action="{:U('Home/Pingjia/add')}" method="post">
+								<div class="re_rt">
+									<input type="hidden" value="{$vo.orderid}"name="orderid" >
+									<input type="hidden" value="{$vo.goodsid}"name="spid" >
+									<input type="radio" name="pj"value="好评" checked class="input"> 好评
+									<input type="radio" name="pj"value="中评" class="input"> 中评
+									<input type="radio" name="pj"value="差评" class="input"> 差评
+								</div>
+								<div class="re_rb">
+									<textarea name="content" style="padding:10px 15px;" cols="60" rows="8"></textarea>
+									<button>发表评价</button>
+								</div>
+							</form>
+						</div>
+						</foreach>
+					</div>
+				</div>
+			</div>
+			
+	</div>
+</block>
+

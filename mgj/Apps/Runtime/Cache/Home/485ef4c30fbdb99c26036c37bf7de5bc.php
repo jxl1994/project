@@ -4,8 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>蘑菇街 -我的买手街-</title>
-		<link href="/Public/Home/css/Personal.css" rel="stylesheet"/>
-		<link href="/Public/Home/css/photo.css" rel="stylesheet"/>
+		<link href="/Public/Home/css/order.css" rel="stylesheet"/>
 		<link href="/Public/Home/css/bootstrap.css" rel="stylesheet"/>
 		<link rel="icon" href="/Public/Home/images/logo.ico">
 		<link rel="stylesheet" href="/Public/Home/css/public.css">
@@ -25,7 +24,7 @@
 			<li><a href="<?php echo U('Home/User/logout');?>">退出 </a><span>|</span></li>
 			<?php } ?>
 			<li><a href="<?php echo U('Home/Shoucang/index');?>">我的收藏</a><span>|</span></li>
-			<li><a href="<?php echo U('Home/Myorder/detail');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Order/index');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Cart/index');?>" name="rdh_md"><img src="/Public/Home/images/tb2.png" class="tb2"> 购物车</a><span>|</span></li>
 			
 			<li><a href="#"><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
@@ -115,39 +114,30 @@
 	<div class="c"></div>
 	
 
-	<link href="/Public/Home/css/Personal.css" rel="stylesheet"/>
-		<link href="/Public/Home/css/photo.css" rel="stylesheet"/>
-		<link href="/Public/Home/css/bootstrap.css" rel="stylesheet"/>
-		<link rel="icon" href="/Public/Home/images/logo.ico">
-		<link rel="stylesheet" href="/Public/Home/css/public.css">
+	<link href="/Public/Home/css/order.css" rel="stylesheet"/>
+	<link href="/Public/Home/css/bootstrap.css" rel="stylesheet"/>
 	<!-- 个人信息主体页面 -->
 	<div class="main">
 		<!-- <img src="/Public/Home/images/bg-v3.png" alt="" class="bg"> -->
 		<!-- 左 -->
 		<div class="left">
 			<div class="left1">
-						
-			<!-- 头像 -->
-			<div class="xgmm_tx">
-				<img src="/Public/<?php echo ($pic); ?>" width="80px" height="80px" class="tx_pic" >
-			</div>
-				
+				<!-- 头像 -->
+					<div class="tx"><img src="/Public/Home/images/tx.jpg" width="110px" height="110px" class="tx_pic"></div>
 				<!-- 用户名 -->
-					<span class="xgmm_name" value="checked"><?php echo $_SESSION['username']; ?> </span>
-				
+					<span class="name"><?php echo ($_SESSION['username']); ?></span>
 				<!-- 等级 -->
 					<span class="vip-level"><img src="/Public/Home/images/lev.png"></span>
-
 				<!-- 我的订单 -->
 				<dl class="menu">
 					<p>我的订单</p>
-					<dd><a href="<?php echo U('Home/Myorder/detail');?>">全部订单</a></dd>
+					<dd><a href="">全部订单</a></dd>
 					<dd><a href="">待付款</a></dd>
 					<dd><a href="">待收货</a></dd>
 					<dd><a href="">待评价</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="<?php echo U('Home/Purse/index');?>">我的钱包</a></p>
+					<p><a href="">我的钱包</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">我的理财</a></p>
@@ -165,58 +155,49 @@
 				<dl class="menu">
 					<p><a href="">安全设置</a></p>
 				</dl>
-				
+				<!-- <dl class="menu">
+					<p>维权管理</p>
+					<dd><a href="">投诉管理</a></dd>
+					<dd><a href="">举报管理</a></dd>
+					<dd><a href="">被盗管理</a></dd>
+				</dl> -->
 				<dl class="menu">
 					<p>账号设置</p>
-					<dd><a href="<?php echo U('Home/personal/index');?>">基本信息</a></dd>
-					<dd><a href="<?php echo U('Home/personal/photo');?>">修改头像</a></dd>
-					<dd><a href="">修改密码</a></dd>
+					<dd><a href="<?php echo U('Home/Address/index');?>">基本信息</a></dd>
+					<dd><a href="<?php echo U('Home/Address/photo');?>">修改头像</a></dd>
+					<dd><a href="<?php echo U('Home/Address/update');?>">修改密码</a></dd>
 				</dl>
 
 			</div>
 			<!-- <div style="clear:both"></div> -->
 			<div class="right">
-			<div class="ziliao">
-				<span>修改密码</span>
-			</div><br/><br/>
-
-	<form class="form-horizontal" method="post" action="<?php echo U('Home/Personal/up');?>" role="form">
-		  	<div class="form-group"style="margin-left: 50px;">
-		    	
-		    	<label for="inputPassword" class="col-lg-2 control-label">原密码：</label>
-		    	<div class="col-lg-4">
-		      		<input type="password" name="oldpass" class="oldpass form-control" id="inputPassword" placeholder="请输入原密码" style="width:250px" readme="请输入原密码">
-		    	</div>
-				<span class="col-lg-6" style="margin-top:5px;" name="oldpass"></span>
-		    	<br/><br/><br/>
-		    	<label for="inputPassword" class="newpass col-lg-2 control-label"style="margin-top:-5px">新密码：</label>
-		    	<div class="col-lg-4">
-		      		<input type="password" name="newpass" class="form-control" id="inputPassword" placeholder="请输入新密码" style="width:250px;margin-top:-5px" readme="请设置新密码(6-20位字母数字下划线)">
-		    	</div>
-		    	<span class="col-lg-6" style="margin-top:2px;" name="newpass"></span><br><br>
-		    	<label for="inputPassword" class="newrepass col-lg-2 control-label" style="margin-top:10px;">确认新密码：</label>
-		    	<div class="col-lg-4">
-		      		<input type="password" name="newrepass" value="" class="form-control" id="inputPassword" placeholder="请确认新密码" style="width:250px;margin-top: 10px;"readme="请确认新密码">
-		    	</div>
-				<span class="col-lg-6" style="margin-top:15px;" name="newrepass"></span>
-		    	<br/><br/><br/>
-		    	<div class="pass-upda">
-		    		<div class="form-group photo-top1">
-					    <div class="col-sm-offset-2 col-sm-10">
-					      <button type="submit" class="btn btn-default" style="margin-top:20px;margin-left:20px;border:1px solid #f2a600;background: #ffb100;color:#fff">确认修改</button>
-					    </div>
-				  	</div>
-		    		
-		    	</div>
-		  	</div>
-		</form>
-
-			</div>	
+			<div class="title">
+				<ul class="order-info">
+					<li class="goods">商品图片</li>
+					<li class="goods-name">商品名称</li>
+					<li class="total">颜色</li>
+					<li class="total">尺码</li>
+					<li class="price">单价(元)</li>
+					<li class="size">数量</li>
+				</ul>
 			</div>
+
+			<!-- 遍历所有订单 -->
+			
+				
+				<hr>
+				<div class="gwc">
+					<a href=""><img src="/Public/Home/images/gwc.png" alt=""></a>
+					<div class="gwc1">你还没有购买过商品，赶紧去挑选<a href="<?php echo U(Home/Index/index);?>">商品吧</a>～</div>
+				</div>
+				
+			</div>
+			
+			
 		</div>	
-	<script type="text/javascript"src="/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript"src="/Public/Home/js/xgmm.js"></script>
-	
+	</div>
+<!-- </body>
+</html> -->
 
 
 	<div class="c"></div>

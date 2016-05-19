@@ -24,7 +24,7 @@
 			<li><a href="<?php echo U('Home/User/logout');?>">退出 </a><span>|</span></li>
 			<?php } ?>
 			<li><a href="<?php echo U('Home/Shoucang/index');?>">我的收藏</a><span>|</span></li>
-			<li><a href="<?php echo U('Home/Order/index');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Myorder/detail');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Cart/index');?>" name="rdh_md"><img src="/Public/Home/images/tb2.png" class="tb2"> 购物车</a><span>|</span></li>
 			
 			<li><a href="#"><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
@@ -131,13 +131,13 @@
 				<!-- 我的订单 -->
 				<dl class="menu">
 					<p>我的订单</p>
-					<dd><a href="">全部订单</a></dd>
+					<dd><a href="<?php echo U('Home/Myorder/detail');?>">全部订单</a></dd>
 					<dd><a href="">待付款</a></dd>
 					<dd><a href="">待收货</a></dd>
 					<dd><a href="">待评价</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">我的钱包</a></p>
+					<p><a href="<?php echo U('Home/Purse/index');?>">我的钱包</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">我的理财</a></p>
@@ -150,7 +150,7 @@
 					<dd><a href="">店铺优惠券</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">地址管理</a></p>
+					<p><a href="<?php echo U('Home/Address/detail');?>">地址管理</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">安全设置</a></p>
@@ -163,9 +163,9 @@
 				</dl> -->
 				<dl class="menu">
 					<p>账号设置</p>
-					<dd><a href="">基本信息</a></dd>
-					<dd><a href="">修改头像</a></dd>
-					<dd><a href="">修改密码</a></dd>
+					<dd><a href="<?php echo U('Home/personal/index');?>">基本信息</a></dd>
+					<dd><a href="<?php echo U('Home/personal/photo');?>">修改头像</a></dd>
+					<dd><a href="<?php echo U('Home/personal/update');?>">修改密码</a></dd>
 				</dl>
 
 			</div>
@@ -225,7 +225,7 @@
                             <td class="sid"><?php echo ($row["phone"]); ?></td> 
                             <td class="sid"><?php echo ($row["status"]); ?></td> 
                             <td class="sid"><?php echo ($row['sendid']); ?></td> -->
-                   		<td><a href="/Home/Pingjia/index?0id=<?php echo ($row['id']); ?>&gid=<?php echo ($row['goodsid']); ?>">评价</a> </td>
+                   		<td><a href="/Home/Pingjia/index?oid=<?php echo ($row['orderid']); ?>&gid=<?php echo ($row['goodsid']); ?>">评价</a> </td>
 					
                         </tr><?php endforeach; endif; ?>
                 </tbody>

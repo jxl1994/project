@@ -28,7 +28,7 @@ class PayController extends Controller {
     	$users=$user->where(array('username'=>'admin'))->find();
     	$res=$users['username'];
     	if($gold<$total || $gold < $toal){
-    		echo '<script>alert("余额不足,请充值");location="/Home/Purse/pay"</script>';
+    		echo '<script>alert("余额不足,请充值");location="/Home/Purse/index"</script>';die;
     	}
 	//实例化pdo对象
 	

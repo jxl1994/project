@@ -16,11 +16,13 @@ class PersonalController extends Controller {
 
         // echo $mod->_sql();die;
         $pic = $list[0]['pic'];
+        // var_dump($pic);die;
     		if($pic==null){
     			$this -> assign("pic","Home/images/tx.jpg");
     		}else{
     			$this -> assign("pic",$pic);
     		}
+
     		// var_dump($list);die;
     		 // var_dump($pic);die();
 

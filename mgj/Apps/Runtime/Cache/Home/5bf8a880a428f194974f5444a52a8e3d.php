@@ -194,7 +194,7 @@
 			
 			<!-- 收藏 -->
 			<?php if(is_array($sc)): foreach($sc as $key=>$count): ?><div class="sc">
-				<div class="sc1" goodsid="2" sc="0">
+				<div class="sc1" goodsid="<?php echo ($row["gid"]); ?>" sc="0">
 					<a lj="/Home/Shoucang/add/id/<?php echo ($row["gid"]); ?>"><div class="sc2"><img src="/Public/Home/images/sc.png" alt=""><span class="count"><?php echo ($count["count(*)"]); ?></span></div></a>
 				</div>
 			</div><?php endforeach; endif; endforeach; endif; ?>

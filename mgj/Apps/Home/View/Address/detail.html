@@ -27,23 +27,16 @@
 		<!-- 左 -->
 		<div class="left">
 			<div class="left1">
-				<!-- 头像 -->
-					<div class="tx"><img src="__PUBLIC__/Home/images/{$list['img']}" width="110px" height="110px" class="tx_pic"></div>
-					
-				<!-- 用户名 -->
-					<span class="name" value="checked">{$list['username']}</span>
-				<!-- 等级 -->
-					<span class="vip-level"><img src="__PUBLIC__/Home/images/lev.png"></span>
-				<!-- 我的订单 -->
+				
 				<dl class="menu">
 					<p>我的订单</p>
-					<dd><a href="{:U('Home/Myorder/order')}">全部订单</a></dd>
+					<dd><a href="{:U('Home/Myorder/detail')}">全部订单</a></dd>
 					<dd><a href="">待付款</a></dd>
 					<dd><a href="">待收货</a></dd>
 					<dd><a href="">待评价</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">我的钱包</a></p>
+					<p><a href="{:U('Home/Purse/index')}">我的钱包</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">我的理财</a></p>
@@ -56,7 +49,7 @@
 					<dd><a href="">店铺优惠券</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">地址管理</a></p>
+					<p><a href="{:U('Home/Address/detail')}">地址管理</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">安全设置</a></p>
@@ -71,6 +64,7 @@
 					<p>账号设置</p>
 					<dd><a href="{:U('Home/personal/index')}">基本信息</a></dd>
 					<dd><a href="{:U('Home/personal/photo')}">修改头像</a></dd>
+					<dd><a href="{:U('Home/personal/update')}">修改密码</a></dd>
 				</dl>
 
 			</div>

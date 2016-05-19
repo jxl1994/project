@@ -5,6 +5,42 @@ class DetailController extends Controller {
     public function index(){
     	$id = $_GET['id'];
         // var_dump($_GET);die;
+
+          //判断,如果用户登录,把浏览的商品写入数据库
+        if($_SESSION['uid']){
+            $_SESSION['goodsid']=$_GET['id']; 
+            $goodsid=$_SESSION['goodsid'];
+            $goods=M('goods');           
+            $row=$goods->where(array('id'=>$goodsid))->find();
+            //var_dump($row);die;
+            $user = M('mark');
+            $users=$user->select();
+            $arr=array();
+            foreach ($users as $k => $v){
+                $arr[]=$v['goodsid'];
+            }
+            //判断商品id有没有重复
+            if(!in_array($goodsid,$arr)){
+                $data['uid'] = $_SESSION['uid'];
+                $data['goodsid']=$_SESSION['goodsid'];
+                $data['pic']=$row['pic'];
+                $data['price']=$row['price'];
+                $data['name']=$row['name'];
+                $data['addtime']=date('Y-m-d H:i:s',time());        
+                //创建数据
+                $goods->create();
+                //执行添加
+                $res=$user->data($data)->add();
+            }else{
+                 //如果重复,让当前的商品id不写入
+            }
+        }else{
+            //如果没有用户登录,记录浏览过的商品id
+           $_SESSION['goodsid'][]=$_GET['id'];
+           //去除重复出现的商品id,只留一个
+           array_unique($_SESSION['goodsid']);
+            
+        }
     	 //实例化detail详情表
 	    	// $d=M("detail");
 	    	$goods = M("goods");

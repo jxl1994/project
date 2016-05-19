@@ -4,10 +4,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>蘑菇街 -我的买手街-</title>
-		
-		<link rel="stylesheet" href="/Public/Home/css/public.css">
 		<link href="/Public/Home/css/photo.css" rel="stylesheet"/>
+		<link rel="stylesheet" href="/Public/Home/css/public.css">
+		
 		<link rel="icon" href="/Public/Home/images/logo.ico">
+		
 		<script type="text/javascript" src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 	</head>
 
@@ -24,7 +25,7 @@
 			<li><a href="<?php echo U('Home/User/logout');?>">退出 </a><span>|</span></li>
 			<?php } ?>
 			<li><a href="<?php echo U('Home/Shoucang/index');?>">我的收藏</a><span>|</span></li>
-			<li><a href="<?php echo U('Home/Order/index');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Myorder/detail');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Cart/index');?>" name="rdh_md"><img src="/Public/Home/images/tb2.png" class="tb2"> 购物车</a><span>|</span></li>
 			
 			<li><a href="#"><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
@@ -131,13 +132,13 @@
 				<!-- 我的订单 -->
 				<dl class="menu">
 					<p>我的订单</p>
-					<dd><a href="<?php echo U('Home/Myorder/order');?>">全部订单</a></dd>
+					<dd><a href="<?php echo U('Home/Myorder/detail');?>">全部订单</a></dd>
 					<dd><a href="">待付款</a></dd>
 					<dd><a href="">待收货</a></dd>
 					<dd><a href="">待评价</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">我的钱包</a></p>
+					<p><a href="<?php echo U('Home/Purse/index');?>">我的钱包</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">我的理财</a></p>
@@ -150,7 +151,7 @@
 					<dd><a href="">店铺优惠券</a></dd>
 				</dl>
 				<dl class="menu">
-					<p><a href="">地址管理</a></p>
+					<p><a href="<?php echo U('Home/Address/detail');?>">地址管理</a></p>
 				</dl>
 				<dl class="menu">
 					<p><a href="">安全设置</a></p>
