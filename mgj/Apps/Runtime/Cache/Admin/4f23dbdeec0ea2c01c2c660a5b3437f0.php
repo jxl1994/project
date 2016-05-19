@@ -465,12 +465,9 @@
 
                            <li>
                             <a href="#"><i class="fa  fa-github-alt  fa-fw"></i> 头像管理<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <ul class="nav nav-second-level">                             
                                 <li>
-                                    <a href="<?php echo U('Admin/Notice/add');?>">添加头像</a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo U('Admin/Notice/index');?>">头像列表</a>
+                                    <a href="<?php echo U('Admin/Lstx/index');?>">头像列表</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->

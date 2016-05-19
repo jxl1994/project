@@ -1,0 +1,331 @@
+
+<extend name="./Public/public" />
+<block name="header">
+	<head>
+		<meta charset="UTF-8">
+		<title>蘑菇街 -我的买手街-</title>
+		
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/public.css">
+		<link href="__PUBLIC__/Home/css/detail.css" rel="stylesheet"/>
+		<link rel="icon" href="__PUBLIC__/Home/images/logo.ico">
+		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	</head>
+</block>
+<block name="fl">
+	
+</block>
+<block name="center">
+	<link href="__PUBLIC__/Home/css/detail.css" rel="stylesheet"/>
+	<foreach name="list" item="row">
+	<div class="main">
+		<!-- 显示大图 -->
+		<div class="left1">
+			<div id="small">
+				<img src="__PUBLIC__/{$row.pic}" alt=""class="bimg">
+				<div id="move"style="background: url('__PUBLIC__/Home/images/fdj_bg.png')"></div>
+			</div>
+			<div id="big"><img src="__PUBLIC__/{$row.pic}" alt="" id="dimg"></div>
+
+			<!-- 细节小图 -->
+			<div class="left2">
+				<foreach name="gimg" item="img">
+				<div class="gimg"><img src="__PUBLIC__/{$img.minpic}" alt=""></div>
+				</foreach>
+			</div>
+		</div>
+
+		<!-- 右侧 -->
+		<div class="right">
+			<!-- 标题 -->
+			<div class="title">{$row.name}</div>
+			<!-- -->
+			<!-- 背景图 -->
+			<div class="price" style="background: url('__PUBLIC__/Home/images/det_bg.png');">
+				<div class="price1"><font color="#ccc" size="4px">价&nbsp;&nbsp;格：<font></div>
+				<?php
+					if(!empty($zhekou)){
+				?>
+						<div class="price2"  style='text-decoration: line-through;' ><font color="rgba(135, 134, 134, 0.94)" size="2">￥{$row.price}</font></div>
+					
+				<?php
+					}else{
+				?>
+						<div class="price2"  ><font color="rgba(135, 134, 134, 0.94)" size="2">￥{$row.price}</font></div>	
+				<?php 
+					}
+				?>	
+				<?php 
+					if(!empty($zhekou)){
+				?>		
+					<div class="price1"><font color="#EF2F23" size="2"><b>全场{$zk}折</b><font></div>
+					<div class="price1 xj"><font color="#999" size="4">现&nbsp;&nbsp;价：<font></div>
+					<div class="price2 xj"><font color="#EF2F23" size="4">￥{$zhekou}</font></div>
+				<?php
+					}
+				?>
+				<div style="clear:both"></div>
+
+				<div class="price3">
+					<font color="#999" size="2">店铺优惠:全店满两件减三元</font>
+				</div>
+			</div>
+
+			<!-- 款式 -->
+			<div class="sty">
+				<div class="sty_name">款式：</div>
+				<foreach name="gimg" item="img">
+				<div class="sty1">
+				
+					<div class="ks"><img src="__PUBLIC__/{$img.minpic}" width="100%"></div>
+				
+				</div>
+				</foreach>
+			</div>
+			<div style="clear:both"></div>
+
+			<!-- 尺码 -->
+			<div style="size">
+				<div class="size_name">商品描述：{$row.detail}</div>
+				<!-- <div class="size1"><a href="">S</a></div>
+				<div class="size2"><a href="">M</a></div>
+				<div class="size3"><a href="">L</a></div> -->
+			</div>
+			<div style="clear:both"></div>
+			<!-- 库存 -->
+			<div style="size">
+				<div class="size_name">库存：{$row.num}</div>
+				<!-- <div class="size1"><a href="">S</a></div>
+				<div class="size2"><a href="">M</a></div>
+				<div class="size3"><a href="">L</a></div> -->
+			</div>
+			<div style="clear:both"></div>
+			<!-- 立即购买 -->
+			<div class="buy">
+				<div class="but1"><a lj="/Home/Cart/add/id/{$row.gid}">立即购买</a></div>
+				<div class="but2"><a lj="/Home/Cart/add/id/{$row.gid}">加入购物车</a></div>
+			</div>
+			<div style="clear:both"></div>
+			
+			<!-- 收藏 -->
+			<foreach name="sc" item="count">
+			<div class="sc">
+				<div class="sc1" goodsid="2" sc="0">
+					<a lj="/Home/Shoucang/add/id/{$row.gid}"><div class="sc2"><img src="__PUBLIC__/Home/images/sc.png" alt=""><span class="count">{$count.count(*)}</span></div></a>
+				</div>
+			</div>
+			</foreach>
+			</foreach>
+			<div class="bdsharebuttonbox">
+				<div class="fx">
+			      <a href="#" class="bds_more" data-cmd="more"></a>
+			      <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+			      <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+			      <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+			      <a href="#" class="bds_renren" data-cmd="renren">
+			      </a><a href="#" class="bds_weixin" data-cmd="weixin"></a>
+				</div>
+		    </div>
+			<div style="clear:both"></div>
+			</foreach>
+			<!-- 商品特色 -->
+			<div class="ts">
+				<div class="ts1">商品特色：</div>
+				<div class="ts2"><img src="__PUBLIC__/Home/images/rz.png" alt=""></div>
+				<div class="ts3">品质认证</div>
+			</div>
+			<div style="clear:both"></div>
+				<!-- 库存 -->
+			<div style="size">
+				<div class="size_name"><div class="cn">服务承诺：</div><div class="cn_img"><img src="__PUBLIC__/Home/images/jt.png" ></div></div>
+				
+			</div>
+			<!-- 支付方式 -->
+			<div class="zf">
+				<div class="zf1">支付方式；</div>
+				<div class="zf2"><img src="__PUBLIC__/Home/images/fs.png" alt=""></div>
+			</div>
+		
+		</div>
+			<!-- 商品评价 -->
+			<div class="pj">
+				<div class="pj_head">
+					<h3>全部评价</h3>
+				</div>
+				<table width="1000"class="bg">
+				 <foreach name="pingjia" item="pj" >  
+					<tr>
+						<td width="100px"><div class="pj_img">
+						<if condition="$pj.pic eq null"> 
+							<img src="__PUBLIC__/Home/images/kong_img.jpg" alt="">
+						<else />
+							<img src="__PUBLIC__/{$pj.pic}" alt="">
+						</if>
+						<span>{$pj.username}</span></div></td>
+						<td class="content"style="word-wrap:break-word;"width="800px">
+							<div class="pj_status">{$pj.status}</div>
+							<div class="pj_con">{$pj.content}</div>
+							<div class="time">{$pj.time}</div>
+						</td>
+					</tr>
+					</foreach>
+					<tr ><td style="padding-left:15px">{$empty}</td></tr>
+				
+				</table>
+			</div>
+	</div>
+	<!-- 弹框 -->
+	<div id="win">
+		<div class="all">
+			<div class="h">
+				<b>登录蘑菇街</b>
+				<a href="javascript:closeLogin();">
+					<span class="close">×</span>
+				</a>
+			</div>
+			<div class="main">
+				<table>
+					<form action="{:U('Home/User/tklogin')}"method="post">
+					 <foreach name="list" item="vo" > 
+						<input type="hidden" name="goodsid" value="{$vo.gid}">
+					</foreach>
+						<tr><td class="ptdl">普通登录</td></tr>
+						<tr>
+							<td><input type="text" name="username" class="yhm" placeholder="用户名"></td>
+						</tr>
+						<tr>
+							<td><input type="password" name="password"placeholder="密码" class="mm"></td>
+						</tr>
+						<tr>
+							<td height="50" ><input type="submit" value="用户登录" class="dl"><span class="zc"><a href="{:U('Home/User/zhuce')}">新用户注册</a></span></td>
+							
+						</tr>
+					</form>
+				</table>
+				<center>
+					<span class="kj">快捷登录:</span>
+					<a href=""><img src="__PUBLIC__/Home/images/qq_login.gif" class="tp"></a>
+					<a href=""><img src="__PUBLIC__/Home/images/wx_login.png" class="tp"></a>
+				</center>
+			</div>
+		</div>
+</div>
+<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/detail.js"></script>
+	 <script>
+	window._bd_share_config = {
+		common : {
+			bdText : '自定义分享内容',	
+			bdDesc : '自定义分享摘要',	
+			bdUrl : '自定义分享url地址', 	
+			bdPic : '自定义分享图片'
+		},
+		share : [{
+			"bdSize" : 16
+		}],
+		slide : [{	   
+			bdImg : 0,
+			bdPos : "right",
+			bdTop : 100
+		}],
+		
+		selectShare : [{
+			"bdselectMiniList" : ['qzone','tqq','kaixin001','bdxc','tqf']
+		}]
+	}
+	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<script type="text/javascript">
+	// alert($);
+	//绑定移动事件
+	$('#small').mouseover(function(e){
+		$('#move').css('display','block');
+		$('#big').css('display','block');
+		var x = e.pageX;
+		// console.log(x);
+		var y = e.pageY;
+		//获取small的xy
+		var _l = $('#small').offset().left;
+		// console.log(_l);
+		var _t = $('#small').offset().top;
+		// console.log(_t);
+		//计算小div宽高的一半
+		var _w = $('#move').width()/2;
+		// console.log(_w);
+		var _h = $('#move').height()/2;
+		// console.log(_h);
+		//计算新的left和top
+		var newL = x - _l - _w;
+		var newT = y - _t - _h;
+		//检测越界
+		if(newL <= 0){newL = 0;}
+		if(newT <= 0){newT = 0;}
+		//获取最大的left
+		var maxLeft = $('#small').width()-$('#move').width();
+		if(newL >= maxLeft){
+			newL = maxLeft;
+		}
+		// 获取最大的top
+		var maxTop = $('#small').height()-$('#move').height();
+		if(newT >= maxTop){
+			newT = maxTop;
+		}
+		//设置left和top
+		var nel = newL + 'px';
+		var net = newT + 'px';
+		$('#move').css('left',nel);
+		$('#move').css('top',net);
+
+		//计算移动比例
+		sW = $('#small').width();
+		sH = $('#small').height()
+		var xp = newL/sW;
+		// console.log(xp);
+		var yp = newT/sH;
+		// console.log(yp);
+		//计算右侧图片移动距离
+		var nl = $('#dimg').width() * xp;
+		var nt = $('#dimg').height() * yp;
+		//设置移动
+		var bnl = -nl + 'px';
+		var bnt = -nt + 'px';
+		$('#dimg').css('left',bnl);
+		$('#dimg').css('top',bnt);
+
+		//计算小图的宽高
+		var bp = $('#big').width()/$('#dimg').width();
+		var bpp = $('#big').height()/$('#dimg').height();
+
+		//计算小图的宽度
+		var mW = $('#small').width() * bp;
+		var mH = $('#small').height() * bpp;
+		//设置小图的宽度
+		mwidth = mW + 'px';
+		mheight = mH + 'px';
+		$('#move').css('width',mwidth);
+		$('#move').css('height',mheight);
+	})
+	//绑定鼠标离开事件
+	$('#small').mouseout(function(){
+		//隐藏小div和右侧的图
+		$('#move').css('display','none');
+		$('#big').css('display','none');
+	})
+
+
+	//获取元素
+		//从ul标签中获取img
+		var limg = $('.gimg').find('img');
+		//遍历
+		for (var i = 0; i < limg.length; i++) {
+			limg[i].onclick = function(){
+				//获取当前src属性
+				var src = this.getAttribute('src');
+				// alert(src);
+				//设置src属性
+				$('#dimg').attr('src',src);
+				$('.bimg').attr('src',src);
+			}
+		};
+</script>
+</block>
+

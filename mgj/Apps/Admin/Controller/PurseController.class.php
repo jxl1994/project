@@ -49,7 +49,7 @@ class PurseController extends Controller {
     public function insert(){
         $user = M('pay');
         //处理图片上传
-        if($_FILES['pic']['error'] == 0){
+        if($_FILES['logo']['error'] == 0){
              $upload = new \Think\Upload();// 实例化上传类    
             $upload->maxSize   =   3145728 ;// 设置附件上传大小   
             $upload->exts      =   array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型    
@@ -108,7 +108,7 @@ class PurseController extends Controller {
             $upload->maxSize   =   3145728 ;// 设置附件上传大小   
             $upload->exts      =   array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型    
             $upload->rootPath = './Public';//手动设置网站根目录
-            $upload->savePath  =   '/Uploads/'; // 设置附件上传目录    
+            $upload->savePath  =   '/Uploads/purses/'; // 设置附件上传目录    
             $info   =   $upload->upload(); 
             //var_dump($info);die;
          // 上传文件     

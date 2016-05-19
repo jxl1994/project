@@ -1,0 +1,137 @@
+
+<extend name="./Public/public" />
+<block name="header">
+	<head>
+		<meta charset="UTF-8">
+		<title>蘑菇街 -我的买手街-</title>
+		
+		<link rel="stylesheet" href="__PUBLIC__/Home/css/public.css">
+		<link href="__PUBLIC__/Home/css/photo.css" rel="stylesheet"/>
+		<link rel="icon" href="__PUBLIC__/Home/images/logo.ico">
+		<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	</head>
+</block>
+<block name="fl">
+</block>
+<block name="center">
+	<link href="__PUBLIC__/Home/css/photo.css" rel="stylesheet"/>
+	<!-- <link href="__PUBLIC__/Home/css/bootstrap.css" rel="stylesheet"/> -->
+	<!-- 个人信息主体页面 -->
+	<div class="main">
+		<!-- 左 -->
+		<div class="left">
+			<div class="left1">
+				<!-- 头像 -->
+					<div class="tx"><foreach name="pic" item="vo">
+					<if condition="$vo.pic eq null">
+						<img src="__PUBLIC__/Home/images/tx.jpg" class="tx_pic">
+					<else />
+						<img src="__PUBLIC__/{$vo.pic}" class="tx_pic" alt="">
+					</if></div>
+					
+				<!-- 用户名 -->
+					<span class="name" value="checked">{$_SESSION['username']}</span>
+				<!-- 等级 -->
+					<span class="vip-level"><img src="__PUBLIC__/Home/images/lev.png"></span>
+				<!-- 我的订单 -->
+				<dl class="menu">
+					<p>我的订单</p>
+					<dd><a href="{:U('Home/Myorder/order')}">全部订单</a></dd>
+					<dd><a href="">待付款</a></dd>
+					<dd><a href="">待收货</a></dd>
+					<dd><a href="">待评价</a></dd>
+				</dl>
+				<dl class="menu">
+					<p><a href="">我的钱包</a></p>
+				</dl>
+				<dl class="menu">
+					<p><a href="">我的理财</a></p>
+				</dl>
+				<dl class="menu">
+					<p>优惠特权</p>
+					<dd><a href="">砖石会员</a></dd>
+					<dd><a href="">我的魔豆</a></dd>
+					<dd><a href="">现金券</a></dd>
+					<dd><a href="">店铺优惠券</a></dd>
+				</dl>
+				<dl class="menu">
+					<p><a href="">地址管理</a></p>
+				</dl>
+				<dl class="menu">
+					<p><a href="">安全设置</a></p>
+				</dl>
+				<dl class="menu">
+					<p>账号设置</p>
+					<dd><a href="{:U('Home/personal/index')}">基本信息</a></dd>
+					<dd><a href="{:U('Home/personal/photo')}">修改头像</a></dd>
+					<dd><a href="{:U('Home/personal/xgmm')}">修改密码</a></dd>
+				</dl>
+
+			</div>
+			<div class="right">
+			<div class="ziliao">
+				<span>修改头像</span>
+			</div><br/><br/>
+
+			<!-- 当前头像 -->
+			<div class="photo">
+				<form action="/Home/Personal/head" method="post" class="form-horizontal" enctype="multipart/form-data" role="form">
+				<!-- 隐藏域传输id -->
+				<foreach name="pic" item="vo">
+					<div class="photo1">当前头像：</div>
+					<if condition="$vo.pic eq null">
+						<div class="photo2"><img src="__PUBLIC__/Home/images/tx.jpg" ></div>
+					<else />
+						<div class="photo2"><img src="__PUBLIC__/{$vo.pic}" alt=""></div>
+					</if>
+				</foreach>
+			</div> 
+			<div style="clear:both"></div>
+
+			<!-- 上传新头像 -->
+			<div class="photo-top"> 
+		  		<span class="new">上传新头像：</span>
+		  		<input type="file" name="img" id="exampleInputFile">
+		  		<p class="pic-top">
+					建议使用正方形的图片，支持JPG、GIF、JPEG格式，100K以内。
+		  		</p> 
+		  	</div>
+			    <div class="sub">
+			      <button type="submit" class="photoxg">确认</button>
+			    </div>
+			    </form>
+				 <!-- 历史头像 -->
+				 <div class="ziliao" style="margin-top: 80px;">
+					<span>历史头像</span>
+				</div>
+				
+				 <div class="lstx">
+				 <foreach name="head" item="lstx">
+				 	<div class="lstx1">
+				 		<div class="lstx_img">
+				 			<div class="img"><img src="__PUBLIC__{$lstx.pic}" alt=""></div>
+				 			<div class="sy">使用<div class="id">{$lstx.id}</div></div>
+				 			<div class="sc">删除<div class="id">{$lstx.id}</div></div>
+				 		</div>
+				 	</div>
+				 	</foreach>
+				 </div>
+				 <div class="row">
+                      <div class="col-sm-6">
+                       <div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite"></div></div>
+                       <div class="col-sm-6">
+                        <div id="pages">
+                         {$pages}
+                      </div>
+                 </div>
+             </div>
+			</div>	
+			</div>
+			
+			
+		</div>	
+		<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/lstx.js"></script>
+</block>
+<!-- </body>
+</html>

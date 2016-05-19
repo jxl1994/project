@@ -1,5 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
+
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/Public/Home/css/public.css">
@@ -10,6 +12,7 @@
 	
 	<script type="text/javascript"src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 </head>
+
 <body>
 	<!-- 导航条 -->
 	<div id="header">
@@ -19,14 +22,14 @@
 			<li><a href="<?php echo U('Home/User/zhuce');?>">注册</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/User/login');?>">登录</a><span>|</span></li>
 		<?php }else{ ?>
-			<li><a href=""><?php echo session('username');?></a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Personal/index');?>"><?php echo session('username');?></a><span>|</span></li>
 			<li><a href="<?php echo U('Home/User/logout');?>">退出 </a><span>|</span></li>
 			<?php } ?>
-			<li><a href="">我的收藏</a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Shoucang/index');?>">我的收藏</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Order/index');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Cart/index');?>" name="rdh_md"><img src="/Public/Home/images/tb2.png" class="tb2"> 购物车</a><span>|</span></li>
 			
-			<li><a href=""><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
+			<li><a href="#"><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
 			
 		</div>
 	</div>
@@ -226,7 +229,7 @@
 			<!-- 轮播图 -->
 			<div class="c1_lb banner">
 				<ul class="img">
-					<?php if(is_array($res)): foreach($res as $key=>$vo): ?><li><a href="<?php echo U('Home/List/lb',array('id'=>$vo['id']));?>"><img src="/Public<?php echo ($vo["pic"]); ?>" alt=""></a></li><?php endforeach; endif; ?>
+					<?php if(is_array($res)): foreach($res as $key=>$vo): ?><li><a href="<?php echo U('Home/Activity/index',array('id'=>$vo['id']));?>"><img src="/Public<?php echo ($vo["pic"]); ?>" alt=""></a></li><?php endforeach; endif; ?>
 				</ul>
 					<div class="btn btn_l">&lt;</div>
 					<div class="btn btn_r">&gt;</div>
@@ -513,6 +516,20 @@ $(function(){
 		})
 	</script>
 
+	<!-- 公告 -->
+	<script type="text/javascript" src="/Public/Home/css/index.css"></script>
+	
+		<div class="main" style="background:rgb(251,251,248)">
+		  <div class="main2"><a href="javascript:" class="bar" style="background:url(/Public/Home/images/mini_bg.png)"></a>
+		    <div id="demo" class="conter">
+			     <div id="demo1">
+			     <?php if(is_array($notices)): foreach($notices as $key=>$vo): ?><a href="http://www.mogujie.com/"><?php echo ($vo["content"]); ?></a><?php endforeach; endif; ?>
+				</div>
+				<div id="demo2"></div>
+			</div>
+		  </div>
+		</div>
+	<script type="text/javascript" src="/Public/Home/js/notice.js"></script>	
 
 
 	<div class="c"></div>

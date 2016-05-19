@@ -119,7 +119,7 @@
 			<div class="c1_lb banner">
 				<ul class="img">
 					<foreach name="res" item='vo'>
-						<li><a href="{:U('Home/List/lb',array('id'=>$vo['id']))}"><img src="__PUBLIC__{$vo.pic}" alt=""></a></li>
+						<li><a href="{:U('Home/Activity/index',array('id'=>$vo['id']))}"><img src="__PUBLIC__{$vo.pic}" alt=""></a></li>
 					</foreach>
 				</ul>
 					<div class="btn btn_l">&lt;</div>
@@ -417,4 +417,20 @@ $(function(){
 		})
 	</script>
 
+	<!-- 公告 -->
+	<script type="text/javascript" src="__PUBLIC__/Home/css/index.css"></script>
+	
+		<div class="main" style="background:rgb(251,251,248)">
+		  <div class="main2"><a href="javascript:" class="bar" style="background:url(__PUBLIC__/Home/images/mini_bg.png)"></a>
+		    <div id="demo" class="conter">
+			     <div id="demo1">
+			     <foreach name="notices" item="vo">
+			         <a href="http://www.mogujie.com/">{$vo.content}</a>
+			     </foreach>
+				</div>
+				<div id="demo2"></div>
+			</div>
+		  </div>
+		</div>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/notice.js"></script>	
 </block>

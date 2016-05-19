@@ -535,8 +535,8 @@
                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">活动名称</th>
                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">状态</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">折扣</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">活动时间</th>
-                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">限时天数</th>
+                           <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="Platform(s): activate to sort column ascending">截止日期</th>
+
 
                       
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 77px;" aria-label="CSS grade: activate to sort column ascending">操作</th>
@@ -552,8 +552,7 @@
  $arr=array('开启','关闭'); ?>
                             <td class="sid"><?php echo $arr[$vo['status']] ?></td>
                             <td class="center"><?php echo ($vo["zhekou"]); ?></td>
-                            <td class="center"><?php echo ($vo["month"]); ?>月<?php echo ($vo["day"]); ?>日</td>
-                            <td class="center"><?php echo ($vo["time"]); ?>天</td>                         
+                            <td class="center"><?php echo ($vo["month"]); ?>月<?php echo ($vo["day"]); ?>日</td>                                       
                     
                             <td>
                                 <a href="<?php echo U('Admin/Activity/delete',array('id'=>$vo['id']));?>"><button type="button" class="btn btn-danger">删除</button></a>

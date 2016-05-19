@@ -547,9 +547,9 @@
                     <?php if(is_array($Goods)): foreach($Goods as $key=>$vo): ?><tr class="gradeA odd" role="row">
                             <td class="sid"><?php echo ($vo["id"]); ?></td>
                            <td class="center"><img class='pic' src="/Public<?php echo ($vo["pic"]); ?>" width="50px">
-                              <div class='smallpic' style="width:77px;height:25px;border:0px solid blue;padding-top:2px;">
+                              <div class='smallpic' style="width:77px;height:35px;border:0px solid blue;padding-top:2px;">
                                 <?php
- $sql = 'select * from goods_image where ggid='.$vo['id']; $result=mysql_query($sql); while ($row=mysql_fetch_assoc($result)) { echo '<div style="width:25px;height:25px;border:0px solid blue;float:left">'; echo '<img width="25px"  src="/Public'.$row['minpic'].'">'; echo '</div>'; } ?>
+ $sql = 'select * from goods_image where ggid='.$vo['id']; $result=mysql_query($sql); while ($row=mysql_fetch_assoc($result)) { echo '<div style="width:25px;height:35px;border:0px solid blue;float:left">'; echo '<img width="25px"  src="/Public'.$row['minpic'].'">'; echo '</div>'; } ?>
                               </div>
                            </td>
                             <td class="center"><?php echo ($vo["catename"]); ?>

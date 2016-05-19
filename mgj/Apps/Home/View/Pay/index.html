@@ -1,0 +1,51 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="title">
+	<title>蘑菇街收银台</title>
+</block>
+<block name="top">
+</block>
+<block name="center">
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/zhifu.css">
+	<div id="quan">
+		<div class="tou">
+			<div class="logo"><a href="{:U('Home/Index/index')}"><img src="__PUBLIC__/Home/images/c.png" alt=""></div></a>
+			<div class="bu" style="background:url('__PUBLIC__/Home/images/zf.png');"></div>
+		</div>
+		<div class="spbiao">
+			<div class="head">
+				<div class="hl">
+					<div class="hl_img"><img src="__PUBLIC__/Home/images/dui.png" alt=""></div>
+					<div class="hl_dd">订单提交成功，请您尽快完成支付!</div>
+				</div>
+				<div class="hr">
+					应付金额：¥<span>{$total}<?php echo isset($_GET['total'])?$_GET['total']:'' ?></span>
+				</div>
+			</div>
+			<div class="qianbao">
+				<div class="ye"><div class="qbimg"><img src="__PUBLIC__/Home/images/qb.png" alt=""></div><div class="m">余额</div></div>
+				<div class="kyye">
+					¥{$v.gold}
+				</div>
+			</div>
+			<div class="licai">
+				<div class="ye"><div class="qbimg"><img src="__PUBLIC__/Home/images/qb.png" alt=""></div><div class="m">理财</div></div>
+				<div class="kyye">
+					可用余额：0.00元
+				</div>
+			</div>
+			<div class="foot">
+				<div class="qr">
+					<div class="sf">
+					实付金额：<span>¥{$total}<?php echo isset($_GET['total'])?$_GET['total']:'' ?></span></div>
+					<div class="shifu">
+						<a href="{:U('Home/Pay/zf',array('total'=>$total,'gold'=>$v['gold'],'toal'=>$toal))}"><button>确认并付款</button></a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript"src="__PUBLIC__/Home/js/cart.js"></script>
+</block>

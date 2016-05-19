@@ -1,0 +1,285 @@
+﻿*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+.main{
+	width: 97.5%;
+	height: 1100px;
+	/*border:1px solid red;*/
+	/*background-image: url("__PUBLIC__/Home/images/bg-v3.png");*/
+	background:#F2F2F2; 
+	float: left;
+}
+
+.left{
+	width:960px;
+	/*height:1050px;*/
+	margin:0 auto;
+	height:1100px;
+	border:1px solid #dfdfdf;
+	/*border: 1px solid red;*/
+}
+/*左侧*/
+.left1{
+	float:left;
+	width:150px;
+	height:1100px;
+	background:#f9f9f9; 
+	border:1px solid #dfdfdf;
+}
+/*头像*/
+.tx{
+	width:80px;
+	height:80px;
+	/*padding:20px 20px;*/
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.tx_pic{
+	border-radius:50%;
+}
+
+
+
+.xgmm_tx{
+	margin-left: -20px;
+	width:80px;
+	height:80px;
+	border-radius:50%;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+.xgmm_name{
+	width:150px;
+	height:25px;
+	margin-top: 15px;
+	/*border:1px solid red;*/
+	text-align: center;
+	display:block;
+	line-height: 25px;
+}
+/*用户*/
+.name{
+	width:150px;
+	height:25px;
+	margin-top: 15px;
+	/*border:1px solid red;*/
+	text-align: center;
+	display:block;
+	line-height: 25px;
+}
+.vip-level{
+	position:relative;
+	margin-left:65px;
+	width:18px;
+	height:17px;
+	/*border:1px solid red; */
+	display:block;
+	/*background-image:url("__PUBLIC__/Home/images/lev.png");*/	
+}
+
+
+/*我的订单字体*/
+.menu{
+	margin-top:10px;
+	border-top:1px dashed #666;
+}
+.menu p a{
+	font-size:18px;
+	color:#333;
+}
+.menu p{
+	display:block;
+	font-size:18px;
+	margin-left:24px;
+	margin-top:10px;
+	padding-top:10px;
+}
+.menu dd{
+	width:150px;
+	display:block;
+	padding-top:10px;
+	padding-bottom:8px;
+	padding-left:24px;
+	/*text-align:center; */
+}
+/*字体颜色*/
+.menu dd a{
+	font-size: 12px;
+	color:#666;
+}
+/*悬停背景色*/
+.menu dd:hover{
+	background:#f2f2f2;
+}
+
+/*右*/
+.right{
+	float:right;
+	width:805px;
+	height:1100px;
+	background:#fff;
+	/*border:1px solid red;*/
+}
+/*基本资料*/
+.ziliao{
+	margin:0 auto;
+	margin-top:35px;
+	padding:0 20px 0 20px;
+	width:649px;
+	height:30px;
+	color: pink;
+	font-weight: bold;
+	line-height:30px;
+	background:#f9f9f9; 
+}
+
+
+/*昵称*/
+.set-name{
+	width:280px;
+	height:30px;
+	float:right;
+	margin-top: -35px;
+	margin-right:280px; 
+}
+.name1{
+	float: right;
+	margin-left: 100px;
+	position: relative;
+	margin-right: 200px;
+	color: #666;
+	/*border: 1px solid red;*/
+}
+
+/*性别*/
+.name2{
+	float: right;
+	margin-left: 100px;
+	position: relative;
+	margin-right: 200px;
+	margin-top: 20px;
+	color: #666;
+	/*border: 1px solid red;*/
+}
+.checkbox{
+	float:left;
+	position: relative;
+	margin-left:-280px; 
+}
+
+/*所在地*/
+.place{
+	position: relative;
+	margin-top: 10px;
+}
+.place1{
+	float: left;
+	margin-left: 112px;
+	color: #666;
+	font-weight: bold;
+
+}
+.place2{
+	float: left;
+	margin-left: 10px;
+}
+/*生日*/
+.birthday{
+	position: relative;
+	margin-top: 25px;
+}
+.birth1{
+	float: left;
+	margin-left: 127px;
+	color: #666;
+	font-weight: bold;
+
+}
+.birth2{
+	float: left;
+	margin-left: 10px;
+}
+/*星座*/
+.star{
+	position: relative;
+	margin-top: 25px;
+}
+.star1{
+	float: left;
+	margin-left: 127px;
+	color: #666;
+	font-weight: bold;
+
+}
+.star2{
+	float: left;
+	margin-left: 10px;
+}
+/*职业*/
+.obj{
+	position: relative;
+	margin-top: 25px;
+}
+.obj1{
+	float: left;
+	margin-left: 127px;
+	color: #666;
+	font-weight: bold;
+
+}
+.obj2{
+	float: left;
+	margin-left: 10px;
+}
+
+/*身高*/
+.set-name1{
+	float: right;
+	/*margin-left: 100px;*/
+	position: relative;
+	margin-right: 340px;
+	margin-top: -30px;
+}
+/*体重*/
+.set-name2{
+	float: right;
+	position: relative;
+	margin-right: 340px;
+	margin-top: -30px;
+}
+
+/*衣服尺寸*/
+.size{
+	position: relative;
+	margin-top: 25px;
+}
+.size1{
+	float: left;
+	margin-left: 124px;
+	color: #666;
+	font-weight: bold;
+
+}
+.size2{
+	float: left;
+	margin-left: 10px;
+}
+.sure{
+	float: left;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+
+/*表单*/
+.biaoge{
+	/*float: left;*/
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+
+

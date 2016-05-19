@@ -526,7 +526,7 @@
                                   
                                 </div>
                                  <div class="form-group">
-                                    <label>开始月份</label>
+                                    <label>截止月份</label>
                                     <select name="month" class="form-control">
                                         <option value="0">请选择</option>
                                         <option value="1" <?php if($res['month'] == 1): ?>selected<?php endif; ?>>1月</option>
@@ -544,7 +544,7 @@
                                     </select>
                                 </div>
                                  <div class="form-group">
-                                    <label>开始日</label>
+                                    <label>截止日期</label>
                                     <select name="day" class="form-control">
                                         <option value="0">请选择</option>
                                         <option value="1" <?php if($res['day'] == 1): ?>selected<?php endif; ?>>1日</option>
@@ -582,19 +582,7 @@
 
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>限时</label>
-                                    <select name="time" class="form-control">
-                                        <option value="0">请选择</option>
-                                        <option value="1" <?php if($res['time'] == 1): ?>selected<?php endif; ?>>1天</option>
-                                        <option value="2" <?php if($res['time'] == 2): ?>selected<?php endif; ?>>2天</option>
-                                        <option value="3" <?php if($res['time'] == 3): ?>selected<?php endif; ?>>3天</option>
-                                        <option value="4" <?php if($res['time'] == 4): ?>selected<?php endif; ?>>4天</option>
-                                        <option value="5" <?php if($res['time'] == 5): ?>selected<?php endif; ?>>5天</option>
-                                        <option value="6" <?php if($res['time'] == 6): ?>selected<?php endif; ?>>6天</option>
-
-                                    </select>
-                                </div>
+                                
 
                                 
                                 <button class="btn btn-primary btn-lg btn-block" >修改</button>

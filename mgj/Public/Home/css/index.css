@@ -302,5 +302,18 @@
 .adver .imgs{width: 1420px;position: absolute;}
 /*广告结束*/
 
+/*公告*/
+.main{ width:260px; height:200px; position:fixed; bottom:60px; border:1px solid #ccc;}
+.main2{ width:240px; height:180px; position:relative; padding:10px;}
+.main2 ul li{ width:100%; height:22px; line-height:22px; text-align:left;}
+.main2 ul li a{ color:#444; text-decoration:none;}
+.main2 ul li a:hover{ text-decoration:underline; color:#000;}
+.bar{ width:25px; height:105px; position:absolute; right:-25px; top:-1px; no-repeat; display:block;}
+a{text-decoration:none;}
+.conter{overflow:hidden;height:175px;width:240px;margin:10px;}
+#demo a {display:block;color:#333;padding-left:2px;overflow:hidden;white-space:nowrap;width:282px;text-overflow:ellipsis;}
+#demo a:hover {color:#f00;}
+
+
 
 

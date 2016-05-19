@@ -1,0 +1,323 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration:none;
+}
+.all{
+	width: 100%;
+	height: auto;
+	background: #e7e8eb;
+}
+.header {
+	width: 1200px;
+	height: 30px;
+	/*margin-left: 30px;*/
+	margin: 0 auto;
+	/*background: #f39;*/
+	/*float: left;*/
+}
+.sy{
+	width: 200px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+}
+.sy a{
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+}
+.yh{
+	width: 200px;
+	height: 30px;
+	float: right;
+	/*background: #39f;*/
+	line-height: 30px;
+}
+.yh li{
+	float: left;
+	padding-left: 25px;
+	font-size: 14px;
+	color: rgb(51, 51, 51);
+}
+.yh li a{
+	color: rgb(51, 51, 51);
+
+}
+.purse{
+	width: 100%;
+	height: 76px;
+	background: #fff;
+}
+.top{
+	width: 1200px;
+	height: 76px;	
+	margin: 0 auto;
+	/*float: left;*/
+	/*background: #f39;*/
+	line-height: 76px;
+}
+.purse_logo{
+	width: 130px;
+	height: 76px;
+	/*background: #39f;*/
+	float: left;
+}
+.purse_logo img{
+	margin-top: 20px;
+}
+.purse_dh{
+	width: 450px;
+	height: 76px;
+	/*background: #39f;*/
+	float: right;
+	line-height: 76px;
+}
+.purse_dh li{
+	float: left;
+	padding-left: 25px;
+	padding-right: 10px;
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	font-weight: 700;
+}
+.purse_dh li:hover{
+	color: #f55;
+}
+.purse_dh .dh1{
+	color: #f55;
+}
+.c1{
+	width: 100%;
+	height: 110px;
+	margin-top: 30px;
+}
+.c1_main{
+	width: 1200px;
+	height: 110px;
+	margin: 0 auto;
+}
+.pic{
+	width: 70px;
+	height: 70px;
+	position: relative;
+	top:20px;
+	border-radius: 50%;
+	float: left;
+}
+.pic img{
+	width: 70px;
+	border-radius: 50%;
+}
+.c1_w{
+	float: left;
+	line-height: 110px;
+	font-size: 20px;
+	color: #f55;
+	margin-left: 20px;
+	font-weight: 700;
+}
+.c2{
+	width: 1200px;
+	height: 276px;
+	background: #fff;
+	margin: 0 auto;
+	margin-top: 30px;
+	border:1px solid #e7e8eb;
+}
+.c2_l{
+	width: 864px;
+	height: 236px;
+	border-right: 1px solid #e7e8eb;
+	float: left;
+	/*background: #f39;*/
+	padding: 20px 30px 20px 25px;
+}
+.c2_r{
+	width: 280px;
+	height: 276px;
+	float: left;
+	/*background: #39f;*/
+}
+.c2_r img{
+	margin-left: 44px;
+	margin-top: 12px;
+}
+.c2_lt{
+	width: 864px;
+	height: 85px;
+	border-bottom: 1px solid #ddd;
+}
+.ye{
+	width: 864px;
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 24px;
+}
+.cz{
+	width: 864px;
+	height: 32px;
+	margin-top: 10px;
+	font-size: 20px;
+	color: rgb(51, 51, 51);
+	line-height: 32px;
+	font-weight: 700;
+}
+.but{
+	border:0px;
+	background: #;
+	width: 66px;
+	height: 26px;
+	margin-top: 3px;
+	background: #f55;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 20px;
+}
+.but1{
+	border:0px;
+	background: #;
+	width: 66px;
+	height: 26px;
+	margin-top: 3px;
+	background: #f55;
+	color: #fff;
+	font-size: 12px;
+	margin-left: 20px;
+}
+.c2_lc{
+	width: 864px;
+	height: 90px;
+	border-bottom: 1px solid #ddd;
+	margin-top: 20px;
+}
+.lc{
+	width: 864px;
+	height: 24px;
+	/*background: #f39;*/
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 24px;
+}
+.lc span{
+	font-size: 16px;
+	color: rgb(255, 85, 85);
+	margin-left: 10px;
+	font-weight: 600;
+}
+.qlc{
+	width: 864px;
+	height: 32px;
+	line-height: 32px;
+	margin-top: 10px;
+	color: rgb(153, 153, 153);
+	font-size: 12px;
+}
+.youhui{
+	width: 864px;
+	height: 32px;
+	/*background: #f39;*/
+	margin-top: 10px;
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 32px;
+}
+.youhui img{
+	margin-left: 20px;
+	position: relative;
+	top:8px;
+}
+.footer{
+	width: 100%;
+	height: 185px;
+	margin-top: 60px;
+	/*background: #f39;*/
+}
+.f1{
+	width: 100%;
+	height: 65px;
+	position: relative;
+	top: 40px;
+	/*background: #39f;*/
+}
+.f2{
+	width: 430px;
+	height: 65px;
+	margin: 0 auto;
+	/*background: #f39;*/
+}
+.f3{
+	width: 430px;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	font-size: 14px;
+	color: rgb(153, 153, 153);
+}
+.f4{
+	width: 430px;
+	height: 40px;
+	margin-top: 10px;
+}
+#tk{
+	background: rgba(0,0,0,0.2);
+	position: absolute;
+	top: 0;
+	left: 0;
+	display:none;
+	position: fixed;
+}
+.tk_cz{
+	width: 300px;
+	height: 180px;
+	background: #fff;
+	position: absolute;
+	top:220px;
+	left:480px;
+}
+.tk_head{
+	width: 250px;
+	height: 64px;
+	margin-left: 30px;
+}
+.tk_hl{
+	width: 200px;
+	height: 64px;
+	float: left;
+	line-height: 64px;
+	font-size: 16px;
+	color: rgb(102, 102, 102);
+	font-weight: 600;
+}
+.close{
+	width: 30px;
+	height: 64px;
+	color: rgb(153, 153, 153);
+	font-size: 36px;
+	line-height: 64px;
+	float: right;
+	cursor: pointer;
+}
+.tk_b{
+	width: 250px;
+	height: 90px;
+	/*background: #f39;*/
+	margin-left: 30px;
+	font-size: 14px;
+	color: rgb(195, 195, 195);
+}
+.tk_b input{
+	width: 180px;
+	height: 15px;
+	padding: 10px 8px;
+	border:1px solid #ccc;
+}
+.tk_b button{
+	width: 120px;
+	height: 30px;
+	border:0px;
+	background: #f55;
+	color: #fff;
+	border-radius: 3px;
+	margin-top: 20px;
+}

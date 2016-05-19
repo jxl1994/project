@@ -1,0 +1,73 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="title">
+	<title>我的足迹</title>
+</block>
+
+<block name="center">
+<link rel="stylesheet" href="__PUBLIC__/Home/css/zj.css">
+<div class="sc_head">
+	<div class="sc_h1">
+		<div class="sc_div1">我的足迹</div>
+	</div>
+</div>
+
+<div class="sc_main">		
+	<div class="sc_good">
+			<foreach name="res" item="vo">
+		<div class="sc_good1">			
+			<div class="sc_img"><a href="/Home/Detail/index?id={$vo.goodsid}"><img src="__PUBLIC__/{$vo.pic}" alt=""></a></div>
+			<div class="sc_price">
+				¥{$vo.price}
+			</div>
+			<div class="sc_w">
+				<div class="gname">
+					<a href="/Home/Detail/index?id={$vo.goodsid}">{$vo.name}</a>
+				</div>
+				<?php
+					if($_SESSION['uid']){
+					?>
+						<div class="sc_time">
+					{$vo.addtime}<a href="">删除</a>
+				</div>
+				<?php
+					}else{
+						?>
+						<div class="sc_time">
+					{$vo.addtime}<a href=""></a>
+				</div>
+				<?php
+					}
+				?>
+						
+				
+				
+			</div>
+		</div>
+		</foreach>
+	</div>
+</div>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+	$('.sc_time a').click(function(){
+		
+		$.ajax({
+			url:'delete',//请求url
+			data:{id:{$vo.id}},
+			dataType:'json',//返回的数据类型
+			type:'get',//请求的方式
+			success:function(data){
+				
+			},
+			timeout:3000,//请求超时时间,如果是同步的请求,没有效果
+			//是否异步 
+			async:false,
+			error:function(){
+				//出现错误时 执行
+				alert('出错啦 思密达');
+			}
+		});
+			
+	})
+</script>
+</block>

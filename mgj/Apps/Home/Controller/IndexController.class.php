@@ -8,6 +8,7 @@ class IndexController extends Controller {
     	$link=M('link');
         $links=$link->where(array('status'=>'已审核'))->select();
         //var_dump($res);die;
+        
         //商品遍历
         $good=M('goods');
         $goods1=$good->limit(0,6)->order('id desc')->where(array('statu'=>'上架'))->select();
@@ -16,10 +17,12 @@ class IndexController extends Controller {
         //var_dump($goods2);die;
         $goods3=$good->limit(12,6)->order('id desc')->where(array('statu'=>'上架'))->select();
         //var_dump($goods3);die;
+        
         //广告
         $adver=M('adver');
         $advers=$adver->limit(5)->where(array('status'=>'已审核'))->select();
-         //分类
+        
+        //分类
         // var_dump($advers);die;
         $category=M('category');
     	$data=$category->select();
@@ -31,18 +34,25 @@ class IndexController extends Controller {
         //var_dump($list);die;
 			}
 
-
-
         //轮播图遍历
         $carousel=M('carousel');
-
 		// var_dump($num);die;
         $res=$carousel->where(array('statu'=>'0'))->order('id desc')->limit(5)->select();
         // $res1=count($res);
         // var_dump($res);die;
+       
         $good=M('goods');
 		$goods=$good->select();
+
+        //公告
+        $notice = M('notice');
+        // var_dump($list);die;
+        $notices = $notice->order('time desc')->select();       
+        // var_dump($notices);die;
+       
+
         //分配变量
+        $this->assign('notices',$notices);
         $this->assign('res',$res);        
 		$this->assign("list",$list);
 		$this->assign("goods",$goods);

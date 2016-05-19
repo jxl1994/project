@@ -2,36 +2,7 @@
 <block name="fl"></block>
 <block name="center">
 	<link rel="stylesheet" href="__PUBLIC__/Home/css/list.css">
-	<link rel="stylesheet" href="__PUBLIC__/Home/css/time.css">	
 	<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
-	<script>
- 		$(function(){
- 			function GetRTime(){
-		       var b=$('#xianshi').html();		     
-		       var a=b.substring(0,1);
-		       var NowTime = new Date();
-		       var EndTime=new Date(NowTime.getFullYear(),NowTime.getMonth(),NowTime.getDate()+Number(a));
-		    
-		       var d=NowTime.getDate();
-		       var t =EndTime.getTime() - NowTime.getTime();
-		       var d=Math.floor(t/1000/60/60/24);
-		       var h=Math.floor(t/1000/60/60%24);
-		       var m=Math.floor(t/1000/60%60);
-		       var s=Math.floor(t/1000%60);
-
-		       document.getElementById("t_d").innerHTML = d + "天";
-		       document.getElementById("t_h").innerHTML = h + "时";
-		       document.getElementById("t_m").innerHTML = m + "分";
-		       document.getElementById("t_s").innerHTML = s + "秒";
-		       if(d == 0 && h ==0 && m ==0 && s ==0){
-		       		clearInterval(GetRTime);
-		       }
-	   }
-	   		setInterval(GetRTime,0);
- 		})
-	  
-	</script>
-	
 	<div id="list">
 	<!-- 分类 -->
 		<div class="list_fl">
@@ -44,29 +15,18 @@
 			</foreach>
 		</div>
 		<!-- 两张图片 -->
-		
 		<div class="l">
-			<?php 
-				if(!empty($xianshi)){
-			?>
-				<div class="time" >
-					<span class='day_show link link--kukuri' data-letters="限时抢购" >限时抢购</span>
-					<strong id='xianshi'>{$xianshi}天</strong>
-			        <span class="day_show link link--kukuri" data-letters="倒计时">倒计时:</span>
-			        <strong id="t_d">00天</strong>
-			        <strong id="t_h">00时</strong>
-			        <strong id="t_m">00分</strong>
-			        <strong id="t_s">00秒</strong>
-			    </div>
-			<?php 
-				}
-
-			?>    
-			<img src="__PUBLIC__{$pic}" style="border-radius: 10px;" width="" >
+			<img src="__PUBLIC__/Home/images/10.jpg" style="border-radius: 10px;" width="1212"  alt="">
 		</div>
 		<div class="name">
-		
-			<h1 style="color:blue;">热销</h1>	
+		<?php
+				$id=$_GET['id'];
+				$sql='select * from category where id = '.$id;
+				$res=mysql_query($sql);
+				$row=mysql_fetch_assoc($res);
+				
+		?>	
+			<h1 style="color:blue;">{$row.catename}</h1>	
 			<hr width="1200px" style="color:#ccc;">
 		</div>
 		
@@ -76,19 +36,7 @@
 				<dl>
 					<dt><a href="{:U('Home/Detail/index',array('id'=>$vo['id']))}"><img src="__PUBLIC__/{$vo.pic}" width="179" height="190" alt=""></a></dt>
 					<dd class="goods_name"><a href="{:U('Home/Detail/index',array('id'=>$vo['id']))}">{$vo.name}</a></dd>
-					
-					<?php 
-						if(!empty($vo['zhekou'])){
-					?>
-					<dd class="goods_price">原价:￥{$vo.price}</dd><dd id='zk'>全场{$zk}折</dd><br>
-					<dd class="goods_zhekou">现价:￥{$vo.zhekou}</dd>
-					<?php 
-						}else{
-					?>
-					<dd class="goods_price" style="color:#f36;text-decoration:none;">原价:￥{$vo.price}</dd><br>		
-					<?php 		
-						}
-					?>	
+					<dd class="goods_price">￥{$vo.price}</dd>	
 				</dl>
 			</div>	
 		</foreach>

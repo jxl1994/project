@@ -18,15 +18,19 @@ class NoticeController extends CommonController {
         }
 
         //获取每页显示的数量
-        $num = !empty($_GET['num']) ? $_GET['num'] : 10;
+        $num = !empty($_GET['num']) ? $_GET['num'] : 5;
         
     	// //统计总数
     	$count = $notice->where($where)->count();
     	// // 实例化分页类
     	$Page = new \Think\Page($count,$num);
+    	//获取limit
+    	$limit = $Page->firstRow.','.$Page->listRows;
+    	// 分页显示输出
+    	$pages = $Page->show();
 
         // $list = $notice->select();
-        $list = $notice->order("time desc")->select();
+        $list = $notice->order("time desc")->limit($limit)->select();
         // var_dump($list);die;
 
     	//分配变量

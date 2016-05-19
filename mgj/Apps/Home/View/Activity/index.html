@@ -1,0 +1,107 @@
+<extend name="./Public/public" />
+<block name="fl"></block>
+<block name="center">
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/Activity.css">
+	<link rel="stylesheet" href="__PUBLIC__/Home/css/time.css">	
+	<script type="text/javascript"src="__PUBLIC__/Home/js/jquery-1.8.3.min.js"></script>
+	<script>
+ 		$(function(){
+ 			function GetRTime(){
+ 			   var jz=$('#jz').html();
+ 			   var NowTime = new Date();
+ 			   var new_r=jz.substring(8,10);
+ 			   var new_m=jz.substring(5,7);
+ 			   var new_n=jz.substring(0,4); 			
+ 			   var d=NowTime.getDate();
+ 			   var y=NowTime.getMonth();
+ 			   var n=NowTime.getFullYear();
+ 			   var cha_r=Number(new_r)-Number(d);
+ 			   var cha_m=Number(new_m)-Number(y+1);
+ 			   var cha_n=Number(new_n)-Number(n);		      	     		      
+		       var EndTime=new Date(NowTime.getFullYear()+Number(cha_n),NowTime.getMonth()+Number(cha_m),NowTime.getDate()+Number(cha_r));		    		       
+		       var t =EndTime.getTime() - NowTime.getTime();
+		       var d=Math.floor(t/1000/60/60/24);
+		       var h=Math.floor(t/1000/60/60%24);
+		       var m=Math.floor(t/1000/60%60);
+		       var s=Math.floor(t/1000%60);
+		       var xianshi=Number(d+1);
+		       document.getElementById("js").innerHTML = xianshi + "天";
+		       document.getElementById("t_d").innerHTML = d + "天";
+		       document.getElementById("t_h").innerHTML = h + "时";
+		       document.getElementById("t_m").innerHTML = m + "分";
+		       document.getElementById("t_s").innerHTML = s + "秒";
+		       if(d == 0 && h ==0 && m ==0 && s ==0){
+		       		clearInterval(GetRTime);
+		       }
+	   }
+	   		setInterval(GetRTime,0);
+ 		})
+	  
+	</script>
+	
+	<div id="list">
+		<!-- 两张图片 -->
+		
+		<div class="l">
+			<?php 
+				if( $status!= '1' ){
+			?>
+				<div class="time" >
+					<div id='jz' style='display:none'>{$jz}</div>
+					<span class='day_show link link--kukuri' data-letters="限时抢购" >限时抢购</span>
+					<strong id='js'>天</strong>
+			        <span class="day_show link link--kukuri" data-letters="倒计时">倒计时:</span>
+			        <strong id="t_d">00天</strong>
+			        <strong id="t_h">00时</strong>
+			        <strong id="t_m">00分</strong>
+			        <strong id="t_s">00秒</strong>
+			    </div>
+			<?php 
+				}
+
+			
+
+			?>    
+			<img src="__PUBLIC__{$pic}" style="border-radius: 10px;" width="" >
+		</div>
+		<div class="name">
+		
+			<h1 style="color:blue;">热销</h1>	
+			<hr width="1200px" style="color:#ccc;">
+		</div>
+		
+		<div class="list_goods">
+		<foreach name="result" item="vo" >
+			<div class="list_g1">
+				<dl>
+					<dt><a href="{:U('Home/Detail/index',array('id'=>$vo['id'],'zk'=>$zk,'zhekou'=>$vo['zhekou']))}"><img src="__PUBLIC__/{$vo.pic}" width="179" height="190" alt=""></a></dt>
+					<dd class="goods_name"><a href="{:U('Home/Detail/index',array('id'=>$vo['id']))}">{$vo.name}</a></dd>
+					
+					<?php 
+						if(!empty($vo['zhekou'])){
+					?>
+					<dd class="goods_price">原价:￥{$vo.price}</dd><dd id='zk'>全场{$zk}折</dd><br>
+					<dd class="goods_zhekou">现价:￥{$vo.zhekou}</dd>
+					<?php 
+						}else{
+					?>
+					<dd class="goods_price" style="color:#f36;text-decoration:none;">原价:￥{$vo.price}</dd><br>		
+					<?php 		
+						}
+					?>	
+				</dl>
+			</div>	
+		</foreach>
+		</div>
+		<div class="c"></div>
+		
+	</div>
+	<script type="text/javascript">
+	$('li').mouseover(function(){
+		$(this).find('.a').css('display','block');
+	})
+	$('li').mouseout(function(){
+		$(this).find('.a').css('display','none');
+	})
+	</script>
+</block>

@@ -1,5 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html lang="en">
+
+
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="/Public/Home/css/public.css">
@@ -10,6 +12,7 @@
 	
 	<script type="text/javascript"src="/Public/Home/js/jquery-1.8.3.min.js"></script>
 </head>
+
 <body>
 	<!-- 导航条 -->
 	<div id="header">
@@ -19,14 +22,14 @@
 			<li><a href="<?php echo U('Home/User/zhuce');?>">注册</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/User/login');?>">登录</a><span>|</span></li>
 		<?php }else{ ?>
-			<li><a href=""><?php echo session('username');?></a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Personal/index');?>"><?php echo session('username');?></a><span>|</span></li>
 			<li><a href="<?php echo U('Home/User/logout');?>">退出 </a><span>|</span></li>
 			<?php } ?>
-			<li><a href="">我的收藏</a><span>|</span></li>
+			<li><a href="<?php echo U('Home/Shoucang/index');?>">我的收藏</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Order/index');?>"><img src="/Public/Home/images/tb1.png" class="tb1"> 我的订单</a><span>|</span></li>
 			<li><a href="<?php echo U('Home/Cart/index');?>" name="rdh_md"><img src="/Public/Home/images/tb2.png" class="tb2"> 购物车</a><span>|</span></li>
 			
-			<li><a href=""><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
+			<li><a href="#"><img src="/Public/Home/images/tb3.png" class="tb3"> 我的小店</a></li>
 			
 		</div>
 	</div>
@@ -52,7 +55,7 @@
 			</div>
 			<!-- 钱包 -->
 			<div class="rdh_qb">
-				<a href="">
+				<a href="<?php echo U('Home/Purse/index');?>">
 					<div class="rdh_qb_logo">
 						<img src="/Public/Home/images/right_dh.png" alt="">
 					</div>
@@ -61,7 +64,7 @@
 			</div>
 			<!-- 足迹 -->
 			<div class="rdh_zj">
-				<a href="">
+				<a href="<?php echo U('Home/Mark/index');?>">
 					<div class="rdh_zj_logo">
 						<img src="/Public/Home/images/right_dh.png" alt="">
 					</div>
@@ -111,36 +114,7 @@
 	<div class="c"></div>
 	
 	<link rel="stylesheet" href="/Public/Home/css/list.css">
-	<link rel="stylesheet" href="/Public/Home/css/time.css">	
 	<script type="text/javascript"src="/Public/Home/js/jquery-1.8.3.min.js"></script>
-	<script>
- 		$(function(){
- 			function GetRTime(){
-		       var b=$('#xianshi').html();		     
-		       var a=b.substring(0,1);
-		       var NowTime = new Date();
-		       var EndTime=new Date(NowTime.getFullYear(),NowTime.getMonth(),NowTime.getDate()+Number(a));
-		    
-		       var d=NowTime.getDate();
-		       var t =EndTime.getTime() - NowTime.getTime();
-		       var d=Math.floor(t/1000/60/60/24);
-		       var h=Math.floor(t/1000/60/60%24);
-		       var m=Math.floor(t/1000/60%60);
-		       var s=Math.floor(t/1000%60);
-
-		       document.getElementById("t_d").innerHTML = d + "天";
-		       document.getElementById("t_h").innerHTML = h + "时";
-		       document.getElementById("t_m").innerHTML = m + "分";
-		       document.getElementById("t_s").innerHTML = s + "秒";
-		       if(d == 0 && h ==0 && m ==0 && s ==0){
-		       		clearInterval(GetRTime);
-		       }
-	   }
-	   		setInterval(GetRTime,0);
- 		})
-	  
-	</script>
-	
 	<div id="list">
 	<!-- 分类 -->
 		<div class="list_fl">
@@ -149,24 +123,13 @@
 			</li><?php endforeach; endif; ?>
 		</div>
 		<!-- 两张图片 -->
-		
 		<div class="l">
-			<?php  if(!empty($xianshi)){ ?>
-				<div class="time" >
-					<span class='day_show link link--kukuri' data-letters="限时抢购" >限时抢购</span>
-					<strong id='xianshi'><?php echo ($xianshi); ?>天</strong>
-			        <span class="day_show link link--kukuri" data-letters="倒计时">倒计时:</span>
-			        <strong id="t_d">00天</strong>
-			        <strong id="t_h">00时</strong>
-			        <strong id="t_m">00分</strong>
-			        <strong id="t_s">00秒</strong>
-			    </div>
-			<?php  } ?>    
-			<img src="/Public<?php echo ($pic); ?>" style="border-radius: 10px;" width="" >
+			<img src="/Public/Home/images/10.jpg" style="border-radius: 10px;" width="1212"  alt="">
 		</div>
 		<div class="name">
-		
-			<h1 style="color:blue;">热销</h1>	
+		<?php
+ $id=$_GET['id']; $sql='select * from category where id = '.$id; $res=mysql_query($sql); $row=mysql_fetch_assoc($res); ?>	
+			<h1 style="color:blue;"><?php echo ($row["catename"]); ?></h1>	
 			<hr width="1200px" style="color:#ccc;">
 		</div>
 		
@@ -175,13 +138,7 @@
 				<dl>
 					<dt><a href="<?php echo U('Home/Detail/index',array('id'=>$vo['id']));?>"><img src="/Public/<?php echo ($vo["pic"]); ?>" width="179" height="190" alt=""></a></dt>
 					<dd class="goods_name"><a href="<?php echo U('Home/Detail/index',array('id'=>$vo['id']));?>"><?php echo ($vo["name"]); ?></a></dd>
-					
-					<?php  if(!empty($vo['zhekou'])){ ?>
-					<dd class="goods_price">原价:￥<?php echo ($vo["price"]); ?></dd><dd id='zk'>全场<?php echo ($zk); ?>折</dd><br>
-					<dd class="goods_zhekou">现价:￥<?php echo ($vo["zhekou"]); ?></dd>
-					<?php  }else{ ?>
-					<dd class="goods_price" style="color:#f36;text-decoration:none;">原价:￥<?php echo ($vo["price"]); ?></dd><br>		
-					<?php  } ?>	
+					<dd class="goods_price">￥<?php echo ($vo["price"]); ?></dd>	
 				</dl>
 			</div><?php endforeach; endif; ?>
 		</div>
