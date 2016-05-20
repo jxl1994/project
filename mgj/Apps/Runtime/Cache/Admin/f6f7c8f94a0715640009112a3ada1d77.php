@@ -503,7 +503,7 @@
     //定义全局变量
     var Cprice = false;
     var Cnum=false;
-    var Cdetail=false;
+  
     $(function(){
 
         //绑定表单提交事件
@@ -536,19 +536,7 @@
             }
         });
         //获取元素
-        $('textarea[name=detail]').blur(function(){  
-            var v = $(this).val();
-            var reg=/^\w+$/;
-
-            //判断价格不能为负
-            if(!reg.test(v)){
-                $(this).next().html('不能为空').css('color','red');
-                Cdetail= false;
-            }else{
-                 $(this).next().html('').css('color','#fff');
-                Cdetail= true;
-            }
-        });
+      
 
         //获取元素
             $('input[name=price]').focus(function(){

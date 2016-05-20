@@ -3,7 +3,9 @@ namespace Home\Controller;
 use Think\Controller;
 class MarkController extends Controller {
     // 前台首页
+
     public function index(){
+      // var_dump($_SESSION['uid']);die;
     	//判断有没有用户登录
     	if($_SESSION['uid']){
 	    	$mark=M('mark');
@@ -20,7 +22,7 @@ class MarkController extends Controller {
           $time=date('Y-m-d H:i:s',time());
           $res[$k]['addtime']=$time;	
     		}
-        //var_dump($res);die;
+        // var_dump($res);die;
     		$this->assign('res',$res);
     	}
         $this->display();

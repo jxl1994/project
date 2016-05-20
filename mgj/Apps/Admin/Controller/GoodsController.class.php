@@ -30,7 +30,7 @@ class GoodsController extends CommonController {
     	$pages = $Page->show();
     	// var_dump($pages);
     	//多表联合查询
-        $sql="select goods.*,detail.num,category.catename from goods left join detail on goods.id = detail.gid left join category on goods.typeid = category.id ".$where." order by goods.id asc limit ".$limit;
+        $sql="select goods.*,detail.num,category.catename from goods left join detail on goods.id = detail.gid left join category on goods.typeid = category.id ".$where." order by goods.id desc limit ".$limit;
         //查看sql语句
         // echo $sql;die;
         // var_dump($Goods);die;

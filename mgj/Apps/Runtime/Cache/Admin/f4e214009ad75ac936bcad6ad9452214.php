@@ -538,7 +538,7 @@
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 40px;" aria-label="CSS grade: activate to sort column ascending">地址</th>
                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 30px;" aria-label="CSS grade: activate to sort column ascending">电话</th>
                             <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">总金额</th>
-                             
+                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 60px;" aria-label="CSS grade: activate to sort column ascending">配送方式</th> 
                               
                               <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 57px;" aria-label="CSS grade: activate to sort column ascending">订单状态</th>
                               <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" style="width: 70px;" aria-label="CSS grade: activate to sort column ascending">购买时间</th>
@@ -557,7 +557,7 @@
                             <td class="center"><?php echo ($row["address"]); ?></td>
                              <td class="center"><?php echo ($row['phone']); ?></td>
                               <td class="center">￥<?php echo ($row['total']); ?></td>
-                              
+                              <td class="center"><?php echo ($row['send']); ?></td>
                                <td><?php if($row['status'] == 1): ?>新订单<?php elseif($row['status'] == 2): ?>已发货<?php elseif($row['status'] == 3): ?>已收货<?php elseif($row['status'] == 4): ?>订单完成<?php endif; ?></td>
                       <td><?php echo ($row['time']); ?></td>
                     <td><a href="/Admin/Order/detail?id=<?php echo ($row['id']); ?>">&nbsp;&nbsp;&nbsp;订单详情</a>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<a href="/Admin/Order/edit?id=<?php echo ($row['id']); ?>">修改</a> |  <a href="/Admin/Order/del?id=<?php echo ($row['id']); ?>"> 删除</a> </td>

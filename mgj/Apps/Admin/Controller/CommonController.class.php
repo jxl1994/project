@@ -18,5 +18,6 @@ class CommonController extends Controller {
 		// if(!$AUTH->check(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME, session('uid'))){
   //          $this->error('没有权限',U('Admin/Login/index'));
 		// }
+	
 	}
 }
